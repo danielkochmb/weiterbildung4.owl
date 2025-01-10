@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="de" class="js">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Start - Next Learning Creator</title>
+        
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="fonts/fonts.css" rel="stylesheet">
+        <link href="fonts/dooiconfont/dooiconfont.css" rel="stylesheet">
+        <script src="libs/jquery-3.6.1.min.js"></script>
+        <script src="libs/jquery-ui.min.js"></script>
+        <script src="libs/jquery.ui.touch-punch.js"></script>
+        <script src="libs/chart.umd.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="js/jsonInfotexts.js"></script>
+        <script src="js/scriptStructure.js"></script>
+        <script src="js/loadAndSaveData.js"></script>
+        <script src="js/loadAndSaveOffer.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <span id="logo">
+                <img class="logo" src="img/Logo_Next Learning_Creator.svg" alt="Logo Next Learning Creator">
+            </span>
+        </header>
+        <header class="hasSubHeader">
+            <div class="headerLeft">
+                <a href="analysis.html" class="backButton small">Zurück</a>
+            </div>
+            <span id="logo">
+                <img class="logo" src="img/Logo_Next Learning_Creator.svg" alt="Logo Next Learning Creator">
+            </span>
+            <div class="headerRight">
+                <a href="conclusion.html" class="primaryButton small">Weiter</a>
+            </div>
+        </header>
+        <main class="contentWidth">
+            <section id="offer">
+                <div class="innerSection">
+                    <h1>Angebotsbeschreibung</h1>
+                    <p>Beschreiben Sie Ihr Lernangebot in den angelegten Kategorien und bereiten Sie so eine aussagekräftige Veröffentlichung auf der Website des Next Learning Hubs oder im Learning Management System des Next Learning Hubs vor.<br>
+                    <br>Sie brauchen nicht alle Felder auszufüllen, sondern nur die, die für Ihr Angebot relevant sind.</p>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Titel</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText"></span>
+                                    <input id="offerTitel" name="offerTitel" class="input no-margin" autocomplete="off" placeholder="Zum Beispiel: Grundlagen des Systems Engineerings"></input>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Kurzbeschreibung</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText"></span>
+                                    <textarea id="offerShortDescription" name="offerShortDescription" class="textarea bigTextarea no-margin" autocomplete="off" placeholder="Bitte max. 300 Wörter verwenden!"></textarea>
+                                </label>
+                                <p id="wordCount">Verbleibende Wörter: 300</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Lernformat</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText"></span>
+                                    <div id="offerLearningFormat" class="radioList no-margin">
+                                        <label class="radioItem" onclick="toggleCheckboxes(this)">
+                                            <input type="radio" name="learningFormat" value="Praesenz-Training" checked>
+                                            <span></span> Präsenz-Training </label>
+                                        <label class="radioItem" onclick="toggleCheckboxes(this)">
+                                            <input type="radio" name="learningFormat" value="Live-Online-Training">
+                                            <span></span> Live-Online-Training </label>
+                                        <label class="radioItem" onclick="toggleCheckboxes(this)">
+                                            <input type="radio" name="learningFormat" value="E-Learning">
+                                            <span></span> E-Learning </label>
+                                        <label class="radioItem" onclick="toggleCheckboxes(this)">
+                                            <input type="radio" name="learningFormat" value="Blended-Learning" class="activateHiddenCheckboxes">
+                                            <span></span> Blended Learning </label>
+                                        <div class="hiddenCheckboxes">
+                                            <p>Kombination aus:</p>
+                                            <label class="checkboxItem">
+                                                <input type="checkbox" name="combinedLearningFormat" value="Praesenz-Training">
+                                                <span></span> Präsenz-Training </label>
+                                            <label class="checkboxItem">
+                                                <input type="checkbox" name="combinedLearningFormat" value="Live-Online-Training">
+                                                <span></span> Live-Online-Training </label>
+                                            <label class="checkboxItem">
+                                                <input type="checkbox" name="combinedLearningFormat" value="E-Learning">
+                                                <span></span> E-Learning </label>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Nutzen</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Bitte nennen Sie max. 8 Punkte!</span>
+                                    <ul id="offerUtility" class="inputList" data-maxInputListItem="8">
+                                        <li class="inputListItem entry-to-delete delete-stop">
+                                            <textarea name="offerUtilityTextarea" class="textarea" autocomplete="off" placeholder="Nutzen eingeben..."></textarea>
+                                        </li>
+                                    </ul>
+                                    <button class="addButton" onclick="addInputList(this);">+ Hinzufügen</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Zielgruppe</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText"></span>
+                                    <textarea id="offerTargetGroup" name="offerTargetGroup" class="textarea bigTextarea no-margin" autocomplete="off" placeholder="Bitte typische Mitarbeitergruppen/Positionen nennen oder relevante Ziele beschreiben, die Personen durch das Training erreichen können. Ggfs. auch auf erforderliche Voraussetzungen eingehen."></textarea>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Inhalte/Agenda</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Bitte max. 20 Stichpunkte nennen, die auf Ebene von Überschriften die Inhalte bzw. den Ablauf des Lernangebots beschreiben!</span>
+                                    <ul id="offerContent" class="inputList" data-maxInputListItem="20">
+                                        <li class="inputListItem entry-to-delete delete-stop">
+                                            <textarea name="offerContentTextarea" class="textarea" autocomplete="off" placeholder="Inhalt eingeben..."></textarea>
+                                        </li>
+                                    </ul>
+                                    <button class="addButton" onclick="addInputList(this);">+ Hinzufügen</button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Abschluss</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <div id="offerCompletion" class="checkboxList no-margin">
+                                    <label class="checkboxItem">
+                                        <input type="checkbox" name="certificate" value="Teilnahmebescheinigung" class="checkbox check-answer">
+                                        <span></span> Teilnahmebescheinigung </label>
+                                    <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                        <input type="checkbox" name="certificate" value="Anbieterzertifikat" class="checkbox check-answer">
+                                        <span></span> Anbieterzertifikat </label>
+                                    <div class="moreInformation">
+                                        <input name="providerCertificate" class="input" autocomplete="off" placeholder="Bezeichnung des Anbieterzertifikats"></input>
+                                    </div>
+                                    <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                        <input type="checkbox" name="certificate" value="Hochschulzertifikat" class="checkbox check-answer">
+                                        <span></span> Hochschulzertifikat </label>
+                                    <div class="moreInformation">
+                                        <input name="universityCertificate" class="input" autocomplete="off" placeholder="Bezeichnung des Hochschulzertifikats"></input>
+                                    </div>
+                                    <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                        <input type="checkbox" name="certificate" value="Badge" class="checkbox check-answer">
+                                        <span></span> Badge </label>
+                                    <div class="moreInformation">
+                                        <input name="badge" class="input" autocomplete="off" placeholder="Angaben zum Badge"></input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Dozent/Trainer</h3>
+                        <div class="card bigPadding">
+                            <div id="offerTrainer" class="inputWrapper">
+                                <label class="textInputBox textInputBoxTutor entry-to-delete">
+                                    <span class="labelText padding-right-10">Dozent/Trainer</span>
+                                    <input name="trainer" class="input no-margin" autocomplete="off" placeholder="Titel, Vorname, Nachname"></input>
+                                    <div class="inputListItemCancel">
+                                        <i class="iconCancel iconCancelTutor" onclick="removeTutor(this);" onkeydown="removeInputListOnKey(this);" tabindex="0"></i>
+                                    </div>
+                                </label>
+                                <!-- <label class="textInputBox textInputBoxTutor entry-to-delete">
+                                    <span class="labelText padding-right-10">Dozent/Trainer</span>
+                                    <input name="tutor_trainer" class="input no-margin" autocomplete="off" placeholder="Titel, Vorname, Nachname"></input>
+                                    <div class="inputListItemCancel">
+                                        <i class="iconCancel iconCancelTutor" onclick="removeTutor(this);" onkeydown="removeInputListOnKey(this);" tabindex="0"></i>
+                                    </div>
+                                </label> -->
+                                <button class="addButton addButtonTutor" onclick="addTutor(this);">+ Hinzufügen</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Preise</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText"></span>
+                                    <div id="offerPrice" class="checkboxList no-margin">
+                                        <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                            <input type="checkbox" name="priceType" value="Offenes Training" class="checkbox check-answer">
+                                            <span></span> Offenes Training
+                                            <div class="infoFormButtonWrapper">
+                                                <button class="infotextButton infoFormButton" type="button" title="Erklärung anzeigen" data-infotext="offerOffenesTraining">?</button>
+                                            </div></label>
+                                        <div class="moreInformation">
+                                            <label class="textInputBox no-padding padding-top-10">
+                                                <span class="labelText">Preis pro Person</span>
+                                                <input type="number" class="input no-margin" name="pricePerParticipant" min="0" placeholder="0,00" onchange="outputValue(this)">
+                                                <div class="currencySymbol">€</div>
+                                            </label>
+                                            <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                                <input type="checkbox" name="discount" value="" class="checkbox check-answer">
+                                                <span></span> Rabatt </label>
+                                            <div class="moreInformation">
+                                                <div class="textInputBox no-padding padding-top-10">
+                                                    <label class="dropdownContainer">
+                                                        <span class="labelText">Ab wie vielen Personen soll es einen Rabatt geben?</span>
+                                                        <select class="dropdown smallDropdown" name="discountNumberOfPersons" onchange="changeDropdownStatus(this);">
+                                                            <option value="" disabled="" selected="" hidden="">Anzahl an Personen</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                        </select>
+                                                        <div class="inputListItemArrow">
+                                                            <span class="dooIconContainer dooContainerName-arrow-down">
+                                                                <i class="dooIcon dooIcon-arrow-down dooIconSize-20"></i>
+                                                            </span>
+                                                        </div>
+                                                    </label>
+                                                    <label class="dropdownContainer">
+                                                        <span class="labelText">Um viel Prozent soll es einen Rabatt geben?</span>
+                                                        <select class="dropdown smallDropdown" name="discountPercent" onchange="changeDropdownStatus(this);">
+                                                            <option value="" disabled="" selected="" hidden="">Prozent % </option>
+                                                            <option value="1">1%</option>
+                                                            <option value="2">2%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="4">4%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="6">6%</option>
+                                                            <option value="7">7%</option>
+                                                            <option value="8">8%</option>
+                                                            <option value="9">9%</option>
+                                                            <option value="10">10%</option>
+                                                            <option value="15">15%</option>
+                                                            <option value="20">20%</option>
+                                                            <option value="25">25%</option>
+                                                            <option value="30">30%</option>
+                                                            <option value="35">35%</option>
+                                                            <option value="40">40%</option>
+                                                            <option value="45">45%</option>
+                                                            <option value="50">50%</option>
+                                                        </select>
+                                                        <div class="inputListItemArrow">
+                                                            <span class="dooIconContainer dooContainerName-arrow-down">
+                                                                <i class="dooIcon dooIcon-arrow-down dooIconSize-20"></i>
+                                                            </span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <p id="discountInformation" class="padding-top-10">Der Rabatt gilt für den Gesamtpreis.</p>
+                                            </div>
+                                            <label class="padding-top-20 display-block">
+                                                <span class="labelText">Inklusivleistungen</span>
+                                                <textarea name="includedServices" class="textarea smallTextarea" autocomplete="off" placeholder="Bitte geben Sie ggfs. Inklusivleistungen an, wie z.B. Lernmaterial, Getränke, Mahlzeiten etc."></textarea>
+                                            </label>
+                                        </div>
+                                        <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                            <input type="checkbox" name="priceType" value="Inhouse-Durchfuehrung" class="checkbox check-answer">
+                                            <span></span> Inhouse-Durchführung </label>
+                                        <div class="moreInformation">
+                                            <label class="textInputBox no-padding padding-top-10">
+                                                <span class="labelText">Preis pro Person</span>
+                                                <input type="number" class="input no-margin" name="pricePerParticipant" min="0" placeholder="0,00" onchange="outputValue(this)">
+                                                <div class="currencySymbol">€</div>
+                                            </label>
+                                            <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                                <input type="checkbox" name="discount" value="" class="checkbox check-answer">
+                                                <span></span> Rabatt </label>
+                                            <div class="moreInformation">
+                                                <div class="textInputBox no-padding padding-top-10">
+                                                    <label class="dropdownContainer">
+                                                        <span class="labelText">Ab wie vielen Personen soll es einen Rabatt geben?</span>
+                                                        <select class="dropdown smallDropdown" name="discountNumberOfPersons" onchange="changeDropdownStatus(this);">
+                                                            <option value="" disabled="" selected="" hidden="">Anzahl an Personen</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                        </select>
+                                                        <div class="inputListItemArrow">
+                                                            <span class="dooIconContainer dooContainerName-arrow-down">
+                                                                <i class="dooIcon dooIcon-arrow-down dooIconSize-20"></i>
+                                                            </span>
+                                                        </div>
+                                                    </label>
+                                                    <label class="dropdownContainer">
+                                                        <span class="labelText">Um viel Prozent soll es einen Rabatt geben?</span>
+                                                        <select class="dropdown smallDropdown" name="discountPercent" onchange="changeDropdownStatus(this);">
+                                                            <option value="" disabled="" selected="" hidden="">Prozent % </option>
+                                                            <option value="1">1%</option>
+                                                            <option value="2">2%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="4">4%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="6">6%</option>
+                                                            <option value="7">7%</option>
+                                                            <option value="8">8%</option>
+                                                            <option value="9">9%</option>
+                                                            <option value="10">10%</option>
+                                                            <option value="15">15%</option>
+                                                            <option value="20">20%</option>
+                                                            <option value="25">25%</option>
+                                                            <option value="30">30%</option>
+                                                            <option value="35">35%</option>
+                                                            <option value="40">40%</option>
+                                                            <option value="45">45%</option>
+                                                            <option value="50">50%</option>
+                                                        </select>
+                                                        <div class="inputListItemArrow">
+                                                            <span class="dooIconContainer dooContainerName-arrow-down">
+                                                                <i class="dooIcon dooIcon-arrow-down dooIconSize-20"></i>
+                                                            </span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <p id="discountInformation" class="padding-top-10">Der Rabatt gilt für den Gesamtpreis.</p>
+                                            </div>
+                                            <label class="padding-top-20 display-block">
+                                                <span class="labelText">Inklusivleistungen</span>
+                                                <textarea name="includedServices" class="textarea smallTextarea" autocomplete="off" placeholder="Bitte geben Sie ggfs. Inklusivleistungen an, wie z.B. Lernmaterial, Getränke, Mahlzeiten etc."></textarea>
+                                            </label>
+                                        </div>
+                                        <label class="checkboxItem" onclick="toggleMoreInformation(this)">
+                                            <input type="checkbox" name="priceType" value="E-Learning" class="checkbox check-answer">
+                                            <span></span> E-Learning </label>
+                                        <div class="moreInformation">
+                                            <div class="textInputBox no-padding padding-top-10">
+                                                <label class="textInputBox no-padding">
+                                                    <span class="labelText">Preis für 3 Monate <br>Nutzung/ 1 Lizenz </span>
+                                                    <input type="number" class="input no-margin" name="pricePerLicense3Months" min="0" placeholder="0,00" onchange="outputValue(this)">
+                                                    <div class="currencySymbol">€</div>
+                                                </label>
+                                                <label class="textInputBox no-padding padding-left-20">
+                                                    <span class="labelText">Preis für 6 Monate <br>Nutzung/ 1 Lizenz </span>
+                                                    <input type="number" class="input no-margin" name="pricePerLicense6Months" min="0" placeholder="0,00" onchange="outputValue(this)">
+                                                    <div class="currencySymbol">€</div>
+                                                </label>
+                                                <label class="textInputBox no-padding padding-left-20">
+                                                    <span class="labelText">Preis für 12 Monate <br>Nutzung/ 1 Lizenz </span>
+                                                    <input type="number" class="input no-margin" name="pricePerLicense12Months" min="0" placeholder="0,00" onchange="outputValue(this)">
+                                                    <div class="currencySymbol">€</div>
+                                                </label>
+                                            </div>
+                                            <label class="checkboxItem padding-top-20" onclick="toggleMoreInformation(this)">
+                                                <input type="checkbox" name="discount" value="" class="checkbox check-answer">
+                                                <span></span> Rabatt </label>
+                                            <div class="moreInformation">
+                                                <div class="textInputBox no-padding padding-top-10">
+                                                    <label class="dropdownContainer">
+                                                        <span class="labelText">Ab wie vielen Lizenzen soll es einen Rabatt geben?</span>
+                                                        <select class="dropdown smallDropdown" name="discountNumberOfPersons" onchange="changeDropdownStatus(this);">
+                                                            <option value="" disabled="" selected="" hidden="">Anzahl an Lizenzen</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                        </select>
+                                                        <div class="inputListItemArrow">
+                                                            <span class="dooIconContainer dooContainerName-arrow-down">
+                                                                <i class="dooIcon dooIcon-arrow-down dooIconSize-20"></i>
+                                                            </span>
+                                                        </div>
+                                                    </label>
+                                                    <label class="dropdownContainer">
+                                                        <span class="labelText">Um viel Prozent soll es einen Rabatt geben?</span>
+                                                        <select class="dropdown smallDropdown" name="discountPercent" onchange="changeDropdownStatus(this);">
+                                                            <option value="" disabled="" selected="" hidden="">Prozent % </option>
+                                                            <option value="1">1%</option>
+                                                            <option value="2">2%</option>
+                                                            <option value="3">3%</option>
+                                                            <option value="4">4%</option>
+                                                            <option value="5">5%</option>
+                                                            <option value="6">6%</option>
+                                                            <option value="7">7%</option>
+                                                            <option value="8">8%</option>
+                                                            <option value="9">9%</option>
+                                                            <option value="10">10%</option>
+                                                            <option value="15">15%</option>
+                                                            <option value="20">20%</option>
+                                                            <option value="25">25%</option>
+                                                            <option value="30">30%</option>
+                                                            <option value="35">35%</option>
+                                                            <option value="40">40%</option>
+                                                            <option value="45">45%</option>
+                                                            <option value="50">50%</option>
+                                                        </select>
+                                                        <div class="inputListItemArrow">
+                                                            <span class="dooIconContainer dooContainerName-arrow-down">
+                                                                <i class="dooIcon dooIcon-arrow-down dooIconSize-20"></i>
+                                                            </span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <p id="discountInformation" class="padding-top-10">Der Rabatt gilt für den Gesamtpreis.</p>
+                                            </div>
+                                            <label class="padding-top-20 display-block">
+                                                <span class="labelText">Inklusivleistungen</span>
+                                                <textarea name="includedServices" class="textarea smallTextarea" autocomplete="off" placeholder="Bitte geben Sie ggfs. Inklusivleistungen an, wie z.B. Lernmaterial, Getränke, Mahlzeiten etc."></textarea>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Angebotszertifizierung</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText"></span>
+                                    <input id="offerCertification" name="offerCertification" class="input no-margin" autocomplete="off" placeholder="Bitte die Form der Angebotszertifizierung nennen, z.B. nach ISO 29993."></input>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Key Visual</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <input name="keyVisual" id="keyVisual" class="file_inputItem check-answer" type="file" data-multiple-caption="{count} Dateien ausgewählt" multiple="">
+                                <label for="keyVisual">
+                                    <span id="spanid" class="fileUploadPlaceholder">Key Visual hochladen</span>
+                                    <p>Hochladen...</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+        </main>
+        <footer>
+            <nav id="menuFooter">
+                <ul class="menuFooterList">
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="index.html">
+                            <span class="footerTitle">Start</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="data.html">
+                            <span class="footerTitle">Rahmendaten</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="content.html">
+                            <span class="footerTitle">Inhalte</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="structure.html">
+                            <span class="footerTitle">Struktur</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="analysis.html">
+                            <span class="footerTitle">Analyse</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem active">
+                        <a class="menuFooterListItemLink" href="offer.html">
+                            <span class="footerTitle">Angebotsbeschreibung</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="conclusion.html">
+                            <span class="footerTitle">Abschluss</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <div class="infotextWrapper">
+            <div class="infotextBackground"></div>
+            <div class="infotextInner thinScrollbar">
+                <div class="infotextTop padding">
+                    <h3 class="infotextHeadline">Hinweis</h3>
+                    <button class="buttonText infotextClose">
+                        <span class="dooIconContainer dooContainerName-cancel userIcon">
+                            <i class="dooIcon dooIcon-cancel dooIconSize-20"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="infotextText padding">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+            </div>
+        </div>
+    </body>
+</html>

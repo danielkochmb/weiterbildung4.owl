@@ -1,0 +1,4718 @@
+:root {
+    --primaryColor: #00afb8;
+    --secondaryColor: #012f6b;
+    --tertiaryColor: #c3d600;
+    --bgColor: #f2f2f2;
+    --bgWhiteColor: #fff;
+    --menuBgColor: #fff;
+    --cardBgColor: #fff;
+    --structureCardBgColor: #F8F8F8;
+    --contentCardBgColor: #F4E195;
+    --bigContentCardBgColor: #FFC387;
+    --borderColor: #ddd;
+    --headerHeight: 60px;
+    --logoHeight: 60px;
+    --footerHeight: 60px;
+
+    --primaryButtonColor: #00afb8;
+    --primaryButtonColorHover: #04cbd5;
+    --secondaryButtonColor: #333333;
+    --secondaryButtonColorHover: #4c4c4c;
+    --inactiveButtonColor: #ccc;
+    --backButtonColor: #fff;
+    --addButtonColor: #f2f2f2;
+    --addButtonColorHover: #e9e9e9;
+    --multipleButtonColor: #fff;
+    --multipleButtonHover: #e9e9e9;
+    --multipleButtonActive: #f2f2f2;
+    --cancelButtonColor: #888;
+    --cancelButtonColorHover: #4c4c4c;
+    --primary-color-transparent: rgba(0, 175, 184, 0.6);
+    --primary-color-transparent-40: rgba(0, 175, 184, 0.4);
+    --primary-color-transparent-10: rgba(0, 175, 184, 0.1);
+    --primary-color-50: #B1E6E9;
+    --tertiaryColor-transparent-50: rgba(195, 214, 0, 0.5);
+    --tertiaryColor-transparent-20: rgba(195, 214, 0, 0.2);
+
+    --statusRed: #da1b1c;
+    --statusRed-transparent-10: rgba(218, 27, 28, 0.10);
+
+    --fontFamily: 'Open Sans', Helvetica, Arial, sans-serif;
+    --fontColor: #333333;
+    --lightFontColor: #999;
+    --fontSizeH1: 24px;
+    --fontSizeH2: 20px;
+    --fontSizeH3: 18px;
+    --bodyFontSize: 16px;
+    --bodyFontSizeMedium: 14px;
+    --bodyFontSizeSmall: 13px;
+    --bodyFontSizeExtraSmall: 12px;
+
+    --borderRadius: 4px;
+    --boxShadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+    --boxShadowEmpty: 0px 0px 7px rgba(0, 175, 184, 0.5);
+    --boxOverlay: rgba(0, 0, 0, 0.5);
+    --contentWidth: 1200px;
+    /* war vorher 900px beim Creator, ist aber fÃ¼r die Analyse zu schmal */
+    /* war vorher 600px wie beim Finder, ist jedoch zu schmal fÃ¼r den Creator */
+    --structureElementWidth: 400px;
+    --structureHeaderHeight: 120px;
+    --scrollbar-width: 10px;
+    --scrollbar-thumb-color: #CDCDCD;
+    --scrollbar-thumb-hover-color: #A6A6A6;
+
+    --colorSeminar: #012F6B;
+    --colorSeminar-30: #AFBDCF;
+    --colorSeminar-20: #cbd4e0;
+    --colorElearning: #E67C03;
+    --colorElearning-30: #F5D5B0;
+    --colorElearning-20: #F9E4CB;
+    --colorPractice: #1DA907;
+    --colorPractice-30: #B8E2B1;
+    --colorPractice-20: #D1EDCC;
+
+    --chartColorInstructionalDiscussion: var(--primaryColor);
+    --chhartColorDiscussion: #E95A0C;
+    --chartColorTasks: #5C5C5B;
+    --chartColorDemonstration: #FFC000;
+
+    --chartColorLearningObjectiveLevel1: var(--primaryColor);
+    --chartColorLearningObjectiveLevel2: #E95A0C;
+    --chartColorLearningObjectiveLevel3: #FFC000;
+    --chartColorLearningObjectiveLevel4: #5C5C5B;
+
+    --chartColorPlenum: var(--primaryColor);
+    --chartColorGroup: #E95A0C;
+    --chartColorPartner: #5C5C5B;
+
+    /* 9 shades of primary color DESC */
+    --chartPrimaryColor1: #cceff1;
+    --chartPrimaryColor2: #99dfe3;
+    --chartPrimaryColor3: #66cfd4;
+    --chartPrimaryColor4: #33bfc6;
+    --chartPrimaryColor5: var(--primaryColor);
+    --chartPrimaryColor6: #008c93;
+    --chartPrimaryColor7: #00696e;
+    --chartPrimaryColor8: #00464a;
+    --chartPrimaryColor9: #002325;
+
+    /* 8 shades of primary color ASC */
+    /* --chartPrimaryColor1: #00464a;
+    --chartPrimaryColor2: #00696e;
+    --chartPrimaryColor3: #008c93;
+    --chartPrimaryColor4: var(--primaryColor);
+    --chartPrimaryColor5: #33bfc6;
+    --chartPrimaryColor6: #66cfd4;
+    --chartPrimaryColor7: #99dfe3;
+    --chartPrimaryColor8: #cceff1; */
+
+    /* 8 shades of primary color light */
+    /* --chartPrimaryColor1: var(--primaryColor);
+    --chartPrimaryColor2: #21b9c1;
+    --chartPrimaryColor3: #42c4ca;
+    --chartPrimaryColor4: #63ced3;
+    --chartPrimaryColor5: #83d8dd;
+    --chartPrimaryColor6: #a4e2e6;
+    --chartPrimaryColor7: #c5edef;
+    --chartPrimaryColor8: #e6f7f8; */
+
+    /* 10 shades of primary color light */
+    /* --chartPrimaryColor1: var(--primaryColor);
+    --chartPrimaryColor2: #1ab7bf;
+    --chartPrimaryColor3: #33bfc6;
+    --chartPrimaryColor4: #4dc7cd;
+    --chartPrimaryColor5: #66cfd4;
+    --chartPrimaryColor6: #80d7dc;
+    --chartPrimaryColor7: #99dfe3;
+    --chartPrimaryColor8: #b3e7ea;
+    --chartPrimaryColor9: #cceff1;
+    --chartPrimaryColor10: #e6f7f8; */
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    hyphens: auto;
+    word-break: break-word;
+    word-wrap: break-word;
+    font-display: swap;
+    font-family: var(--fontFamily);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html *:focus-visible,
+html *.empty:focus-visible {
+    outline: 0;
+    box-shadow: 0px 0px 0px 3px var(--primary-color-transparent);
+}
+
+*[contenteditable="true"] {
+    position: relative;
+}
+
+*[contenteditable="true"]:before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    background: transparent;
+    transition: all ease 0.2s;
+}
+
+*[contenteditable="true"]:focus-visible {
+    box-shadow: none;
+}
+
+*[contenteditable="true"]:focus-visible:before {
+    background: var(--primaryColor);
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--fontColor);
+    font-size: var(--bodyFontSize);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    font-size: var(--fontSizeH1);
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--fontSizeH2);
+}
+
+h3 {
+    font-size: var(--fontSizeH3);
+    font-weight: 600;
+}
+
+p:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.fontSizeSmall {
+    font-size: var(--bodyFontSizeMedium);
+}
+
+.fontSizeExtraSmall {
+    font-size: var(--bodyFontSizeMedium);
+}
+
+a {
+    transition: all ease 0.2s;
+}
+
+.startNavigateButtons {
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 740px;
+}
+
+
+/*-------- buttons  --------*/
+.primaryButton,
+.secondaryButton,
+.tertiaryButton,
+.backButton,
+.addButton {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--primaryButtonColor);
+    /* width: 100%; */
+    /* padding: 20px; */
+    padding: 15px 30px;
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+    cursor: pointer;
+    font-size: var(--bodyFontSize);
+    font-weight: 700;
+    transition: all ease 0.2s;
+}
+
+.primaryButton.inactive,
+.secondaryButton.inactive,
+.tertiaryButton.inactive,
+.backButton.inactive,
+.addButton.inactive,
+.primaryButton.inactive:hover,
+.secondaryButton.inactive:hover,
+.tertiaryButton.inactive:hover,
+.backButton.inactive:hover,
+.addButton.inactive:hover {
+    background-color: var(--inactiveButtonColor);
+    cursor: not-allowed;
+}
+
+.tertiaryButton {
+    background: transparent;
+    color: var(--primaryButtonColor);
+    border: 1px solid var(--primaryButtonColor);
+}
+
+.tertiaryButton:hover {
+    color: var(--primaryButtonColorHover);
+    border: 1px solid var(--primaryButtonColorHover);
+}
+
+.primaryButton.small,
+.secondaryButton.small,
+.tertiaryButton.small,
+.backButton.small,
+.addButton.small {
+    padding: 10px 20px;
+}
+
+.primaryButton.extraSmall,
+.secondaryButton.extraSmall,
+.backButton.extraSmall,
+.addButton.extraSmall {
+    padding: 7px 13px;
+}
+
+.primaryButton.start {
+    width: 100%;
+}
+
+.primaryButton:hover {
+    background-color: var(--primaryButtonColorHover);
+}
+
+.secondaryButton {
+    background-color: var(--secondaryButtonColor);
+}
+
+.secondaryButton:hover {
+    background-color: var(--secondaryButtonColorHover);
+}
+
+.backButton {
+    color: var(--fontColor);
+    background-color: var(--backButtonColor);
+    width: auto;
+    margin-bottom: 30px;
+}
+
+.backButton:hover {
+    background-color: var(--addButtonColor);
+}
+
+.headerLeft .backButton {
+    margin: 0px 20px 0px 0px;
+}
+
+.addButton {
+    border: 1px solid #ccc;
+    color: var(--fontColor);
+    font-weight: inherit;
+    height: 44px;
+    margin: 10px 0 0 28px;
+    padding: 10px;
+    box-shadow: none;
+    background-color: var(--addButtonColor);
+}
+
+.addButton:hover {
+    background-color: var(--addButtonColorHover);
+}
+
+.buttonText {
+    font-size: var(--bodyFontSizeMedium);
+    background: transparent;
+    border: 0;
+    text-align: center;
+    width: 100%;
+    color: var(--primaryColor);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.buttonText:hover {
+    color: var(--primaryButtonColorHover);
+}
+
+.downloadButton {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all ease 0.2s;
+}
+.downloadButton:hover {
+    color: var(--primaryColor);
+    transition: all ease 0.2s;
+}
+.downloadButton:focus-visible {
+    box-shadow: none;
+}
+
+/*-------- input --------*/
+
+input,
+textarea,
+select {
+    min-height: 35px;
+    outline: 0;
+    margin: 0;
+    border: 1px solid var(--borderColor);
+    padding: 7px 10px;
+    width: 100%;
+    background-color: var(--bgWhiteColor);
+    border-radius: var(--borderRadius);
+    box-shadow: none;
+    transition: box-shadow ease 0.2s;
+    -webkit-appearance: none;
+    font-size: var(--bodyFontSizeMedium);
+}
+
+.inputWrapper {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    padding-right: 30px;
+    cursor: pointer;
+    color: var(--fontColor);
+}
+
+.selectWrapper {
+    position: relative;
+}
+
+.selectWrapper:after {
+    font-family: "dooiconfont";
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--bodyFontSizeMedium);
+    text-decoration: inherit;
+    min-width: 1em;
+    text-align: center;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    content: "\e856";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateY(-50%);
+    transition: all ease 0.3s;
+    color: var(--font-color);
+}
+
+.selectWrapper:focus-within:after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+input.empty,
+select.empty {
+    border-color: var(--primaryColor);
+    box-shadow: var(--boxShadowEmpty);
+    color: var(--primaryColor);
+}
+
+select.empty option {
+    color: var(--fontColor);
+}
+
+
+/* checkboxes and radiobuttons */
+.checkboxList,
+.radioList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.checkboxItem,
+.radioItem {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.checkboxItem:not(:first-child),
+.radioItem:not(:first-child) {
+    padding-top: 10px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    width: auto;
+}
+
+html body .checkboxItem input[type=checkbox],
+html body .radioItem input[type=radio] {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+body .checkboxItem input:checked+span,
+body .radioItem input:checked+span {
+    background-color: var(--primaryColor);
+}
+
+body .checkboxItem input+span {
+    border-radius: var(--borderRadius);
+}
+
+body .radioItem input+span {
+    border-radius: 100%;
+}
+
+body .radioItem input+span::after {
+    border-radius: 100%;
+    margin: 6px;
+    width: 10px;
+    height: 10px;
+}
+
+body .radioItem input:checked+span::after {
+    background: #fff;
+}
+
+body .checkboxItem input+span::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    margin-left: 7px;
+    margin-top: 3px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    box-sizing: content-box;
+    transform: rotate(45deg) scale(0);
+}
+
+body .checkboxItem input+span,
+body .radioItem input+span {
+    background: #fff;
+    content: "";
+    display: inline-block;
+    margin: 0 12px 0 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border: 1px solid transparent;
+    box-sizing: content-box;
+    transform: translate3d(0, 0, 0);
+    transition: background ease 0.2s, box-shadow ease 0.2s;
+}
+
+.checkboxItem input:not(:checked)+span,
+.radioItem input:not(:checked)+span {
+    border-color: #ccc;
+}
+
+body .checkboxItem input+span::after,
+body .radioItem input+span::after {
+    content: "";
+    display: block;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s;
+}
+
+body .checkboxItem input:checked+span::after,
+body .radioItem input:checked+span::after {
+    transform: rotate(45deg) scale(1);
+}
+
+@media screen and (min-width: 768px) {
+
+    body .checkboxItem:not(.disabled):hover input+span,
+    body .radioItem:not(.disabled):hover input+span {
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
+body .checkboxItem:not(.disabled) input:active+span,
+body .radioItem:not(.disabled) input:active+span {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+body .checkboxItem:not(.disabled) input:focus+span,
+body .radioItem:not(.disabled) input:focus+span {
+    box-shadow: 0px 0px 0px 3px var(--primary-color-transparent);
+    transition: background ease 0.2s, box-shadow ease 0s;
+}
+
+.checkboxItem.disabled,
+.radioItem.disabled {
+    cursor: not-allowed;
+}
+
+.checkboxItem.disabled input+span,
+.radioItem.disabled input+span {
+    opacity: 0.7;
+}
+
+.checkboxItem.disabled span+span,
+.radioItem.disabled span+span {
+    color: #999;
+}
+
+.hiddenCheckboxes, .moreInformation {
+    margin-left: 35px;
+    display: none;
+}
+
+/* thin scrollbar */
+
+.thinScrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.thinScrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.thinScrollbar::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: var(--border-radius);
+    border: transparent;
+    transition: all ease 0.3s;
+}
+
+.thinScrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-color);
+}
+
+.thinScrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-color) transparent;
+}
+
+
+/*-------- header --------*/
+header {
+    height: var(--headerHeight);
+    box-shadow: var(--boxShadow);
+    background-color: var(--menuBgColor);
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    padding: 0 20px;
+}
+
+header.hasSubHeader {
+    box-shadow: none;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+#logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo {
+    height: var(--logoHeight);
+}
+
+.headerLeft,
+.headerRight {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.headerRight {
+    justify-content: flex-end;
+}
+
+.headerRight .primaryButton,
+.headerRight .tertiaryButton {
+    margin-left: 20px;
+}
+
+
+
+
+/*-------- footer --------*/
+footer {
+    min-height: var(--footerHeight);
+    box-shadow: var(--boxShadow);
+    background-color: var(--menuBgColor);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.menuFooterList {
+    list-style-type: none;
+    display: flex;
+}
+
+.menuFooterListItem {
+    margin: 0 20px;
+}
+
+.menuFooterListItemLink {
+    text-decoration: none;
+    border-radius: var(--borderRadius);
+}
+
+.footerTitle {
+    padding: 10px;
+    color: #333;
+    transition: all ease 0.2s;
+}
+
+.menuFooterListItemLink:hover .footerTitle {
+    color: var(--primaryColor);
+}
+
+.active .footerTitle {
+    color: var(--primaryColor);
+    font-weight: 600;
+}
+
+.inactive .footerTitle {
+    color: #999;
+}
+
+.menuFooterListItem.inactive {
+    cursor: not-allowed;
+}
+
+.menuFooterListItem.inactive a {
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+/* info button */
+
+.infotextButton {
+    border-radius: 100px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #bbb;
+    color: #fff;
+    font-weight: 600;
+    font-size: var(--bodyFontSizeMedium);
+    cursor: pointer;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: background ease 0.2s;
+}
+
+.infotextButton:hover,
+.infotextButton:focus {
+    background: #999;
+}
+
+html .hasInfoButton {
+    position: relative;
+    padding-right: 40px !important;
+}
+
+html .hasInfoButton.infoButtonMarginRight {
+    padding-right: calc(40px + 15px) !important;
+}
+
+.hasInfoButton.infoButtonMarginRight .infotextButton {
+    right: 15px;
+}
+
+.infotextWrapper {
+    z-index: 999;
+    position: relative;
+    display: none;
+}
+
+.infotextBackground {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--boxOverlay);
+    z-index: 999;
+}
+
+.infotextInner {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    z-index: 9999;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: #fff;
+    transform: translate(100%, 0);
+    transition: all ease 0.2s;
+}
+
+.active .infotextInner {
+    transform: translate(0, 0);
+}
+
+html .infotextTop {
+    display: flex;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    background: var(--bgWhiteColor);
+}
+
+.infotextHeadline {
+    margin-right: 20px;
+    margin-top: 2px;
+}
+
+.infotextClose {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    color: var(--fontColor);
+    margin-left: auto;
+    -webkit-text-stroke: 0.5px;
+}
+
+.infotextText {
+    padding-top: 0;
+}
+
+
+
+
+
+
+
+/* card */
+
+.card {
+    background-color: var(--cardBgColor);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+    margin: 0 auto;
+    position: relative;
+}
+
+.padding {
+    padding: 20px;
+}
+
+.bigPadding {
+    padding: 30px;
+}
+
+.smallPadding {
+    padding: 10px;
+}
+
+.padding-right-10 {
+    padding-right: 10px;
+}
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+.padding-top-20,
+.checkboxItem.padding-top-20 {
+    padding-top: 20px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-top-20,
+.checkboxItem.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-bottom-12 {
+    margin-bottom: 12px;
+}
+
+html .no-margin {
+    margin: 0px;
+}
+
+html .no-padding,
+html .moreInformation .no-padding {
+    padding: 0px;
+}
+
+html .padding-left-20,
+html .moreInformation .padding-left-20 {
+    padding: 0px 0px 0px 20px;
+}
+
+.display-block {
+    display: block;
+}
+
+/* content card */
+
+.contentCard {
+    position: relative;
+    background-color: var(--contentCardBgColor);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    margin-bottom: 15px;
+}
+
+.bigContentCard {
+    background-color: var(--bigContentCardBgColor);
+    min-height: 100px;
+    margin-bottom: 50px;
+}
+
+.structureCardContentInner .bigContentCard {
+    margin-bottom: 15px;
+}
+
+.contentCard.ui-sortable-placeholder {
+    opacity: 0.5;
+    /* min-height: 0;
+    max-height: 0; */
+    width: calc(var(--structureElementWidth) - 40px);
+}
+
+.contentCard.animate {
+    transition: transform .2s;
+}
+
+.contentCardTitle {
+    width: 100%;
+    text-align: center;
+}
+
+.contentCardTitle br {
+    display: none;
+}
+
+.contentCardTitle div {
+    display: inline;
+}
+
+.contentCardPlaceholder {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    opacity: 0.4;
+    display: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.contentCard.empty .contentCardPlaceholder{
+    display: block;
+}
+
+.contentCardIcon {
+    color: #555;
+    width: 48px;
+    min-width: 48px;
+    transition: all ease 0.2s;
+}
+
+@media (hover: hover) {
+    .contentCardIcon {
+        opacity: 0;
+    }
+}
+
+.contentCard:hover .contentCardIcon {
+    opacity: 1;
+}
+
+.contentCardDragIcon {
+    cursor: move;
+    cursor: grab;
+}
+
+.contentCardCommentIcon {
+    cursor: pointer;
+    background: none;
+    border: 0;
+    position: relative;
+}
+
+.contentCardIcon:hover {
+    color: #000;
+}
+
+.contentCardList .contentCardDragIcon,
+.contentCardCheckbox {
+    display: none;
+}
+
+.contentCardList .contentCardCheckbox {
+    display: block;
+    opacity: 1;
+}
+
+
+
+
+
+/* section */
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: calc(var(--headerHeight) + 80px);
+    padding-bottom: calc(var(--footerHeight) + 80px);
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.contentWidth {
+    max-width: var(--contentWidth);
+    margin: 0 auto;
+}
+
+/*--------------- start ---------------*/
+section#start {
+    justify-content: center;
+}
+
+#start video {
+    margin-bottom: 20px;
+}
+
+
+/*--------------- start END ---------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- data ---------------*/
+.innerSection {
+    width: 100%;
+}
+
+.innerSectionHeaderWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardTitle {
+    margin-bottom: 20px;
+}
+
+.cardTitleWrapper {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.inputWrapper:last-child {
+    margin-bottom: 0;
+}
+
+.textarea,
+.dropdown,
+.sliderInput,
+.input {
+    border: 1px solid #ccc;
+    resize: none;
+    width: 100%;
+    border-radius: var(--borderRadius);
+    font-size: var(--bodyFontSize);
+    color: var(--fontColor);
+    margin-top: 10px;
+    padding: 10px;
+    min-height: 44px;
+}
+
+.textInputBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all ease 0.2s;
+}
+
+.textInputBox:not(:last-child) {
+    padding-bottom: 20px;
+}
+
+.smallDropdown {
+    min-width: 185px;
+    color: var(--lightFontColor);
+}
+
+.smallDropdown.active,
+.smallDropdown option {
+    color: var(--fontColor);
+}
+
+.multipleTextInputWrapper {
+    margin-top: 20px;
+}
+
+.multipleTextInputWrapper .textInputTitle {
+    min-width: fit-content;
+    margin-bottom: 0;
+}
+
+.multipleTextInputWrapper .input,
+.multipleTextInputWrapper .dropdown {
+    margin-top: 0;
+}
+
+.labelHelpText {
+    color: var(--lightFontColor);
+    font-size: var(--bodyFontSizeMedium);
+    font-style: italic;
+}
+
+.dropdownContainer {
+    position: relative;
+}
+
+.inputListItemArrow .dooContainerName-arrow-down {
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.dooIcon-arrow-down::before {
+    color: var(--cancelButtonColor);
+    font-style: normal;
+    font-weight: normal;
+    transition: all ease 0.2s;
+    -webkit-text-stroke: 0.5px;
+}
+
+.inputListItemArrow {
+    pointer-events: none;
+}
+
+.dropdown:focus~.inputListItemArrow .dooIcon-arrow-down::before {
+    color: var(--cancelButtonColorHover);
+    display: inline-block;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transition: all ease 0.2s;
+}
+
+.textInputBoxPlaceholder .addButton {
+    margin: 0;
+}
+
+.textInputBoxPlaceholder .selectLearningTargetLevelButton {
+    pointer-events: none;
+}
+
+.textInputBoxPlaceholder .textInputTitle, 
+.textInputBoxPlaceholder .selectLearningTargetLevelButton .newText, 
+.textInputBoxPlaceholder .selectLearningTargetLevelButton .conceptButton {
+    color: var(--lightFontColor);
+    pointer-events: none;
+}
+
+.deleteEntryButtonContainer {
+    cursor: pointer;
+    position: absolute;
+    right: -66px;
+    opacity: 0;
+    padding: 15px;
+    transition: all ease 0.2s;
+    pointer-events: none;
+}
+
+.deleteEntryButton {
+    /* border-radius: 100%;
+    border: 1px solid #ccc;
+    background-color: var(--addButtonColor);
+    min-width: 44px;
+    height: 44px;
+    padding: 7px; */
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgWhiteColor);
+    border: 1px solid var(--borderColor);
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.deleteEntryButton:hover {
+    background-color: var(--addButtonColorHover);
+}
+
+.deleteEntryButton .dooIcon-trash:before {
+    color: var(--fontColor);
+}
+
+.deleteEntryButton:hover .dooIcon-trash:before {
+    color: var(--fontColor);
+}
+
+.textInputBox:not(.delete-stop):hover .deleteEntryButtonContainer {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.multipleButton {
+    box-shadow: var(--boxShadow);
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: var(--borderRadius);
+    display: flex;
+    margin-top: 10px;
+}
+
+.singleMultipleButton {
+    border-right: 1px solid #ccc;
+    color: var(--fontColor);
+    font-weight: inherit;
+    min-height: 44px;
+    padding: 10px;
+    box-shadow: none;
+    background-color: var(--multipleButtonColor);
+    text-align: center;
+    border-radius: var(--borderRadius) 0px 0px var(--borderRadius);
+    cursor: pointer;
+    font-size: var(--bodyFontSize);
+    width: 100%;
+    transition: all ease 0.2s;
+}
+
+.buttonMiddle {
+    border-radius: 0px
+}
+
+.buttonEnd {
+    border: none;
+    border-radius: 0px var(--borderRadius) var(--borderRadius) 0px;
+}
+
+.singleMultipleButton.active {
+    background-color: var(--multipleButtonActive);
+    font-weight: 700;
+}
+
+.buttonStart:hover,
+.buttonMiddle:hover,
+.buttonEnd:hover {
+    background-color: var(--multipleButtonHover);
+}
+
+.infoFormButton {
+    display: inline-block;
+    position: inherit;
+    line-height: inherit;
+    transform: translate(0, 0);
+    background-color: var(--primaryColor);
+}
+
+.infoFormButtonWrapper {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* slider */
+html input.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+    height: 4px;
+    background: #ccc;
+    outline: none;
+    opacity: 0.85;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin: 20px 0px;
+    border-radius: 50px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 27px;
+    height: 27px;
+    background: var(--secondaryButtonColor);
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.slider:focus::-webkit-slider-thumb,
+.slider:hover::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px 8px rgba(51, 51, 51, 0.1);
+}
+
+.slider:focus::-moz-range-thumb,
+.slider:hover::-moz-range-thumb {
+    box-shadow: 0px 0px 0px 8px rgba(51, 51, 51, 0.1);
+}
+
+.slider::-moz-range-thumb {
+    width: 27px;
+    height: 27px;
+    background: var(--secondaryButtonColor);
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.hourDayContainer,
+.sliderInputContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.sliderInputContainer {
+    gap: 20px;
+}
+
+.hourDayContainer {
+    max-height: 44px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+
+.presenceEvent.inactive,
+.digitalEvent.inactive {
+    display: none;
+}
+
+.presenceEvent.active,
+.digitalEvent.active {
+    display: block;
+}
+
+.rangeContainer {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 690px;
+}
+
+.hourDayContainer .sliderInput {
+    width: 80px;
+    margin: 0;
+    text-align: center;
+}
+
+.hourDayContainer .multipleButton,
+.hourDayContainer .silderInputText {
+    margin-top: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+.additionalQuestionDigitalFormat,
+.additionalQuestionTimePresence,
+.additionalQuestionTimeDigital {
+    display: none;
+}
+
+/* range jquery ui slider */
+
+.ui-slider {
+	height: 4px;
+	position: relative;
+	border: none;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.85;
+	 -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.ui-slider-range {
+	background: #ee7f00;
+	outline: none;
+}
+
+.ui-widget.ui-widget-content {
+	border: none;
+	transform-style: preserve-3d;
+}
+
+.ui-slider-range.ui-widget-header.ui-slider-range-min {
+	padding-right: 15px;
+}
+
+.ui-state-default, .rangeQuestion_wrapper .rangeQuestionSliderJqueryUi.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	background-color: #ee7f00;
+	cursor: pointer;
+	transition: background ease 0.2s;
+}
+
+.ui-state-default, 
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	outline: none !important;
+	top: -10px;
+	position: absolute;
+	border: none;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+	border: 0px;
+}
+
+.ui-slider-handle.ui-corner-all.ui-state-default {
+	width: 27px;
+    height: 27px;
+    background: var(--secondaryButtonColor);
+    border-radius: 50px;
+	box-shadow: none;
+	background-image: none;
+	top: -10.5px;
+}
+
+.ui-widget-content.ui-slider-disabled .ui-slider-handle {
+	cursor: default;
+}
+
+.ui-slider-range.ui-corner-all.ui-widget-header.ui-slider-range-min {
+	border-radius: 25px;
+}
+
+.ui-slider {
+	background: #ddd;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+	background: var(--primaryColor);
+	opacity: 0.4;
+	transition: background ease 0.2s;
+}
+
+.rangeContainer:hover .ui-slider {
+	opacity: 1;
+}
+
+.rangeContainer:hover .ui-slider span{
+    box-shadow: 0px 0px 0px 8px rgba(160, 160, 160, 0.2);
+}
+
+.sliderRangeContainer {
+    margin: 20px 0;
+}
+
+/* go next button */
+
+.goNextContainer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 80px 0;
+}
+
+.primaryButtonSmall {
+    width: fit-content;
+    min-width: 200px;
+}
+
+.goNextInfotext {
+    font-style: italic;
+    background-color: var(--primary-color-transparent-40);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+    padding: 8px 15px;
+}
+
+/* select learning target level button */
+.selectLearningTargetLevelButton {
+    min-width: 120px;
+    max-width: 120px;
+    margin-top: 0px;
+}
+
+html .conceptRow.selectLearningTargetLevelButton:first-child {
+    margin-top: 0px;
+}
+
+.selectLearningTargetLevelButton .conceptRowLightboxContent:before {
+    left: 21%;
+}
+
+.selectLearningTargetLevelButton .conceptButton {
+    justify-content: flex-start;
+}
+
+.selectLearningTargetLevelButton .conceptTitle {
+    font-size: var(--bodyFontSize);
+}
+
+/* disable coarse learning targets if LearningTargetLevel isnt selected */
+.textInputBox.noLevel .textInputTitle,
+.textInputBox.noLevel input,
+.textInputBox.noLevel .dropdownContainer {
+    opacity: 0.5;
+    pointer-events: none;
+}
+/*--------------- data END ---------------*/
+
+
+
+
+
+
+
+
+
+/*--------------- content ---------------*/
+section#content {
+    padding-right: 20px;
+}
+
+.contentCardList {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.contentCardListColumn {
+    width: calc(var(--structureElementWidth) - 40px);
+    position: relative;
+}
+
+.contentCardListColumn:not(:first-child) {
+    margin-left: 20px;
+}
+
+.contentCardListColumn:before {
+    content: '';
+    width: 1px;
+    height: calc(100% - 80px);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    background-color: #bbb;
+    z-index: 0;
+}
+
+.contentCardListColumn.ui-sortable-helper.shortLine:before {
+    height: calc(100% - 95px);
+}
+
+.contentCardListColumn.ui-sortable-helper.activeNoContentCard::before {
+    display: none;
+}
+
+.contentCardListColumn .contentCard {
+    z-index: 14;
+}
+
+.contentCardWrapper {
+    width: 100%;
+    overflow-x: scroll;
+    transform: rotateX(180deg);
+}
+
+.contentCardWrapperInner {
+    display: flex;
+    align-items: flex-start;
+    transform: rotateX(180deg);
+    padding-top: 30px;
+}
+
+.contentCardColumns {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.contentCardWrapper .contentCardListColumn {
+    margin: 0;
+}
+
+.contentCardWrapper .contentCardListColumn:last-child {
+    margin-right: 40px;
+}
+
+.goNextSkip {
+    color: var(--fontColor);
+}
+
+.goNextSkip:hover {
+    color: var(--primaryColor);
+}
+
+.addBigContentCard {
+    min-height: 100px;
+    min-width: 360px;
+}
+
+.addContentCardColumn::before {
+    display: none;
+}
+
+.contentCardColumns .contentCardInner {
+    min-height: 0px;
+}
+
+.activeSortable .contentCardInner {
+    min-height: 75px;
+}
+
+.contentCard.bigContentCard .contentCardCommentIcon .numberOfComments,
+.contentCard .contentCardCommentIcon .numberOfComments {
+    color: #fff;
+    font-size: 10px;
+    font-family: var(--fontFamily);
+    background-color: var(--primaryColor);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14px;
+    width: 14px;
+    padding: 2px;
+    margin-left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    display: none;
+}
+
+.contentCard.bigContentCard .contentCardCommentIcon .numberOfComments.active,
+.contentCard .contentCardCommentIcon .numberOfComments.active {
+    display: flex;
+}
+
+.contentCardButton,
+.contentCommentButton {
+    position: absolute;
+    z-index: 5;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgWhiteColor);
+    border: 1px solid var(--borderColor);
+    top: -20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.2s;
+}
+
+.contentCard:hover .contentCardButton {
+    opacity: 1;
+}
+
+.contentCardButton.contentCardDrag {
+    left: -20px;
+    cursor: move;
+    cursor: grab;
+}
+
+.contentCardButton.contentCardDelete {
+    right: -20px;
+}
+
+.contentCardButton.contentCardCopy,
+.contentCardButton.contentCardEdit {
+    right: 30px;
+}
+
+.contentCardButton.contentCardEdit,
+.structureCardContent .contentCardButton.contentCardCopy {
+    display: none;
+}
+
+.structureElement[data-type="elearning"] .structureCardContent .contentCardButton.contentCardEdit {
+    display: block;
+}
+
+.contentCardButton:hover {
+    background-color: var(--addButtonColor);
+}
+
+.contentLightboxCommentOverlay,
+.templateLightboxOverlay {
+    background: var(--boxOverlay);
+    opacity: 0;
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s ease-out;
+}
+
+.contentCommentWrapper,
+.templateLightboxWrapper {
+    background-color: #fff;
+    /* filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.16)); Text und X werden unscharf dadurch*/
+    box-shadow: var(--boxShadow);
+    border-radius: var(--borderRadius);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 101;
+    max-height: 80vh;
+    transition: all 0.3s ease-out;
+}
+
+.closeContentCommentWrapper,
+.closeTemplateLightboxWrapper {
+    position: fixed;
+    top: -40px;
+    right: 0px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.closeContentCommentWrapper .dooIcon-cancel,
+.closeTemplateLightboxWrapper .dooIcon-cancel {
+    font-size: 22px;
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-text-stroke-width: medium;
+}
+
+.contentCommentWrapper.active,
+.contentLightboxCommentOverlay.active,
+.templateLightboxWrapper.active,
+.templateLightboxOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+#contentLightbox .contentCardCommentIcon {
+    pointer-events: none;
+}
+
+.currentContentCard {
+    background-color: var(--structureCardBgColor);
+    width: 100%;
+    padding: 45px 20px;
+    border-top-right-radius: var(--borderRadius);
+    border-top-left-radius: var(--borderRadius);
+    position: relative;
+}
+
+.currentContentCard::before {
+    content: '';
+    width: 1px;
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    background-color: #bbb;
+    z-index: 0;
+}
+
+.currentContentCard .contentCard {
+    margin: 0px;
+    position: relative;
+    z-index: 1;
+}
+
+.currentContentCard .contentCard .contentCardCommentIcon {
+    opacity: 1;
+    pointer-events: none;
+}
+
+.currentContentCard .contentCard:hover .contentCardDragIcon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.currentContentComments {
+    padding: 20px;
+    border-top: 1px solid var(--borderColor);
+}
+
+.allContentComments {
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+.noContentComments {
+    font-size: var(--bodyFontSizeMedium);
+    display: none;
+}
+
+.noContentComments.active {
+    display: block;
+}
+
+.contentComment {
+    font-size: var(--bodyFontSizeMedium);
+    padding: 15px;
+    border: 1px solid var(--borderColor);
+    border-radius: var(--borderRadius);
+    position: relative;
+}
+
+.contentComment:not(:first-child) {
+    margin-top: 20px;
+}
+
+.contentCommentData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contentCommentUserName {
+    font-weight: 600;
+}
+
+.contentCommentDate {
+    color: var(--lightFontColor);
+}
+
+.contentCommentButton.contentCommentDelete {
+    right: 5px;
+    top: 5px;
+    box-shadow: var(--boxShadow);
+}
+
+.contentComment:hover .contentCommentButton.contentCommentDelete {
+    opacity: 1;
+    transition: all ease 0.2s;
+}
+
+.errorEmptyComment {
+    color: var(--statusRed);
+    font-size: var(--bodyFontSizeMedium);
+    margin-top: 20px;
+    display: none;
+}
+
+.errorEmptyComment.active {
+    display: block;
+}
+
+#contentWriteCommentID {
+    min-height: 10vh;
+    overflow-y: auto;
+}
+
+.contentWriteComment {
+    resize: none;
+    padding: 15px 60px 15px 15px;
+    margin-top: 20px;
+}
+
+.contentWriteComment:focus-visible {
+    box-shadow: none;
+}
+
+.contentSendComment {
+    background-color: var(--primaryButtonColor);
+    border-radius: 50%;
+    color: #fff;
+    margin: 0px 15px 0px 15px;
+    cursor: pointer;
+    position: absolute;
+    bottom: calc(11vh/2);
+    right: 20px;
+}
+
+.contentSendComment .dooIcon-send:before {
+    margin-right: 0.1em;
+    margin-left: 0.3em;
+}
+
+/*--------------- content END---------------*/
+
+
+
+
+
+
+
+
+
+/*--------------- template ---------------*/
+.templateCardSection {
+    margin: 20px 0;
+}
+
+.templateCardWrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.templateCard,
+.greyTemplateCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    width: 250px;
+    background-color: var(--bgWhiteColor);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.templateCard.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.templateCard:hover,
+.greyTemplateCard:hover {
+    transform: translateY(-8px);
+    z-index: 1;
+}
+
+.templateCardTitle {
+    margin-bottom: 15px;
+}
+
+.templateCardTitle.highlighted {
+    color: var(--primaryColor);
+}
+
+.templateCard.highlighted {
+    border: 2px solid var(--primaryColor);
+    box-shadow: var(--boxShadowEmpty);
+}
+
+.introductionHeader {
+    margin-bottom: 20px;
+}
+
+.greyTemplateCard,
+.greyTemplateCard:visited {
+    background-color: #ddd;
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.templateCard p {
+    margin: 0;
+    color: var(--fontColor);
+}
+
+.customTemplateTime {
+    color: var(--lightFontColor);
+    font-size: var(--bodyFontSizeMedium);
+    padding-top: 10px;
+}
+
+.customTemplateTime:hover {
+    color: var(--primaryColor);
+}
+
+/* template lightbox */
+.templateLightboxWrapper {
+    padding: 20px;
+}
+
+.templateLightboxWrapper p {
+    margin: 0px 0px 10px 0px;
+}
+
+/* info box and lightboxes */
+#isStructureDataInfoBox .lightboxInner,
+#dataStructureNotEqual .lightboxInner,
+#structureExplanation .lightboxInner,
+#deleteAllData .lightboxInner,
+#deleteStructureElement .lightboxInner {
+    width: 50%;
+    min-width: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 20%;
+}
+
+#isStructureDataInfoBox .lightboxContentClose,
+#dataStructureNotEqual .lightboxContentClose,
+#structureExplanation .lightboxContentClose,
+#deleteAllData .lightboxContentClose {
+    margin-left: auto;
+}
+
+#isStructureDataInfoBox .lightboxButtons {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+#dataStructureNotEqual .lightboxButtons,
+#deleteAllData .lightboxButtons,
+#deleteStructureElement .lightboxButtons {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+#dataStructureNotEqual .lightboxButtonsInner {
+    display: flex;
+    gap: 20px;
+}
+
+#dataStructureNotEqual .dataStructureOverview {
+    margin-bottom: 30px;
+}
+
+.dataStructureOverview .overviewContainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.dataStructureOverview .overviewItem {
+    padding: 8px 10px;
+    border-radius: var(--borderRadius);
+    background-color: var(--colorSeminar-20);
+    color: var(--colorSeminar);
+    width: 100%;
+    min-width: 140px;
+    text-align: center;
+    white-space: nowrap;     
+    overflow: hidden;     
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.dataStructureOverview .overviewItem[data-type="elearning"] {
+    background-color: var(--colorElearning-20);
+    color: var(--colorElearning);
+}
+
+.dataStructureOverview .overviewItem[data-type="practice"] {
+    background-color: var(--colorPractice-20);
+    color: var(--colorPractice);
+}
+
+#dataStructureNotEqual .changeDataSuccess {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: 0.2s ease all;
+}
+
+#dataStructureNotEqual .changeDataSuccess.active {
+    opacity: 1;
+    animation: growAndFade 1s;
+}
+
+#dataStructureNotEqual .changeDataSuccess .itemOk {
+    height: 44px;
+    width: 44px;
+}
+
+#dataStructureNotEqual .changeDataSuccess .iconOk::after {
+    font-size: 22px;
+    left: 10px;
+    top: 10px;
+}
+
+#dataStructureNotEqual .changeDataSuccess h2 {
+    margin: 0;
+    color: var(--tertiaryColor);
+}
+
+#structureExplanation .infotextButton {
+    pointer-events: none;
+}
+
+#deleteStructureElement .lightboxInner {
+    min-width: auto;
+    width: 500px;
+}
+
+@keyframes growAndFade {
+    from {
+      transform: scale(0.8) rotate(30deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+/* template section as structure lightbox */
+
+#template {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px 50px;
+    min-height: 0;
+}
+
+#chooseTemplate .lightboxButtons {
+    padding: 10px;
+    padding-left: auto;
+}
+
+#chooseTemplate .thinLightboxFooter {
+    height: 10px;
+    padding: 0;
+}
+
+#chooseTemplate .lightboxFooterClose {
+    display: none;
+}
+
+.templateNotice b {
+    color: var(--primaryColor)
+}
+
+/*--------------- template END ---------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- structure ---------------*/
+
+section#structure {
+    padding-top: var(--headerHeight);
+    padding-bottom: var(--footerHeight);
+    padding-right: 0px;
+    padding-left: 0px;
+    transition: transform cubic-bezier(0.29, 0.11, 0.43, 0.91) 0.6s;
+    will-change: transform;
+}
+
+/* structure header */
+#structureHeader {
+    height: var(--structureHeaderHeight);
+    width: 99999px;
+    box-shadow: var(--boxShadow);
+    background-color: var(--menuBgColor);
+    z-index: 10;
+    position: sticky;
+    top: var(--headerHeight);
+    transition: 0.2s ease all;
+}
+
+.structureElementHeader:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: var(--borderColor);
+    position: absolute;
+    right: -50px;
+    top: 0;
+    z-index: 4;
+}
+
+/* header toggle switch */
+.structureHeaderSwitch {
+    position: sticky;
+    top: calc(var(--headerHeight) + var(--structureHeaderHeight));
+    z-index: 9;
+    cursor: pointer;
+    transform: translateY(-50px);
+    transition: 0.2s ease transform;
+    padding: 0 50px 50px 0;
+}
+
+.structureHeaderContainer {
+    padding: 7px 10px 10px 10px;
+    border-radius: 0 0 30px 30px;
+    background-color: var(--bgWhiteColor);
+    box-shadow: var(--boxShadow);
+}
+
+#structureHeader:hover ~ .structureHeaderSwitch,
+.structureHeaderSwitch:hover,
+#structure:has(.structureElementHeader:hover) .structureHeaderSwitch,
+main:has(.structureSlideButton:hover) .structureHeaderSwitch,
+#structure:has(.addStructureElement:hover) .structureHeaderSwitch,
+body:has(header:hover) .structureHeaderSwitch {
+    transform: translateY(0px);
+}
+
+[data-header-style="small"] .structureHeaderSwitch {
+    top: calc(var(--headerHeight) + 70px);
+}
+
+.structureHeaderSwitch .dooIcon {
+    color: var(--primaryColor);
+    transform-origin: center;
+}
+
+.structureHeaderSwitch .dooIcon::before {
+    transform: rotate(-90deg);
+}
+
+[data-header-style="small"] .structureHeaderSwitch .dooIcon::before {
+    transform: rotate(90deg);
+}
+
+/* responsive header */
+[data-header-style="small"] .structureElementHeader,
+[data-header-style="small"] #structureHeader,
+[data-header-style="small"] .addStructureElement {
+    height: 70px;
+} 
+
+[data-header-style="small"] ~ .structureSlideButton {
+    top: calc(var(--headerHeight) + 70px / 2)
+}
+
+[data-header-style="small"] .structureElementHeader .headerRowTime {
+    display: none;
+}
+
+[data-header-style="small"] .structureElementHeader .headerTypeBadge {
+    display: none;
+}
+
+[data-header-style="small"] .structureElementHeader .structureElementDelete {
+    right: -20px;
+    top: 15px;
+}
+
+[data-header-style="small"] .structureElementHeader .structureElementHeaderRow,
+[data-header-style="small"] .structureElementHeader .structureElementHeaderPlaceholder {
+    padding-top: 3px;
+}
+
+[data-header-style="small"] #structureContent {
+    margin-top: calc((var(--structureHeaderHeight) + 64px)* -1);
+}
+
+/* header end */
+
+#structureContent {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    margin-left: 40px;
+    margin-top: calc((var(--structureHeaderHeight) + 94px) * -1);
+}
+
+.structureSlideButton {
+    position: fixed;
+    z-index: 20;
+    top: calc(var(--headerHeight) + var(--structureHeaderHeight) / 2);
+    transform: translate(50%, -50%);
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.structureSlideButton[disabled="disabled"],
+.structureSlideButton[disabled="disabled"]:hover,
+.structureSlideButton.inactive,
+.structureSlideButton.inactive:hover {
+    background-color: var(--primary-color-50);
+    cursor: default;
+}
+
+.structureSlideButton.slideLeft {
+    right: calc(100% - 40px);
+}
+
+.structureSlideButton.slideRight {
+    left: calc(var(--structureElementWidth) + 95px);
+}
+
+.structureElementHeader {
+    height: var(--structureHeaderHeight);
+    margin-bottom: 50px;
+    position: sticky;
+    top: var(--headerHeight);
+    z-index: 20;
+    padding: 5px;
+}
+
+.structureElementHeaderRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.structureElementHeaderRow.headerRowTime {
+    min-height: 37px;
+}
+
+.structureElement[data-type="practice-transfer"] .structureElementHeaderRow.headerRowTime,
+.structureElement[data-type="practice-self-learning"] .structureElementHeaderRow.headerRowTime,
+.structureElement[data-type="practice-project"] .structureElementHeaderRow.headerRowTime {
+    display: none;
+}
+
+.structureElementHeaderHeading {
+    margin-bottom: 0;
+    margin-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 200px;
+}
+
+.structureElementHeaderHeading:focus-visible{
+    text-overflow: initial;
+}
+
+.structureElementHeaderPlaceholder {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    opacity: 0.4;
+    display: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.structureElementHeaderRow.empty .structureElementHeaderPlaceholder {
+    display: block;
+}
+
+.structureElement[data-type*="seminar"] .structureElementHeaderHeading,
+.structureElement[data-type*="seminar"] .structureElementHeaderPlaceholder {
+    color: var(--colorSeminar);
+}
+
+.structureElement[data-type="elearning"] .structureElementHeaderHeading,
+.structureElement[data-type="elearning"] .structureElementHeaderPlaceholder {
+    color: var(--colorElearning);
+}
+
+.structureElement[data-type="practice-transfer"] .structureElementHeaderHeading,
+.structureElement[data-type="practice-transfer"] .structureElementHeaderPlaceholder,
+.structureElement[data-type="practice-self-learning"] .structureElementHeaderHeading,
+.structureElement[data-type="practice-self-learning"] .structureElementHeaderPlaceholder,
+.structureElement[data-type="practice-project"] .structureElementHeaderHeading,
+.structureElement[data-type="practice-project"] .structureElementHeaderPlaceholder {
+    color: var(--colorPractice);
+}
+
+.headerTypeBadge {
+    background: var(--colorSeminar-20);
+    color: var(--colorSeminar);
+    padding: 4px 8px;
+    border-radius: var(--borderRadius);
+    white-space: pre;
+}
+
+.structureElement[data-type="elearning"] .headerTypeBadge {
+    background: var(--colorElearning-20);
+    color: var(--colorElearning);
+}
+
+.structureElement[data-type="practice-transfer"] .headerTypeBadge,
+.structureElement[data-type="practice-self-learning"] .headerTypeBadge,
+.structureElement[data-type="practice-project"] .headerTypeBadge {
+    background: var(--colorPractice-20);
+    color: var(--colorPractice);
+}
+
+.structureElement[data-type="elearning"] .headerStartingTime,
+.structureElement[data-type="practice-transfer"] .headerStartingTime,
+.structureElement[data-type="practice-self-learning"] .headerStartingTime,
+.structureElement[data-type="practice-project"] .headerStartingTime,
+.headerStartingTime.hiddenTime {
+    display: none;
+}
+
+.structureElementDelete {
+    position: absolute;
+    right: -40px;
+    top: 0px;
+    position: absolute;
+    z-index: 5;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgWhiteColor);
+    border: 1px solid var(--borderColor);
+    color: var(--fontColor);
+    cursor: pointer;
+    appearance: none;
+    transition: all ease 0.2s;
+}
+
+.structureElementDelete:hover {
+    background-color: var(--addButtonColor);
+}
+
+@media (hover: hover) {
+    .structureElementDelete {
+        opacity: 0;
+    }
+
+    .structureElement:hover .structureElementDelete {
+        opacity: 1;
+    }
+}
+
+.structureElement:first-child:nth-last-child(2) .structureElementDelete {
+    display: none;
+}
+
+.startingTimeLabel {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.startingTimeLabelText {
+    margin-right: 10px;
+}
+
+.structureElementInner.active {
+    min-height: calc(100% - var(--structureHeaderHeight) - 170px);
+}
+
+/* .addStructureCard, */
+.cardListAddContentCard,
+.addBigContentCard,
+.addSmallContentCard {
+    width: 100%;
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--fontColor);
+    background: transparent;
+    font-size: var(--bodyFontSizeMedium);
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0.5;
+    background-image: linear-gradient(to right, var(--fontColor) 50%, transparent 50%), linear-gradient(to right, var(--fontColor) 50%, transparent 50%), linear-gradient(to bottom, var(--fontColor) 50%, transparent 50%), linear-gradient(to bottom, var(--fontColor) 50%, transparent 50%);
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 10px 1px, 10px 1px, 1px 10px, 1px 10px;
+    transition: all ease 0.2s;
+}
+
+/* .addStructureCard:hover, */
+.cardListAddContentCard:hover,
+.addBigContentCard:hover,
+.addSmallContentCard:hover {
+    opacity: 0.8;
+}
+
+/* .empty .addStructureCard {
+    color: var(--primaryColor);
+    background-image: linear-gradient(to right, var(--primaryColor) 50%, transparent 50%), linear-gradient(to right, var(--primaryColor) 50%, transparent 50%), linear-gradient(to bottom, var(--primaryColor) 50%, transparent 50%), linear-gradient(to bottom, var(--primaryColor) 50%, transparent 50%);
+    opacity: 0.7;
+}
+
+.empty .addStructureCard:hover {
+    opacity: 1;
+} */
+
+.structureElement {
+    width: var(--structureElementWidth);
+    min-width: var(--structureElementWidth);
+    padding: 50px;
+    padding-top: 0;
+    box-sizing: content-box;
+    position: relative;
+}
+
+.structureElement:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: var(--borderColor);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 8;
+}
+
+.structureElementInner .card.ui-sortable-placeholder {
+    margin-bottom: 30px;
+    opacity: 0.5;
+}
+
+.structureCardHeader {
+    background-color: var(--structureCardBgColor);
+    border-bottom: 1px solid var(--borderColor);
+    position: relative;
+    border-top-left-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+}
+
+.structureCardHeaderTop,
+.structureCardHeaderBottom {
+    display: flex;
+    align-items: center;
+}
+
+.structureCardHeader .timeStart {
+    margin-left: 15px;
+}
+
+.card.structureCard.pause .structureCardHeader {
+    border-bottom: 0;
+    border-radius: var(--borderRadius);
+}
+
+.structureCard.pause .structureCardHeaderTop {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.structureElement:not([data-type="practice-transfer"]) .structureCardHeaderTop,
+.structureElement:not([data-type="practice-self-learning"]) .structureCardHeaderTop,
+.structureElement:not([data-type="practice-project"]) .structureCardHeaderTop {
+    padding-bottom: 12px;
+}
+
+.structureCardHeaderBottom {
+    padding-top: 0;
+}
+
+.structureElement[data-type="practice-transfer"] .structureCardHeaderBottom,
+.structureElement[data-type="practice-self-learning"] .structureCardHeaderBottom,
+.structureElement[data-type="practice-project"] .structureCardHeaderBottom {
+    display: none;
+}
+
+.structureCardHeaderText {
+    display: block;
+    flex: 1;
+    min-width: 100px;
+    position: relative;
+    font-weight: 600;
+    margin-right: 10px;
+    z-index: 1;
+}
+
+.structureCardHeaderPlaceholder {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: var(--lightFontColor);
+    font-weight: 600;
+    display: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.structureCardHeader.empty .structureCardHeaderPlaceholder {
+    display: block;
+}
+
+.structureCardHeader .conceptRowLightboxContent * {
+    font-size: 14px;
+}
+
+.structureCardHeader .conceptSelectPhase {
+    margin: 0;
+    width: 150px;
+}
+
+.structureCardHeader .conceptSelectPhase .conceptButton{
+    padding: 7px 15px 7px 0px;
+    justify-content: flex-start;
+}
+
+.structureCardHeader .conceptSelectPhase.empty .conceptButton{
+    padding: 7px 10px;
+}
+
+.structureCardHeader .conceptSelectPhase .newText, 
+.structureCardHeader .conceptSelectPhase .conceptContent {
+    font-size: 14px;
+}
+
+.structureCardHeader .conceptSelectPhase.empty .conceptButton {
+    border: 1px solid var(--primaryColor);
+    box-shadow: var(--boxShadowEmpty);
+}
+
+.structureCardHeader .conceptSelectPhase.empty .newText {
+    color: var(--primaryColor);
+}
+
+.structureCardHeaderTime,
+.structureCardHeaderDuration {
+    margin-left: auto;
+}
+
+.structureElement[data-type="elearning"] .structureCardHeaderTime,
+.structureElement[data-type="practice-transfer"] .structureCardHeaderTime,
+.structureElement[data-type="practice-self-learning"] .structureCardHeaderTime,
+.structureElement[data-type="practice-project"] .structureCardHeaderTime
+.structureCardHeaderTime.hiddenTime  {
+    display: none;
+}
+
+.structureCardHeaderDuration {
+    position: relative;
+    max-width: 76px;
+}
+
+.structureCardHeaderDuration input {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.durationMinLabel {
+    pointer-events: none;
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--lightFontColor);
+    font-size: var(--bodyFontSizeMedium);
+}
+
+.structureCardButton {
+    position: absolute;
+    z-index: 5;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgWhiteColor);
+    border: 1px solid var(--borderColor);
+    color: var(--fontColor);
+    top: -20px;
+    cursor: pointer;
+    appearance: none;
+    transition: all ease 0.2s;
+}
+
+@media (hover: hover) {
+    .structureCardButton {
+        opacity: 0;
+    }
+}
+
+.structureCard:hover .structureCardButton {
+    opacity: 1;
+}
+
+.structureCardButton.structureCardDrag {
+    left: -20px;
+    cursor: move;
+    cursor: grab;
+}
+
+.structureCardButton.structureCardDelete {
+    right: -20px;
+}
+
+.structureCardButton.structureCardCopy {
+    right: 30px;
+}
+
+.structureCardButton:hover {
+    background-color: var(--addButtonColor);
+}
+
+.structureCard:not(.noContent) .structureCardContentInner {
+    padding-bottom: 0;
+}
+
+.structureCardContent {
+    position: relative;
+}
+
+.structureCardContentInner {
+    min-height: 60px;
+    box-sizing: content-box;
+}
+
+.structureCard:not(.noContent) .addContentCardWrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.structureCard.noContent .addContentCardWrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/*.addContentCardEmpty {
+    width: 100%;
+    min-height: 60px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--primaryColor);
+    border: 2px dashed var(--primaryColor);
+    background: transparent;
+    font-size: var(--bodyFontSizeMedium);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all ease 0.2s;
+}
+
+.addContentCardEmpty:hover {
+    color: var(--primaryButtonColorHover);
+    border-color: var(--primaryButtonColorHover);
+}*/
+
+.addContentCardEmpty {
+    width: 100%;
+    min-height: 60px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--primaryColor);
+    background: transparent;
+    font-size: var(--bodyFontSizeMedium);
+    cursor: pointer;
+    font-weight: 600;
+    opacity: 0.8;
+    background-image: linear-gradient(to right, var(--primaryColor) 50%, transparent 50%), linear-gradient(to right, var(--primaryColor) 50%, transparent 50%), linear-gradient(to bottom, var(--primaryColor) 50%, transparent 50%), linear-gradient(to bottom, var(--primaryColor) 50%, transparent 50%);
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 10px 1px, 10px 1px, 1px 10px, 1px 10px;
+    transition: all ease 0.2s;
+}
+
+.addContentCardEmpty:hover {
+    opacity: 1;
+}
+
+.addContentCardEmpty.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.addContentCard {
+    width: 100%;
+    min-height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    background: transparent;
+    font-size: var(--bodyFontSizeMedium);
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: all ease 0.2s;
+}
+
+.addContentCard:hover {
+    color: var(--primaryButtonColorHover);
+}
+
+.structureCard:not(.noContent) .addContentCard,
+.structureCard.noContent .addContentCardEmpty {
+    display: flex;
+}
+
+.structureCardBottom {
+    border-top: 1px solid var(--borderColor);
+    background-color: var(--structureCardBgColor);
+    font-size: var(--bodyFontSizeMedium);
+    transition: all ease 0.2s;
+    padding-bottom: 0;
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+}
+
+.structureCardBottom.empty {
+    background-color: var(--primaryButtonColor);
+}
+
+.structureCardBottom.empty:hover {
+    background-color: var(--primary-color-transparent);
+}
+
+.structureCardBottom.empty.conceptDisabled {
+    background-color: var(--inactiveButtonColor);
+}
+
+.structureCard.noContent .structureCardBottom {
+    display: none;
+}
+
+.structureCardBottom:not(.empty) .conceptNew,
+.structureCardBottom.empty .conceptCollapse {
+    display: none;
+}
+
+.buttonText.conceptNew,
+.buttonText.conceptCollapse {
+    padding: 13px;
+}
+
+.buttonText.conceptNew {
+    padding-left: 18px;
+    color: #fff;
+}
+
+.buttonText.conceptCollapse {
+    padding-left: 3px;
+}
+
+.buttonText.conceptCollapse {
+    color: var(--fontColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonText.conceptCollapse:hover,
+.buttonText.conceptCollapse.active {
+    color: var(--primaryColor);
+}
+
+.conceptCollapseArrow {
+    margin: 0 5px;
+    transition: all linear 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.conceptCollapse.active .conceptCollapseArrow {
+    transform: rotate(180deg);
+    background-color: var(--primaryColor);
+    width: 21px;
+}
+
+.conceptCollapse.active .conceptCollapseArrow .dooIcon{
+    color: #fff;
+}
+
+
+
+
+.conceptWrapper {
+    display: none;
+    padding-top: 0;
+}
+
+.conceptRow {
+    position: relative;
+}
+
+.conceptRow.activeLightbox {
+    z-index: 999;
+}
+
+.conceptRow:first-child {
+    margin-top: 7px;
+}
+
+.conceptRow {
+    margin-top: 15px;
+}
+
+.conceptButton {
+    /* min-height: 17px; */
+    border: 1px solid var(--borderColor);
+    background-color: var(--bgWhiteColor);
+    border-radius: var(--borderRadius);
+    color: var(--fontColor);
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    font-size: var(--bodyFontSizeSmall);
+    /* z-index: 999; */
+    appearance: none;
+    transition: all ease 0.2s;
+}
+
+.conceptButton:hover {
+    background-color: var(--structureCardBgColor);
+}
+
+.conceptRow.empty.next .conceptButton {
+    border-color: var(--primaryColor);
+    box-shadow: var(--boxShadowEmpty);
+}
+
+.conceptRow.disabled .conceptButton {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.conceptRow:not(.empty) .newText,
+.conceptRow.empty .conceptText {
+    display: none;
+}
+
+.conceptRow .conceptButton .newText {
+    transition: all ease 0.2s;
+}
+
+.conceptRow.next .conceptButton .newText {
+    font-weight: 600;
+    color: var(--primaryColor);
+}
+
+.conceptButton:hover .newText,
+.conceptButton:focus .newText {
+    color: var(--primaryButtonColorHover);
+}
+
+.conceptButton .conceptText {
+    margin: 0 15px 0px 12px;
+}
+
+.conceptTitle {
+    font-weight: 600;
+}
+
+.conceptRow.empty .conceptEditButton,
+.conceptRow.disabled .conceptEditButton {
+    display: none;
+}
+
+.conceptEditButton {
+    position: absolute;
+    right: 5px;
+}
+
+
+
+
+.conceptRowLightbox {
+    display: none;
+    /* z-index: 998; */
+    width: max-content;
+    min-width: 100%;
+    top: 100%;
+    position: absolute;
+}
+
+.lightboxTop .conceptRowLightbox {
+    top: auto;
+    bottom: 100%;
+}
+
+.conceptRowLightboxBackground {
+    position: fixed;
+    background: var(--boxOverlay);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 99999px;
+}
+
+.activeLightbox .conceptButton {
+    z-index: 999;
+}
+
+.conceptRowLightboxContent {
+    margin: 15px 0;
+}
+
+.conceptLearningTargetFormulation .conceptRowLightboxContent {
+    min-width: 700px;
+}
+
+.conceptLearningTargetFormulation .learningTargetFormulationHeadline {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.learningTargetFormulationInner {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.chooseLearningTargetFormulation {
+    margin-left: 15px;
+}
+
+.saveLearningTargetFormulation.inactive {
+    pointer-events: none;
+}
+
+.learningTargetSelect {
+    width: auto;
+    max-width: 200px;
+}
+
+.conceptRowLightboxContent:before {
+    content: '';
+    height: 15px;
+    width: 2px;
+    background: var(--primaryColor);
+    position: absolute;
+    left: 0;
+    z-index: 999;
+    top: 0;
+    left: 50%;
+}
+
+.lightboxTop .conceptRowLightboxContent:before {
+    top: auto;
+    bottom: 0;
+}
+
+.conceptRowLightboxHeader {
+    padding: 15px;
+    border-bottom: 1px solid var(--borderColor);
+    font-weight: 600;
+}
+
+.conceptRowLightboxInner {
+    padding: 10px 15px;
+    max-height: 40vh;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+
+.conceptRowLightboxLink {
+    display: block;
+    padding: 5px 0;
+    color: var(--fontColor);
+    text-decoration: none;
+}
+
+.conceptRowLightboxLink.recommendation {
+    font-weight: 600;
+    color: var(--primaryColor);
+}
+
+.conceptRowLightboxLink:not(:last-child) {
+    margin-bottom: 3px;
+}
+
+.conceptRowLightboxLink:hover {
+    color: var(--primaryButtonColorHover);
+}
+
+.conceptRowLightboxInner .conceptRowLightboxMoreCollapse {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    margin: 20px 0 5px;
+    color: var(--fontColor);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.conceptRowLightboxInner .conceptRowLightboxMoreCollapse:hover {
+    color: var(--primaryButtonColorHover);
+}
+
+.conceptRowLightboxMore {
+    display: none;
+}
+
+.conceptInformation .conceptInformationTextarea,
+.conceptTask .conceptTaskTextarea {
+    min-height: 140px;
+    margin-top: 3px;
+}
+
+.structureCardBottom .conceptText {
+    -webkit-box-orient: vertical;   
+    -webkit-line-clamp: 2;           
+    overflow: hidden;               
+    text-overflow: ellipsis;         
+    max-height: 38px;
+}
+
+
+
+
+
+
+
+.addStructureElement {
+    height: var(--structureHeaderHeight);
+    position: sticky;
+    top: var(--headerHeight);
+    z-index: 20;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+}
+
+.addStructureElementButton {
+    margin-right: 20px;
+    min-width: max-content;
+    box-shadow: none;
+}
+
+.addStructureElementButton.addSeminar {
+    color: var(--colorSeminar);
+    background-color: var(--colorSeminar-20);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.addStructureElementButton.addSeminar:hover,
+.addStructureElementButton.addSeminar.active {
+    background-color: var(--colorSeminar-30);
+}
+
+.addStructureElementButton.addElearning {
+    color: var(--colorElearning);
+    background-color: var(--colorElearning-20);
+}
+
+.addStructureElementButton.addElearning:hover {
+    background-color: var(--colorElearning-30);
+}
+
+.addStructureElementButton.addPractice {
+    color: var(--colorPractice);
+    background-color: var(--colorPractice-20);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.addStructureElementButton.addPractice:hover,
+.addStructureElementButton.addPractice.active {
+    background-color: var(--colorPractice-30);
+}
+
+.addStructureElementButtonGroup {
+    position: relative;
+}
+
+.addStructureArrow {
+    margin-left: 8px;
+    transition: all linear 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active .addStructureArrow {
+    transform: rotate(180deg);
+}
+
+.addStructureDropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    display: none;
+    z-index: 99;
+    background-color: var(--bgWhiteColor);
+    margin: 0;
+    list-style: none;
+    padding: 8px 0;
+    width: max-content;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    max-height: 70vh;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a.addStructureDropdownItem {
+    display: block;
+    padding: 8px 15px;
+    border-radius: 0;
+    min-width: 200px;
+    color: var(--fontColor);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+a.addStructureDropdownItem:hover {
+    background-color: var(--bgColor);
+}
+
+
+
+/* content lightbox */
+
+.lightboxWrapper {
+    z-index: 999;
+    position: relative;
+    display: none;
+}
+
+.lightboxBackground {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--boxOverlay);
+    z-index: 999;
+}
+
+.lightboxContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    overflow: auto;
+    padding: 60px;
+    overscroll-behavior: contain;
+    transform: translate(0, 20px);
+    pointer-events: none;
+    transition: all ease 0.2s;
+}
+
+.active .lightboxContainer {
+    transform: translate(0, 0);
+}
+
+.lightboxInner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    pointer-events: all;
+}
+
+#moveLightbox .lightboxInner {
+    max-width: 900px;
+}
+
+.lightboxHeader {
+    box-shadow: var(--boxShadow);
+    z-index: 1;
+}
+
+.lightboxHeader h3 {
+    margin-bottom: 10px;
+}
+
+.lightboxContent {
+    background-color: var(--bgColor);
+    flex: 1;
+    /* max-height: 50vh; */
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+}
+
+.lightboxFooter {
+    box-shadow: var(--boxShadow);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lightboxFooter button {
+    margin-left: 20px;
+}
+
+/* content concept lightbox */
+
+.addContentConceptCard {
+    padding: 15px 30px;
+    /* background-color: var(--bgWhiteColor); */
+    /* margin: 20px auto; */
+    /* box-shadow: var(--boxShadow); */
+    /* border-radius: var(--borderRadius); */
+    width: 100%;
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--primaryColor);
+    background: transparent;
+    font-size: var(--bodyFontSizeMedium);
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    background-image: linear-gradient(to right, var(--primaryColor) 50%, transparent 50%), linear-gradient(to right, var(--primaryColor) 50%, transparent 50%), linear-gradient(to bottom, var(--primaryColor) 50%, transparent 50%), linear-gradient(to bottom, var(--primaryColor) 50%, transparent 50%);
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 10px 1px, 10px 1px, 1px 10px, 1px 10px;
+    transition: all ease 0.2s;
+}
+
+.addContentConceptCard:hover {
+    opacity: 1;
+}
+
+#moveLightbox .lightboxHeaderTitle {
+    color: var(--primaryColor);
+}
+
+.contentConceptCard {
+    position: relative;
+    background-color: var(--bgWhiteColor);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 0 20px 0 10px;
+}
+
+.contentConceptCard:hover {
+    cursor: pointer;
+}
+
+.contentConceptCard.ui-sortable-placeholder {
+    opacity: 0.5;
+}
+
+.contentConceptList {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.contentConceptInner {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contentConceptCardTitle {
+    text-align: left;
+    /* width: 100% */
+    padding-left: 10px;
+}
+
+.contentConceptCardUnset {
+    color: var(--lightFontColor);
+}
+
+.contentConceptCardDragIcon .dooIcon:before{
+    color: var(--lightFontColor);
+}
+
+.contentConceptCardSelectIcon .dooIcon:before{
+    color: var(--primaryColor);
+}
+
+.contentConceptCard .contentConceptCardSelectIcon {
+    opacity: 0;
+    transition: all ease 0.2s;
+}
+
+.contentConceptCard:hover .contentConceptCardSelectIcon {
+    opacity: 1;
+}
+
+.activeContentConceptCard .contentConceptCardSelectIcon {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.contentConceptCard:hover .contentCardButton {
+    opacity: 1;
+}
+
+.contentConceptDropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 44px;
+    background-color: var(--bgWhiteColor);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+    z-index: 5;
+    width: calc(100% - 88px);
+}
+
+.contentConceptDropdown .contentConceptDropdownItem {
+    padding: 10px 20px;
+    width: 100%;
+    transition: all ease 0.2s;
+}
+
+.contentConceptDropdown .contentConceptDropdownItem:hover {
+    background-color: var(--bgColor);
+}
+
+.contentConceptDropdown .contentConceptDropdownItem.contentConceptSelected {
+    background-color: var(--primary-color-transparent-10);
+    color: var(--primaryColor);
+}
+
+.contentConceptDropdownRow {
+    display: flex;
+}
+
+.contentConceptDropdownRow .contentConceptDropdownContainer {
+    width: calc(100% / 3);
+    border-right: 1px solid var(--borderColor);
+
+}
+
+.contentConceptDropdownRow .contentConceptDropdownContainer:last-child {
+    border: none;
+}
+
+.contentConceptDropdownRow.firstDropdownRow {
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.contentConceptInfoCard {
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: var(--borderRadius);
+    background-color: var(--primary-color-transparent-40);
+}
+
+/* add structure part container */
+.addStructurePartContainer {
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease opacity;
+}
+
+.structureCard:hover .addStructurePartContainer,
+.addStructurePartContainer.active,
+.structureElementInner ~ .addStructurePartContainer {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.structureCard:last-child .addStructurePartContainer {
+    opacity: 0;
+    pointer-events: none;
+    height: 20px;
+}
+
+.addStructurePartContainer .addStructurePartInner {
+    padding:13px 10px;
+    cursor: pointer;
+}
+
+.addStructurePartContainer.active .addStructurePartInner {
+    z-index: 100;
+    position: relative;
+}
+
+.addStructurePartContainer .addStructureBar {
+    background-color: var(--primary-color-transparent-10);
+    height: 8px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease all;
+}
+
+.addStructurePartContainer:hover .addStructureBar,
+.addStructurePartContainer.active .addStructureBar {
+    background-color: var(--primary-color-transparent-40);
+}
+
+.addStructurePartContainer .dooIcon {
+    padding: 3px;
+    border-radius: 20px;
+    background-color: var(--bgColor);
+    color: var(--primaryColor)
+}
+
+.addStructurePartContainer .addStructureButtons {
+    display: none;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.2s ease all;
+}
+
+.addStructurePartContainer.active .addStructureButtons {
+    display: flex;
+}
+
+.addStructurePartContainer .addStructureButtons .addStructurePartButton {
+    margin-top: 20px;
+    background-color: var(--backButtonColor);
+}
+
+.structureElement[data-type="elearning"] .addStructurePartContainer .addStructurePartButton[data-container-type="pause"],
+.structureElement[data-type="practice-transfer"] .addStructurePartContainer .addStructurePartButton[data-container-type="pause"], 
+.structureElement[data-type="practice-self-learning"] .addStructurePartContainer .addStructurePartButton[data-container-type="pause"], 
+.structureElement[data-type="practice-project"] .addStructurePartContainer .addStructurePartButton[data-container-type="pause"] {
+    display: none;
+}
+
+.addStructurePartContainer.active .addStructurePartOverlay {
+    transition: 0.2s ease all;
+}
+
+.addStructurePartContainer.active .addStructurePartOverlay{
+    position: fixed;
+    background: var(--boxOverlay);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    width: 100vw;
+}
+
+.ui-sortable-helper .addStructurePartContainer {
+    display: none;
+}
+
+/* analysis mode in structure */
+
+.hex-container {
+    position: absolute;
+    height: 14px;
+    top: 24px;
+    left: -12px;
+    z-index: 1;
+}
+
+.hex-container:nth-child(2) {
+    top: 54px;
+}
+
+#structure .hex-container {
+    display: none;
+}
+
+#structure.analysisMode .hex-container {
+    display: block;
+}
+
+.structureCardBottom .hex-container {
+    top: 12px;
+    left: -12px;
+}
+
+.structureCardBottom .hex-container:nth-child(2) {
+    top: 12px;
+    left: 14px;
+}
+
+.optimizationProposalsWrapper .hex-container {
+    top: -1px;
+}
+
+.hex-number {
+    position: absolute;
+    top: -3px;
+    left: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.hex:before {
+    content: " ";
+    width: 0; height: 0;
+    border-bottom: 7px solid var(--statusRed);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    position: absolute;
+    top: -7px;
+}
+
+.hex {
+    width: 24px;
+    height: 14px;
+    background-color: var(--statusRed);
+   
+}
+
+.hex:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: -7px;
+    border-top: 7px solid var(--statusRed);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}
+
+.structureAnalysisContainer {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    min-width: 400px;
+    max-width: 600px;
+    min-height: 200px;
+    max-height: 600px;
+    border: 1px solid var(--primaryColor);
+    padding-bottom: 20px;
+    transition: 0.5s ease all;
+}
+
+.structureAnalysisHeader,
+.structureAnalysisHeaderMini {
+    display: flex;
+    justify-content: space-between;
+}
+
+.structureAnalysisMinimize {
+    background: none;
+}
+
+.structureAnalysisMinimize:hover {
+    cursor: pointer;
+}
+
+.structureAnalysisMinimize:hover .dooIcon {
+    color: var(--primaryColor);
+}
+
+.structureAnalysisContent {
+    overflow-y: auto;
+    max-height: 510px;
+}
+
+.structureAnalysisRecommendation {
+    padding: 10px 20px;
+}
+
+.structureAnalysisRecommendation.canBeLocated {
+    cursor: pointer;
+    transition: 0.2s ease all;
+}
+
+.structureAnalysisRecommendationInner {
+    display: flex;
+    gap: 15px;
+}
+
+.structureAnalysisRecommendation.canBeLocated:hover,
+.structureAnalysisRecommendation.canBeLocated.active {
+    background-color: var(--primary-color-transparent-10);
+}
+
+.structureAnalysisRecommendation .hex-container {
+    position: relative;
+    top: 4px;
+    left: 0;
+}
+
+.structureAnalysisRecommendation .showRecommendation {
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 5px;
+    color: var(--primaryColor);
+    font-weight: 600;
+}
+
+.structureCard.optimizationFound .structureCardInner {
+    outline: 1px solid var(--statusRed);
+}
+
+.structureAnalysisHeaderMini {
+    display: none;
+    padding-bottom: 10px;
+}
+
+.structureAnalysisHeaderMini p {
+    margin-bottom: 0;
+}
+
+/* minimized analysis container */
+
+.structureAnalysisContainer.minimized {
+    min-height: 40px;
+}
+
+.structureAnalysisContainer.minimized .structureAnalysisContent {
+    display: flex;
+    gap: 10px;
+    padding-left: 20px;
+    overflow-y: hidden;
+}
+
+.structureAnalysisContainer.minimized .structureAnalysisRecommendation {
+    padding: 10px 0;
+}
+
+.structureAnalysisContainer.minimized .structureAnalysisRecommendation:hover,
+.structureAnalysisContainer.minimized .structureAnalysisRecommendation.active {
+    background: none;
+}
+
+.structureAnalysisContainer.minimized .structureAnalysisRecommendationText,
+.structureAnalysisContainer.minimized .structureAnalysisHeader,
+.structureAnalysisContainer.minimized .showRecommendation {
+    display: none;
+}
+
+.structureAnalysisContainer.minimized .structureAnalysisHeaderMini {
+    display: flex;
+}
+
+
+/* Checkbox raus, da nicht benötigt */
+.showTimeCheckbox {
+    display: none;
+}
+
+/*--------------- structure END ---------------*/
+
+
+
+
+
+
+
+
+
+
+
+/*--------------- analysis ---------------*/
+.optimizationProposalsWrapper {
+    margin-bottom: 100px;
+}
+
+.cardConnectingLine {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.cardConnectingLine::before {
+    content: '';
+    width: 1px;
+    height: calc(100% - 65px);
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    background-color: #bbb;
+    z-index: 0;
+}
+
+.cardConnectingLine .cardTitleWrapper:first-child {
+    margin-top: 15px;
+}
+
+.cardOptimizationProposals {
+    border: 1px solid var(--primaryColor);
+}
+
+/* .numberOfOptimizationProposals {
+    color: var(--primaryColor);
+    font-family: var(--fontFamily);
+    font-size: var(--bodyFontSize);
+    font-weight: 600;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid var(--primaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+} */
+
+#analysis .cardTitleWrapper:last-child {
+    margin-bottom: 0px;
+}
+
+.analysisCardWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.analysisCardLeft {
+    margin-right: 25px;
+    width: 50%;
+}
+
+.analysisCardRight {
+    margin-left: 25px;
+    /* width: 50%; */
+}
+
+.analysisCardLeft .downloadButton {
+    margin-top: 0px;
+}
+
+.chartContainer {
+    position: relative;
+    height: 180px;
+    height: 240px;
+}
+
+/* info box */
+#toolcheckInfoBox .lightboxInner {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#toolcheckInfoBox .lightboxContentClose {
+    margin-left: auto;
+}
+
+.lightboxBackgroundMandatory {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--boxOverlay);
+    z-index: 999;
+}
+
+/*--------------- analysis END ---------------*/
+
+
+
+
+
+/*--------------- offer ---------------*/
+.bigTextarea {
+    height: 250px;
+}
+
+.smallTextarea {
+    height: 150px;
+}
+
+#wordCount,
+#discountInformation {
+    font-size: var(--bodyFontSizeMedium);
+    color: var(--lightFontColor);
+}
+
+#wordCount.wordCountNull {
+    color: var(--statusRed);
+}
+
+/* #errorUtilityTextarea {
+    color: var(--statusRed);
+    font-size: var(--bodyFontSizeMedium);
+    display: none;
+    transition: all ease 0.2s;
+}
+
+#errorUtilityTextarea.active {
+    display: block;
+    transition: all ease 0.2s;
+} */
+
+.hiddenCheckboxes p {
+    margin: 10px 0px 0px 0px;
+}
+
+.inputList {
+    list-style-type: none;
+}
+
+.inputListItem {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+}
+
+.inputListItem::before {
+    content: '\e86b';
+    font-family: 'dooiconfont';
+    font-size: 9px;
+    margin-top: 10px;
+}
+
+.inputListItem .textarea {
+    height: 44px;
+    margin-left: 10px;
+}
+
+.iconCancel {
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.iconCancel::after {
+    content: '\e808';
+    font-family: 'dooiconfont';
+    font-size: 15px;
+    color: var(--cancelButtonColor);
+    font-style: normal;
+    font-weight: bold;
+    display: none;
+    transition: all ease 0.2s;
+}
+
+.inputListItem:hover .iconCancel::after, 
+.inputListItem textarea:focus~.inputListItemCancel .iconCancel::after, 
+.iconCancel:focus::after,
+.textInputBoxTutor:hover .iconCancel::after,
+.textInputBoxTutor input:focus-visible~.inputListItemCancel .iconCancel::after {
+    display: block;
+}
+
+.inputListItem.delete-stop .inputListItemCancel,
+.textInputBoxTutor.delete-stop .inputListItemCancel {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.addButtonTutor {
+    margin: 0px;
+}
+
+#offer .labelText {
+    min-width: fit-content;
+}
+
+#offer input[type="number"] {
+    max-width: 100px;
+}
+
+.currencySymbol {
+    font-size: 22px;
+}
+
+.textInputBox .dropdownContainer {
+    width: 53%;
+}
+
+.textInputBoxTutor {
+    gap: 0px;
+    position: relative;
+}
+
+.textInputBoxTutor:not(:last-child) {
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+}
+
+.iconCancelTutor {
+    top: 5px;
+}
+
+/* custom file input */
+.js .file_inputItem {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.no-js .file_inputItem+label {
+    display: none;
+}
+
+.file_inputItem+label,
+.file_inputItem+label span,
+.file_inputItem+label p {
+    padding: 0.625rem 1.25rem;
+}
+
+.file_inputItem+label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    /* overflow: hidden; */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: var(--borderRadius);
+    font-size: var(--bodyFontSize);
+    color: var(--fontColor);
+    padding: 0;
+    width: 100%;
+}
+
+.file_inputItem:focus+label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.file_inputItem+label span {
+    width: calc(100% - 144px);
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.file_inputItem+label p {
+    height: 100%;
+    color: var(--fontColor);
+    background-color: var(--addButtonColor);
+    display: inline-block;
+    width: 140px;
+    border-left: 1px solid #ccc;
+    border-bottom-right-radius: var(--borderRadius);
+    border-top-right-radius: var(--borderRadius);
+    transition: all ease 0.2s;
+}
+
+.file_inputItem:focus+label,
+.file_inputItem.has-focus+label,
+.file_inputItem+label:hover {
+    border-color: #ccc;
+}
+
+.file_inputItem:focus+label p,
+.file_inputItem.has-focus+label p,
+.file_inputItem+label:hover p {
+    background-color: var(--addButtonColorHover);
+}
+
+.fileUploadPlaceholder {
+    opacity: 0.8;
+}
+/* custom file input end */
+/*--------------- offer END ---------------*/
+
+
+
+
+
+
+/*--------------- conclusion ---------------*/
+.centerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* bubble animation */
+#bubble-container {
+    position: relative;
+    height: 200px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(195, 214, 0, 0.5);
+    opacity: 0;
+    animation: bubbleAnim 2s ease-out infinite;
+}
+
+
+@keyframes bubbleAnim {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.itemOk {
+    background-color: var(--tertiaryColor);
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+.iconOk::after {
+    font-family: 'dooiconfont';
+    content: '\e857';
+    font-size: 50px;
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    transition: all ease 0.2s;
+}
+
+.conclusionTextWrapper {
+    margin-bottom: 50px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.conclusionTextWrapper h2 {
+    margin-bottom: 20px;
+}
+
+/*--------------- conclusion END ---------------*/
+
+
+
+
+
+/*--------------- summary ---------------*/
+.divider {
+    width: 80%;
+    border: 1px solid #f2f2f2;
+    margin: 0 auto 50px auto;
+}
+
+#summary {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.summary .goNextContainer {
+    margin: 0;
+}
+
+.summary .headerTypeBadge {
+    max-width: fit-content;
+}
+.summary .headerTypeBadge:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.summaryStructureElement[data-type="presence-seminar"] .headerTypeBadge,
+.summaryStructureElement[data-type="live-seminar"] .headerTypeBadge {
+    background-color: var(--colorSeminar-20);
+    color: var(--colorSeminar);
+}
+
+.summaryStructureElement[data-type="elearning"] .headerTypeBadge {
+    background-color: var(--colorElearning-20);
+    color: var(--colorElearning);
+}
+
+.summaryStructureElement[data-type="practice-transfer"] .headerTypeBadge,
+.summaryStructureElement[data-type="practice-self-learning"] .headerTypeBadge,
+.summaryStructureElement[data-type="practice-project"] .headerTypeBadge {
+    background-color: var(--colorPractice-20);
+    color: var(--colorPractice);
+}
+
+.summary p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.summary .learningTargetLevelList li {
+    margin-left: 20px;
+}
+
+.summary .learningTargetLevelList li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.summary .structureElementHeaderRow {
+    margin: 0px 0px 20px 0px;
+    justify-content: flex-start;
+}
+
+.structureElementSingleSection:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+table.structureElementAllSections {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: var(--bodyFontSize);
+    border-spacing: 0;
+}
+table.structureElementAllSections:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.summaryStructureElement .structureElementAllSections thead {
+    background-color: var(--primary-color-transparent-40);
+    white-space: nowrap;
+}
+.summaryStructureElement[data-type="presence-seminar"] .structureElementAllSections thead,
+.summaryStructureElement[data-type="live-seminar"] .structureElementAllSections thead {
+    background-color: var(--colorSeminar);
+    color: #fff;
+}
+.summaryStructureElement[data-type="elearning"] .structureElementAllSections thead {
+    background-color: var(--colorElearning);
+    color: #fff;
+}
+
+.summaryStructureElement[data-type="practice-transfer"] .structureElementAllSections thead,
+.summaryStructureElement[data-type="practice-self-learning"] .structureElementAllSections thead,
+.summaryStructureElement[data-type="practice-project"] .structureElementAllSections thead {
+    background-color: var(--colorPractice);
+    color: #fff;
+}
+.summaryStructureElement .structureElementAllSections.contentSection thead {
+    background-color: #ddd;
+    color: #333;
+}
+
+.structureElementAllSections thead th {
+    font-weight: bold;
+    border-bottom: 4px solid #fff;
+    padding: 10px 20px;
+    text-align: start;
+}
+.structureElementAllSections thead th:not(:last-child) {
+    /* border-right: 2px solid #fff; */
+}
+
+.structureElementAllSections tbody tr {
+    background-color: var(--bgColor);
+}
+.structureElementAllSections tbody tr:nth-child(odd) {
+    background-color: rgb(242 242 242 / 40%);
+}
+
+
+.structureElementAllSections tbody td {
+    padding: 10px 20px;
+    /* border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff; */
+}
+
+.structureElementAllSections thead th:first-child {
+    border-top-left-radius: var(--borderRadius);
+}
+.structureElementAllSections thead th:last-child {
+    border-top-right-radius: var(--borderRadius);
+}
+.structureElementAllSections tbody tr:last-child td:first-child {
+    border-bottom-left-radius: var(--borderRadius);
+}
+.structureElementAllSections tbody tr:last-child td:last-child {
+    border-bottom-right-radius: var(--borderRadius);
+}
+
+/* structure secions */
+
+#summaryStructureElements {
+    width: 100%;
+}
+
+#summaryStructureElements .structureElementHeaderHeading {
+    min-width: auto;
+}
+
+#summaryStructureElements tbody{
+    font-size: 12px;
+}
+
+[data-type="presence-seminar"] .structureElementAllSections .isPause, 
+[data-type="live-seminar"] .structureElementAllSections .isPause {
+    background-color: var(--colorSeminar-20);
+}
+
+.structureElementAllSections th {
+    font-size: 14px;
+}
+
+.structureElementAllSections th.contentSectionTitle {
+    width: 15%;
+}
+
+.structureElementAllSections th.contentPhase {
+    width: 12%;
+}
+
+.structureElementAllSections th.contentTime {
+    width: 8%;
+}
+
+.structureElementAllSections th.contentSubtopic {
+    min-width: 20%;
+}
+
+.structureElementAllSections th.contentMethod {
+    width: 10%;
+}
+
+.structureElementAllSections th.contentSocialForm {
+    width: 12%;
+}
+
+.structureElementAllSections th.contentTask {
+    width: 40%;
+}
+
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin-top: 50px !important;
+    }
+    .cardTitleWrapper {
+        padding-top: 3em;
+    }
+    .cardTitleWrapper:nth-child(2) {
+        page-break-after: always;
+    }
+    .summaryStructureElement {
+        page-break-before: always;
+        /* page-break-before: avoid; */
+    }
+
+    body,
+    table.structureElementAllSections {
+        -webkit-print-color-adjust: exact;
+        font-size: 12px;
+    }
+
+    header, 
+    footer,
+    .goNextContainer,
+    button.primaryButtonSmall {
+        display: none;
+    }
+
+    h1 {
+       font-size: 20px; 
+    }
+    h2 {
+        font-size: 18px; 
+     }
+    h3 {
+        font-size: 16px; 
+    }
+    h4 {
+        font-size: 14px; 
+    }
+    .headerTypeBadge {
+        font-size: 10px;
+    }
+
+    h1, h2 {
+        margin-bottom: 0px;
+    }
+    
+    section {
+        padding: 50px;
+    }
+
+    .card.bigPadding {
+        padding: 0;
+        background-color: unset;
+        box-shadow: unset;
+    }
+
+    .inputWrapper {
+        margin-bottom: 20px;
+        padding-top: 1em;
+    }
+
+    #summary .learningTargetLevelList li:not(:last-child),
+    #summary p:not(:last-child) {
+        margin-bottom: 6px;
+    }
+
+    table.structureElementAllSections:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .structureElementSingleSection:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    .structureElementAllSections thead th,
+    .structureElementAllSections tbody td {
+        padding: 6px 10px;
+    }
+}
+/*--------------- summary END ---------------*/
+
+
+
+
+
+
+
+/* custom toast */
+.toast-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+}
+
+.toast-element {
+    margin-top: 15px;
+    padding: 15px 25px;
+    width: 400px;
+    border-left: 4px solid var(--primaryColor);
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.3);
+    transform: translateY(-50px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 0.5s;
+}
+
+.toast-element h3 {
+    margin-bottom: 10px;
+}
+
+.toast-element.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.toast-element.toast-danger {
+    border-color: var(--statusRed);
+}
+
+
+/*--------------- responsive adjustments ---------------*/
+@media (max-width: 1280px) {
+    /* responsive - global */
+    :root {
+        --fontSizeH1: 20px;
+        --fontSizeH2: 18px;
+        --fontSizeH3: 16px;
+        --bodyFontSize: 14px;
+        --bodyFontSizeMedium: 13px;
+        --bodyFontSizeSmall: 12px;
+        --bodyFontSizeExtraSmall: 10px;
+        --headerHeight: 45px;
+        --logoHeight: 45px;
+        --footerHeight: 45px;
+        --structureElementWidth: 360px;
+    }
+
+    h1, h2 {
+        margin-bottom: 20px;
+    }
+
+    header {
+        padding: 0 8px;
+    }
+
+    .footerTitle {
+        padding: 0 10px;
+    }
+
+    .primaryButton, .secondaryButton, .tertiaryButton, .backButton, .addButton {
+        padding: 10px 20px;
+    }
+
+    .primaryButton.small, .secondaryButton.small, .tertiaryButton.small, .backButton.small, .addButton.small {
+        padding: 8px 15px;
+    }
+
+    .startNavigateButtons {
+        margin: 20px;
+        width: auto;
+    }
+
+    .goNextContainer {
+        margin: 40px 0;
+    }
+
+    section {
+        padding-top: calc(var(--headerHeight) + 40px);
+        padding-bottom: calc(var(--footerHeight) + 40px);
+    }
+
+    /* responsive - data inputs */
+    .textarea, .dropdown, .sliderInput, .input {
+        min-height: 35px;
+        padding: 8px 10px;
+    }
+
+    /* responsive - content */
+    .contentCard.bigContentCard {
+        min-height: 80px;
+        margin-bottom: 30px;
+    }
+
+    .contentCard {
+        min-height: 60px;
+    }
+
+    /* responsive - structure */
+    .structureElementHeaderHeading {
+        min-width: 150px;
+    }
+
+    .structureElementHeader:after {
+        right: -30px;
+    }
+
+    .structureElementDelete {
+        right: -30px;
+    }
+        
+    .structureCardContentInner .bigContentCard {
+        margin-bottom: 15px;
+    }
+
+    .structureElement {
+        padding: 30px;
+        padding-top: 0px;
+    }
+
+    .structureSlideButton.slideRight {
+        left: calc(var(--structureElementWidth) + 55px);
+    }
+
+    .headerRight .primaryButton, .headerRight .tertiaryButton {
+        margin-left: 10px;
+    }
+
+    .structureHeaderSwitch {
+        padding: 0 25px 50px 0;
+    }
+
+    .addStructureElement {
+        padding: 0 20px;
+    }
+
+    #structureContent {
+        margin-top: calc((var(--structureHeaderHeight) + 114px) * -1);
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --fontSizeH1: 22px;
+        --fontSizeH2: 18px;
+        --bodyFontSize: 14px;
+        --cardWidth: auto;
+    }
+
+    .innerSection {
+        padding: 40px;
+    }
+
+    /* data */
+    .sliderInputContainer {
+        flex-direction: column;
+    }
+
+    .hourDayContainer .multipleButton,
+    .hourDayContainer .silderInputText {
+        width: auto;
+    }
+
+    .hourDayContainer .multipleButton {
+        min-width: 200px;
+    }
+
+    .textInputBox {
+        flex-wrap: wrap;
+    }
+
+    .multipleTextInputWrapper .smallTextarea {
+        width: calc(100% - 195px);
+    }
+
+    .multipleTextInputWrapper .textInputTitle {
+        width: 100%;
+    }
+
+    /* conclusion */
+    .iconOk.icon-answer-filled::after {
+        font-size: 12px;
+        top: 7px;
+        left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .innerSection {
+        padding: 20px;
+    }
+
+    /* data */
+
+    .multipleTextInputWrapper .smallTextarea {
+        width: 100%;
+    }
+}
+
+
+/*** für eine horizontale structure scrollbar - nicht fertig, nur begonnen ***/
+/* .structureHeaderScrollbar {
+    height: 10px;
+    width: 100vw;
+    z-index: 11;
+    top: 170px;
+    position: fixed;
+}
+
+.structureHeaderScrollbar .structureScrollTotal {
+    background-color: #f2f2f2;
+    height: 10px;
+}
+
+.structureHeaderScrollbar .structureScrollActualWidth {
+    position: absolute;
+    top: 0;
+    background-color: #ddd;
+    height: 10px;
+    width: 600px;
+} */
+
+
+
+
+/*** vorübergehend für den Toolcheck ausgebelendet **/
+#data .dataFormat[data-format="open"] {
+    display: none;
+}
+
+/* .contentCardCommentIcon {
+    pointer-events: none;
+    visibility: hidden;
+} */
+
+.toolcheckInfoBox {
+    padding: 20px 30px;
+    background-color: var(--primary-color-transparent-40);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow);
+    margin-bottom: 30px;
+}
+
+.toolcheckInfoBox h3{
+    margin-bottom:10px;
+}
+
+.notice{
+    margin-bottom: 20px;
+}

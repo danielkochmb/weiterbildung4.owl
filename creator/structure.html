@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Struktur - Next Learning Creator</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="fonts/fonts.css" rel="stylesheet">
+        <link href="fonts/dooiconfont/dooiconfont.css" rel="stylesheet">
+        <script src="libs/jquery-3.6.1.min.js"></script>
+        <script src="libs/jquery-ui.min.js"></script>
+        <script src="libs/jquery.ui.touch-punch.js"></script>
+        <script src="libs/chart.umd.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="js/jsonInfotexts.js"></script>
+        <script src="js/scriptStructure.js"></script>
+        <script src="js/generateAndSaveStructure.js"></script>
+        <script src="js/loadAndSaveData.js"></script>
+        <script src="js/loadAndSaveContent.js"></script>
+        <script src="js/generateTemplateRecommendations.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/analyzeStructure.js"></script>
+
+    </head>
+    <body>
+        <header class="hasSubHeader">
+            <div class="headerLeft">
+                <a href="content.html" class="backButton small">Zurück</a>
+                <p class="headerTitle"></p>
+            </div>
+            <span id="logo">
+                <img class="logo" src="img/Logo_Next Learning_Creator.svg" alt="Logo Next Learning Creator">
+            </span>
+            <div class="headerRight">
+                <label class="checkboxItem showTimeCheckbox">
+                    <input type="checkbox" class="checkbox check-answer" checked>
+                    <span></span> Uhrzeiten anzeigen
+                </label>
+                <div class="tertiaryButton small" onclick="changeTemplate();">Vorlage wechseln</div>
+                <a href="#" class="primaryButton small" onclick="checkIfDataStructureEqual();">Weiter</a>
+                <!-- <a href="analysis.html" class="primaryButton small" onclick="checkIfDataStructureEqual();">Weiter</a> -->
+            </div>
+        </header>
+        <main class="fullWidth">
+            <section id="structure" data-header-style="normal">
+                <div id="structureHeader"></div>
+                <div class="structureHeaderSwitch" onclick="switchStructureHeader();">
+                    <div class="structureHeaderContainer">
+                        <span class="dooIconContainer dooContainerName-next-object">
+                            <i class="dooIcon dooIcon-next-object dooIconSize-20"></i>
+                        </span>
+                    </div>
+                </div>
+                <div id="structureContent">
+                    <!-- generate structure content here -->
+                </div>
+            </section>
+            <button class="structureSlideButton primaryButton slideLeft inactive">
+                <span class="dooIconContainer dooContainerName-toggle-left">
+                    <i class="dooIcon dooIcon-toggle-left dooIconSize-20"></i>
+                </span>
+            </button>
+            <button class="structureSlideButton primaryButton slideRight">
+                <span class="dooIconContainer dooContainerName-toggle-right">
+                    <i class="dooIcon dooIcon-toggle-right dooIconSize-20"></i>
+                </span>
+            </button>
+            <!-- <div class="structureHeaderScrollbar">
+                <div class="structureScrollTotal"></div>
+                <div class="structureScrollActualWidth"></div>
+            </div> -->
+
+        </main>
+        <footer>
+            
+        </footer>
+        <script>
+            $(function(){
+              $("footer").load("footer.html");
+            });
+          </script>
+
+
+        <div class="infotextWrapper">
+            <div class="infotextBackground"></div>
+            <div class="infotextInner thinScrollbar">
+                <div class="infotextTop padding">
+                    <h3 class="infotextHeadline">Hinweis</h3>
+                    <button class="buttonText infotextClose">
+                        <span class="dooIconContainer dooContainerName-cancel userIcon">
+                            <i class="dooIcon dooIcon-cancel dooIconSize-20"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="infotextText padding">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+            </div>
+        </div>
+
+
+        <div class="lightboxWrapper" id="contentLightbox">
+            <div class="lightboxBackground"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card">
+                    <div class="lightboxHeader padding">
+                        <h3>Inhalt einfügen</h3>
+                        <p style="max-width: 900px;">Wählen Sie den oder die Inhalte aus, die Sie einfügen möchten. Nur Unterthemen können in die Strukturabschnitte eingefügt werden. Per Auswahl eines Oberthemas können alle darin enthaltenen Unterthemen zeitgleich eingefügt werden.</p>
+                    </div>
+                    <div class="lightboxContent thinScrollbar">
+                        <div class="contentCardList padding">
+
+                            <div class="contentCardWrapper thinScrollbar">
+                                <div class="contentCardWrapperInner">
+                                    <div class="contentCardColumns"></div>
+                                    <div class="contentCardListColumn addContentCardColumn">
+                                        <button type="button" title="Thema hinzufügen" class="addBigContentCard">+ Thema</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="lightboxFooter padding">
+                        <button type="button" class="secondaryButton small lightboxContentClose">Abbrechen</button>
+                        <button type="button" class="primaryButton small lightboxContentInsert inactive" disabled>Einfügen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightboxWrapper" id="moveLightbox">
+            <div class="lightboxBackground"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card">
+                    <div class="lightboxHeader padding">
+                        <h3 style="margin-bottom: 0;">Seiteninhalte vorbereiten: <span class="lightboxHeaderTitle">Titel</span></h3>
+                    </div>
+                    <div class="lightboxContent thinScrollbar">
+                        <div class="contentConceptList padding">
+                            <div class="contentConceptInner">
+                                <!-- generate content concept -->
+                            </div>
+                            <button type="button" class="addContentConceptCard">+ Inhalt</button>
+                            <!-- <div class="contentConceptInfoCard">
+                                <h3>Hinweis:</h3>
+                                <p>Zukünftig werden hier basierend auf der gewählten Phase entsprechende Vorschläge für Inhalte angezeigt.</p>
+                            </div> -->
+                        </div>
+                        <!-- <img src="img/move.jpg"> -->
+                    </div>
+                    <div class="lightboxFooter padding">
+                        <button type="button" class="secondaryButton small lightboxContentClose">Abbrechen</button>
+                        <button type="button" class="primaryButton small lightboxMovecontentSave">Speichern</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightboxWrapper" id="structureExplanation">
+            <div class="lightboxBackgroundMandatory"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card padding">
+                    <h1>Hinweis:</h1>
+                    <p>Auf dieser Seite können Sie eine Grob- und Feinplanung für Ihr Lernangebot anlegen. <br> Sie können Lernformate, Abschnitte oder Pausen hinzufügen oder löschen. Bitte beachten Sie, dass Sie <b> pro Abschnitt nur eine Verlaufsform, eine Methode und eine Sozialform </b> bestimmen können. Legen sie Sie daher ggfs. weitere Abschnitte an, um Ihre Planung zu detaillieren. <br><br> In den einzelnen Abschnitten können Sie Inhalte, die Sie schon erstellt haben, einfügen oder neu anlegen. Für Präsenzveranstaltungen und Live-Online-Veranstaltungen ist eine Spalte für maximal einen Tag eines solchen Lernangebots vorgesehen. Legen Sie ggfs. weitere Spalten an, um Ihr Lernangebot auszuweiten. 
+                        <br><br>Ein weiterer Tipp: Nutzen Sie die Kontextmenüs  <button class="infotextButton infoFormButton" type="button" title="Erklärung anzeigen">?</button>, wenn Ihnen Begriffe unklar sind!.</p>
+                    <div class="lightboxButtons">
+                        <button type="button" class="primaryButton small lightboxContentClose" onclick="flagStructureAsVisited();">Alles klar, los geht’s!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightboxWrapper" id="chooseTemplate">
+            <div class="lightboxBackgroundMandatory"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card">
+                    <div class="lightboxHeader padding">
+                        <h3 style="margin-bottom: 0;">Vorlage wählen</h3>
+                    </div>
+                    <div class="lightboxContent">
+                        <!-- <h1>Hinweis:</h1>
+                        <p>Sie haben bereits Inhalte für die Struktur Ihres Lernangebots erstellt. Wenn Sie diese Vorlage anwenden möchten, wird Ihre bisherige Konzeption überschrieben.</p>
+                        <h3>Möchten Sie die Vorlage trotzdem anwenden?</h3> -->
+
+                         <!-- template lightbox site -->
+                        <section id="template">
+                            <div class="innerSection introductionHeader">
+                                <!-- <h1>Vorlage wählen</h1> -->
+                                <p>Wählen Sie eine Struktur-Vorlage für Ihr Lernangebot aus und beginnen Sie direkt mit der Konzeption Ihres Lernangebots. Sie können aber auch mit einer leeren Vorlage starten.
+                                <span class="templateNotice"><br>Die Konzeption der Struktur richtet sich nach Ihrer <b>individuellen Planungstiefe</b>. Dabei ist nicht immer notwendig alle Felder zu befüllen.</span></p>
+                            </div>
+                            <div class="templateCardSection">
+                                <h3 class="templateCardTitle highlighted">Vorschläge</h3>
+                                <div id="templateRecommendations" class="templateCardWrapper">
+                                    <!-- generate template recommendations -->
+                                </div>
+                            </div>
+                            <div class="templateCardSection">
+                                <h3 class="templateCardTitle">Weitere Lernformate</h3>
+                                <div class="templateCardWrapper">
+                                    <div class="templateCard card" data-type="presence-seminar" onclick="checkIfStructureExisting(event, this);">
+                                        <p>Präsenz</p>
+                                        <p class="customTemplateTime" data-timevalue="1.5" data-timepresencevalue="" data-timedigitalvalue="" data-timetype="days">
+                                            <span class="customTemplateTimeValue">1.5</span>
+                                            <span class="customTemplateTimeText">Tage</span>
+                                        </p>
+                                    </div>
+                                    <div class="templateCard card" data-type="live-seminar" onclick="checkIfStructureExisting(event, this);">
+                                        <p>Live-Online-Event</p>
+                                        <p class="customTemplateTime" data-timevalue="1.5" data-timepresencevalue="" data-timedigitalvalue="" data-timetype="days">
+                                            <span class="customTemplateTimeValue">1.5</span>
+                                            <span class="customTemplateTimeText">Tage</span>
+                                        </p>
+                                    </div>
+                                    <div class="templateCard card" data-type="elearning" onclick="checkIfStructureExisting(event, this);">
+                                        <p>E-Learning</p>
+                                        <p class="customTemplateTime" data-timevalue="4" data-timepresencevalue="" data-timedigitalvalue="" data-timetype="hours">
+                                            <span class="customTemplateTimeValue">4</span>
+                                            <span class="customTemplateTimeText">Stunden</span>
+                                        </p>
+                                    </div>
+                                    <div class="templateCard card" data-type="presence-live-seminar" onclick="checkIfStructureExisting(event, this);">
+                                        <p>Präsenz + Live-Online-Event</p>
+                                        <p class="customTemplateTime" data-timevalue="24" data-timepresencevalue="1" data-timedigitalvalue="2" data-timetype="hours">
+                                            <span class="customTemplateTimeValue">24</span>
+                                            <span class="customTemplateTimeText">Stunden</span>
+                                        </p>
+                                    </div>
+                                    <div class="templateCard card" data-type="blended-learning" onclick="checkIfStructureExisting(event, this);">
+                                        <p>Blended-Learning</p>
+                                        <p class="customTemplateTime" data-timevalue="20" data-timepresencevalue="2" data-timedigitalvalue="0.5" data-timetype="hours">
+                                            <span class="customTemplateTimeValue">20</span>
+                                            <span class="customTemplateTimeText">Stunden</span>
+                                        </p>
+                                    </div>
+                                    <!-- <div class="templateCard card" data-digitalEvent="true" data-presenceEvent="false">
+                                        <p>E-Learning</p>
+                                        <p class="customTemplateTime" data-customTemplateTimeValue="" data-customTemplateTimeText="">
+                                            <span class="customTemplateTimeValue"></span>
+                                            <span class="customTemplateTimeText">Dauer wählen...</span>
+                                        </p>
+                                    </div>
+                                    <a href="structure.html" class="templateCard disabled card" data-digitalEvent="true" data-presenceEvent="true">
+                                        <p>Blended Learning</p>
+                                        <p class="customTemplateTime" data-customTemplateTimeValue="" data-customTemplateTimeText="">
+                                            <span class="customTemplateTimeValue"></span>
+                                            <span class="customTemplateTimeText">Dauer wählen...</span>
+                                        </p>
+                                    </a> -->
+                                </div>
+                            </div>
+                            <div class="templateCardSection">
+                                <div class="templateCardWrapper">
+                                    <a href="structure.html" class="card greyTemplateCard blankTemplate" onclick="checkIfStructureExisting(event, this);">
+                                        <p>Mit leerer Vorlage starten</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="lightboxFooter lightboxFooterMandatory thinLightboxFooter padding"></div>
+                    <div class="lightboxFooter lightboxFooterClose padding">
+                        <button type="button" class="secondaryButton small lightboxContentClose">Abbrechen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightboxWrapper" id="isStructureDataInfoBox">
+            <div class="lightboxBackgroundMandatory"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card padding">
+                    <h1>Hinweis:</h1>
+                    <p>Sie haben bereits Inhalte für die Struktur Ihres Lernangebots erstellt. Wenn Sie diese Vorlage anwenden möchten, wird Ihre bisherige Konzeption überschrieben.</p>
+                    <h3>Möchten Sie die Vorlage trotzdem anwenden?</h3>
+                    <div class="lightboxButtons">
+                        <button type="button" class="primaryButton small lightboxContentClose" onclick="redirectAndApplyTemplate();">Ja, bisherige Konzeption überschreiben!</button>
+                        <a href="structure.html"><button type="button" class="tertiaryButton small lightboxContentClose">Nein, mit bisheriger Konzeption fortfahren!</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightboxWrapper" id="deleteStructureElement">
+            <div class="lightboxBackground"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card padding">
+                    <h3>Möchten Sie diesen Abschnitt wirklich löschen?</h3>
+                    <div class="lightboxButtons">
+                        <button type="button" class="primaryButton small lightboxContentClose" onclick="removeStructureSection(this);">Ja, löschen!</button>
+                        <a><button type="button" class="secondaryButton small lightboxContentClose">Abbrechen</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightboxWrapper" id="dataStructureNotEqual">
+            <div class="lightboxBackgroundMandatory"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card padding">
+                    <div class="lightboxText">
+                        <h1>Hinweis:</h1>
+                        <p>Ihre Angabe zum Format und/oder Zeit in den Rahmendaten unterscheidet sich von der tatsächlichen Struktur ihres Lernangebotes:</p>
+
+                        <div class="dataStructureOverview" data-type="data"></div>
+                        <div class="dataStructureOverview" data-type="structure"></div>
+
+                        <h3>Möchten Sie trotzdem fortfahren?</h3>
+                    </div>
+                    <div class="lightboxButtons">
+                        <div class="lightboxButtonsInner">
+                            <a href="analysis.html"><button type="button" class="primaryButton small" onclick="flagStructureAsApproved();">Ja, weiter!</button></a>
+                            <button type="button" class="tertiaryButton small setDataBasedOnStructure" onclick="setDataBasedOnStructure();">Rahmendaten anpassen</button>
+                            <div class="changeDataSuccess">
+                                <div class="itemOk">
+                                    <i class="iconOk"></i>
+                                </div>
+                                <!-- <h2>Änderungen wurden erfolgreich übernommmen!</h2> -->
+                            </div>
+                        </div>
+                        <button type="button" class="secondaryButton small lightboxContentClose">Abbrechen</button>
+                    </div>
+                    <!-- <div class="changeDataSuccess">
+                        <div class="itemOk">
+                            <i class="iconOk"></i>
+                        </div>
+                        <h2>Änderungen wurden erfolgreich übernommmen!</h2>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- content comments start -->
+        <div class="contentCommentWrapper">
+            <button type="button" title="Schließen" class="closeContentCommentWrapper">
+                <span class="dooIconContainer dooContainerName-cancel userIcon">
+                    <i class="dooIcon dooIcon-cancel dooIconSize-16"></i>
+                </span>
+            </button>
+            <div class="currentContentCard">
+                <!-- hier aktuelle Karte einfügen -->
+                <div class="contentCard bigContentCard">
+                    <div class="contentCardIcon contentCardDragIcon smallPadding ui-sortable-handle">
+                        <span class="dooIconContainer dooContainerName-drag_handle userIcon">
+                            <i class="dooIcon dooIcon-drag_handle dooIconSize-16"></i>
+                        </span>
+                    </div>
+                    <div class="contentCardIcon contentCardCheckbox smallPadding">
+                        <label class="checkboxItem">
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="contentCardTitle smallPadding" contenteditable="false" spellcheck="true"></div>
+                    <button type="button" class="contentCardIcon contentCardCommentIcon smallPadding">
+                        <span class="numberOfComments"></span>
+                        <span class="dooIconContainer dooContainerName-community userIcon">
+                            <i class="dooIcon dooIcon-community dooIconSize-20"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="currentContentComments">
+                <div class="allContentComments thinScrollbar">
+                    <h3 class="cardTitle">Kommentare</h3>
+                    <div class="noContentComments">Es sind keine Kommentare vorhanden.</div>
+                </div>
+                <div class="errorEmptyComment">Ein leerer Kommentar kann nicht hinzugefügt werden!</div>
+                <textarea id="contentWriteCommentID" class="contentWriteComment thinScrollbar" name="contentWriteComment" placeholder="Kommentar schreiben..."></textarea>
+                <button type="button" title="Kommentar senden" class="contentSendComment smallPadding">
+                    <span class="dooIconContainer dooContainerName-send userIcon">
+                        <i class="dooIcon dooIcon-send dooIconSize-16"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="contentLightboxCommentOverlay"></div>
+        <!-- content comments end -->
+
+        <div class="toast-container"></div>
+    </body>
+</html>

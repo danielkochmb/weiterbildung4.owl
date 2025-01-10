@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start - Next Learning Creator</title>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="fonts/fonts.css" rel="stylesheet">
+    <link href="fonts/dooiconfont/dooiconfont.css" rel="stylesheet">
+    <script src="libs/jquery-3.6.1.min.js"></script>
+    <script src="libs/jquery-ui.min.js"></script>
+    <script src="libs/jquery.ui.touch-punch.js"></script>
+    <script src="libs/chart.umd.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="js/jsonInfotexts.js"></script>
+    <script src="js/scriptStructure.js"></script>
+    <script src="js/loadAndSaveData.js"></script>
+    <script src="js/fillSummary.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <span id="logo"><img class="logo" src="img/Logo_Next Learning_Creator.svg"
+                alt="Logo Next Learning Creator"></span>
+    </header>
+    <header class="hasSubHeader">
+        <div class="headerLeft">
+            <!-- <a href="offer.html" class="backButton small">Zurück</a> -->
+        </div>
+
+        <span id="logo"><img class="logo" src="img/Logo_Next Learning_Creator.svg"
+                alt="Logo Next Learning Creator"></span>
+
+        <div class="headerRight">
+            <!-- <a href="index.html" class="primaryButton small">Weiter</a> -->
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <main class="contentWidth">
+
+        <section id="summary" class="summary">
+            <h1>Zusammenfassung Ihres Lernangebots</h1>
+
+            <div class="cardTitleWrapper">
+                <h2 class="cardTitle">Rahmendaten</h2>
+                <div class="card bigPadding">
+                    <div class="inputWrapper">
+                        <h4 class="margin-bottom-12">Titel</h4>
+                        <p id="summaryTitel"></p>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <h4 class="margin-bottom-12">Groblernziele</h4>
+                        <ul class="learningTargetLevelList">
+                            <!-- <li>
+                                <p><span class="conceptLearningTargetLevel">Stufe 2:</span> Die Teilnehmenden können<span class="inputTextLearningTargetLevel">die Theorie zu Feuerlöschern</span> <span class="learningTargetLevelVerb">wiedergeben</span>.</p>
+                            </li>
+                            <li>
+                                <p><span class="conceptLearningTargetLevel">Stufe 2:</span> Die Teilnehmenden können<span class="inputTextLearningTargetLevel">Übersicht nützliche Methoden, Tools und Modellierungssprachen in ihren Grundzügen</span> <span class="learningTargetLevelVerb">anwenden</span>.</p>
+                            </li>
+                            <li>
+                                <p><span class="conceptLearningTargetLevel">Stufe 2:</span> Die Teilnehmenden können<span class="inputTextLearningTargetLevel">theoretisches SE-Wissen in Fallstudien und konkreten Praxisfällen aus der Industrie</span> <span class="learningTargetLevelVerb">anwenden</span>.</p>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <h4 class="margin-bottom-12">Format & Zeit</h4>
+                        <p>Format der Weiterbildung: <span id="summaryFormat"><b></b></span></p>
+                        <p>Zeitumfang: <span id="summaryTime"><b></b></span></p>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <h4 class="margin-bottom-12">Teilnehmende</h4>
+                        <p>Ungefähre Anzahl der Teilnehmenden pro Durchführung: <span id="summaryUserPerEvent"><b></b></span></p>
+                        <p>Digitale Affinität der Teilnehmenden: <span id="summaryDigitalAffinity"><b></b></span></p>
+                        <p>Stand von Wissen & Fähigkeiten der Teilnehmenden: <span id="summaryKnowledgeSkills"><b></b></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="cardTitle">Struktur</h2>
+            <div id="summaryStructureElements">
+
+            </div>
+
+            <!-- <div class="cardTitleWrapper summaryStructureElement" data-type="presence-seminar">
+                <div class="structureElementHeaderRow">
+                    <h3 class="cardTitle structureElementHeaderHeading">Titel der Spalte: Schulungstag 1</h3>
+                    <div class="headerTypeBadge fontSizeSmall">Präsenz-Veranstaltung</div>
+                </div>
+                <div class="card bigPadding">
+                    <div class="inputWrapper">
+                        <table class="structureElementAllSections">
+                            <thead>
+                                <tr>
+                                    <th>Titel des Abschnitts</th>
+                                    <th>Verlauf</th>
+                                    <th>Uhrzeit</th>
+                                    <th>Inhalt</th>
+                                    <th>Methode</th>
+                                    <th>Lernziel</th>
+                                    <th>Sozialform</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="contentSectionTitle">Herzlich Willkommen – Starte hier!</td>
+                                    <td class="contentPhase">Einführung</td>
+                                    <td class="contentTime">09:00 - 09:15</td>
+                                    <td class="contentSubtopic">Unterthema 1, Unterthema 2</td>
+                                    <td class="contentMethod">Gespräch</td>
+                                    <td class="contentLearningTargetLevelAndFormulation">Stufe 1: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein)</td>
+                                    <td class="contentSocialForm">Plenum</td>
+                                </tr>
+                                <tr>
+                                    <td class="contentSectionTitle">Herzlich Willkommen – Starte hier!</td>
+                                    <td class="contentPhase">Erarbeitung</td>
+                                    <td class="contentTime">09:15 - 10:15</td>
+                                    <td class="contentSubtopic">Unterthema 1, Unterthema 2</td>
+                                    <td class="contentMethod">Aufgabe</td>
+                                    <td class="contentLearningTargetLevelAndFormulation">Stufe 2: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein)</td>
+                                    <td class="contentSocialForm">Einzelarbeit</td>
+                                </tr>
+                                <tr>
+                                    <td class="contentSectionTitle">...</td>
+                                    <td class="contentPhase">...</td>
+                                    <td class="contentTime">...</td>
+                                    <td class="contentSubtopic">...</td>
+                                    <td class="contentMethod">...</td>
+                                    <td class="contentLearningTargetLevelAndFormulation">...</td>
+                                    <td class="contentSocialForm">...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardTitleWrapper summaryStructureElement" data-type="live-seminar">
+                <div class="structureElementHeaderRow">
+                    <h3 class="cardTitle structureElementHeaderHeading">Schulungstag 2</h3>
+                    <div class="headerTypeBadge fontSizeSmall">Live-Online-Veranstaltung</div>
+                </div>
+                <div class="card bigPadding">
+                    <div class="inputWrapper">
+                        <table class="structureElementAllSections">
+                            <thead>
+                                <tr>
+                                    <th>Titel des Abschnitts</th>
+                                    <th>Verlauf</th>
+                                    <th>Uhrzeit</th>
+                                    <th>Inhalt</th>
+                                    <th>Methode</th>
+                                    <th>Lernziel</th>
+                                    <th>Sozialform</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="contentSectionTitle">Herzlich Willkommen – Starte hier!</td>
+                                    <td class="contentPhase">Einführung</td>
+                                    <td class="contentTime">09:00 - 09:15</td>
+                                    <td class="contentSubtopic">Unterthema 1, Unterthema 2</td>
+                                    <td class="contentMethod">Gespräch</td>
+                                    <td class="contentLearningTargetLevelAndFormulation">Stufe 1: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein)</td>
+                                    <td class="contentSocialForm">Plenum</td>
+                                </tr>
+                                <tr>
+                                    <td class="contentSectionTitle">Herzlich Willkommen – Starte hier!</td>
+                                    <td class="contentPhase">Erarbeitung</td>
+                                    <td class="contentTime">09:15 - 10:15</td>
+                                    <td class="contentSubtopic">Unterthema 1, Unterthema 2</td>
+                                    <td class="contentMethod">Aufgabe</td>
+                                    <td class="contentLearningTargetLevelAndFormulation">Stufe 2: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein)</td>
+                                    <td class="contentSocialForm">Einzelarbeit</td>
+                                </tr>
+                                <tr>
+                                    <td class="contentSectionTitle">...</td>
+                                    <td class="contentPhase">...</td>
+                                    <td class="contentTime">...</td>
+                                    <td class="contentSubtopic">...</td>
+                                    <td class="contentMethod">...</td>
+                                    <td class="contentLearningTargetLevelAndFormulation">...</td>
+                                    <td class="contentSocialForm">...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardTitleWrapper summaryStructureElement" data-type="elearning">
+                <div class="structureElementHeaderRow">
+                    <h3 class="cardTitle structureElementHeaderHeading">Selbstlernphase 1</h3>
+                    <div class="headerTypeBadge fontSizeSmall">E-Learning</div>
+                </div>
+                <div class="card bigPadding">
+                    <div class="inputWrapper">
+                        <div class="structureElementSingleSection">
+                            <table class="structureElementAllSections">
+                                <thead>
+                                    <tr>
+                                        <th>Titel des Abschnitts</th>
+                                        <th>Phase</th>
+                                        <th>Dauer</th>
+                                        <th>Lernziel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="contentSectionTitle">Titel des grauen Abschnitts</td>
+                                        <td class="contentPhase">Erarbeitung</td>
+                                        <td class="contentDuration">60 Min.</td>
+                                        <td class="contentLearningTargetLevelAndFormulation">Stufe 1: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein),<br>Stufe 1: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="structureElementAllSections contentSection">
+                                <thead>
+                                    <tr>
+                                        <th>Dauer</th>
+                                        <th>Seitentitel</th>
+                                        <th>Lernobjekte</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Willkommen</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Seite 2</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Seite 3</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Seite 4</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="divider"></div>
+
+                        <div class="structureElementSingleSection">
+                            <table class="structureElementAllSections">
+                                <thead>
+                                    <tr>
+                                        <th>Titel des Abschnitts</th>
+                                        <th>Phase</th>
+                                        <th>Dauer</th>
+                                        <th>Lernziel</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="contentSectionTitle">Titel des grauen Abschnitts</td>
+                                        <td class="contentPhase">Erarbeitung</td>
+                                        <td class="contentDuration">60 Min.</td>
+                                        <td class="contentLearningTargetLevelAndFormulation">Stufe 1: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein),<br>Stufe 1: Lernzielformulierung einfügen (mehrere Lernzielformulierungen können hier sein)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="structureElementAllSections contentSection">
+                                <thead>
+                                    <tr>
+                                        <th>Dauer</th>
+                                        <th>Seitentitel</th>
+                                        <th>Lernobjekte</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Willkommen</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Seite 2</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Seite 3</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="contentDurationPerPage">5 Min.</td>
+                                        <td class="contentTitlePage">Seite 4</td>
+                                        <td class="contentLearningObjects">Video, Text, Bild, Zeitstrahl</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="goNextContainer">
+                <button id="summaryPDFDownload" class="primaryButton primaryButtonSmall">PDF-Download</button>
+                <p class="goNextInfotext">Sie müssen ggf. ihr Druckziel auf "Als PDF speichern" anpassen.</p>
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+
+
+    <footer>
+        <!-- <nav id="menuFooter">
+            <ul class="menuFooterList">
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="index.html">
+                        <span class="footerTitle">Start</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="data.html">
+                        <span class="footerTitle">Rahmendaten</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="content.html">
+                        <span class="footerTitle">Inhalte</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="template.html">
+                        <span class="footerTitle">Vorlagen</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="structure.html">
+                        <span class="footerTitle">Struktur</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="analysis.html">
+                        <span class="footerTitle">Analyse</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="offer.html">
+                        <span class="footerTitle">Angebotsbeschreibung</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem active">
+                    <a class="menuFooterListItemLink" href="conclusion.html">
+                        <span class="footerTitle">Abschluss</span>
+                    </a>
+                </li>
+            </ul>
+        </nav> -->
+    </footer>
+
+</body>
+
+</html>
