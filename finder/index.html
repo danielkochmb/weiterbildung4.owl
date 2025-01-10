@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Learning Finder</title>
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="script.js"></script>
+    <script>(function (e, t, n) { var r = e.querySelectorAll("html")[0]; r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2") })(document, window, 0);</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-particles"></script>
+
+</head>
+
+<body>
+    <header>
+        <a id="logo" href="#"><img class="logo" src="img/Logo_Next Learning_Finder.svg"
+                alt="Logo von Next Learning Finder"></a>
+    </header>
+
+    <main>
+        <section id="start" class="active">
+            <div class="card">
+                <h1>Herzlich Willkommen beim <br>Next Learning Finder!</h1>
+                <p>Mit dem Next Learning Finder kommst du in wenigen Schritten zu deiner Wunsch-Weiterbildung. Wir
+                    erleichtern
+                    dir die Suche nach einem passenden Anbieter und sorgen für eine effektive Beratung.
+                </p>
+                <p> <strong>Wie funktioniert das?</strong><br>
+                    Bereits mit wenigen Angaben kannst du ganz unverbindlich mit Anbietern deiner Wahl in Kontakt
+                    treten.
+                    Wenn du noch mehr Details angibst, können Anbieter noch besser auf deine Wünsche eingehen.
+                </p>
+                <p> <strong>Hinweis</strong><br>
+                    Derzeit steht dir zunächst nur eine <strong>Testversion</strong> des Tools zur Verfügung, mit der du aber bereits Anfragen erstellen und an Weiterbildungsanbieter aus OWL senden kannst. 
+                    Die Vollversion wird demnächst erscheinen und dir noch umfangreichere Funktionen zur Verfügung stellen, wie z.B. ein automatisiertes Matching und die 
+                    Veröffentlichung deiner Anfrage auf dem Next Learning Hub. Bleibe gespannt und nutze die Gelegenheit, dich schon jetzt mit dem Next Learning Finder vertraut zu machen!
+                </p>
+                <button class="primaryButton" onclick="showNext(this);">Starten</button>
+                
+            </div>
+        </section>
+
+        <section id="thema">
+            <div class="cardWrapper">
+                <button class="backButton" onclick="showPrevious(this);">Zurück</button>
+                <div class="card">
+                    <h2 class="cardHeadline">Thema</h2>
+                    <div class="inputWrapper required">
+                        <label><span class="labelText">Zu welchem Thema suchen Sie eine Weiterbildung? Nennen Sie ein
+                                Thema oder wählen Sie direkt eine passende Kategorie.
+                                <span class="requiredStar">*</span></span>
+                            <input name="question1"
+                                class="textarea smallTextarea check-answer categorySearchInput question1"
+                                autocomplete="off" placeholder="z.B. Product Lifecycle Management" required
+                                oninput="searchForCategory(this);"></input>
+ 
+
+
+                        </label>
+                        <div class="dropdownContainer categorySystemInputWrapper">
+                            <input name="question1_1"
+                                class="textarea smallTextarea check-answer categorySystemInput question1_1"
+                                autocomplete="off" placeholder="Kategorie" required></input>
+                            <div class="inputListItemCancel">
+                                <i class="iconCancel" onclick="removeInputList(this);"
+                                    onkeydown="removeInputListOnKey(this);" tabindex="0"></i>
+                            </div>
+                            <button class="chooseCategoryButton">Auswählen...</button>
+                        </div>
+                        <div class="categorySystemContainer">
+                            <div class="categoryOverlayCancel">
+                                <i class="iconCancel" onclick="closeOverlay(this);" onkeydown="closeOverlayOnKey(this);"
+                                    tabindex="0"></i>
+                            </div>
+                            <h3 class="categorySystemHeadline">Wählen Sie eine Kategorie aus:</h3>
+                            <div class="categoryFlexContainer">
+                                <div class="categoryFlex categoryFirstRow"></div>
+                                <div class="categoryFlex categorySecondRow"></div>
+                                <div class="categoryFlex categoryThirdRow"></div>
+                            </div>
+                            <div class="categorySystemFooter">
+                                <input name="question1_2" class="textarea smallTextarea categorySystemInput -3547155663305458280"
+                                    autocomplete="off" placeholder="Kategorie"></input>
+                                <button class="primaryButton saveButton buttonInactive" onclick="closeOverlay(this);"
+                                    onkeydown="closeOverlayOnKey(this);">Speichern</button>
+                            </div>
+                        </div>
+                        <div class="categoryOverlay"></div>
+                        <div class="categorySuggestionContainer">
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <label><span class="labelText">Welche Inhalte sollen zu dem Thema behandelt
+                                werden?</span>
+                            <textarea name="question2" class="textarea check-answer question2" autocomplete="off"
+                                placeholder="z.B. Stammdaten"></textarea>
+                        </label>
+                    </div>
+
+ 
+                    <button class="primaryButton" onclick="showNext(this);">Weiter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="teilnehmer">
+            <div class="cardWrapper">
+                <button class="backButton" onclick="showPrevious(this);">Zurück</button>
+                <div class="card">
+                    <h2 class="cardHeadline">Teilnehmer</h2>
+
+                    <div class="inputWrapper required">
+                        <label for="question3">
+                            <span class="labelText">Wie viele Personen sollen ungefähr teilnehmen? <span
+                                    class="requiredStar">*</span>
+                            </span>
+                        </label>
+                        <div class="rangeContainer">
+                            <span>1</span>
+                            <div class="sliderLableContainer">
+                                <input type="range" min="1" max="100" value="50" class="slider check-answer question3 -4268962273455824140"
+                                    id="question3" oninput="sliderValue(this)" required>
+                                <span class="sliderLabel">50</span>
+                            </div>
+                            <span>>100</span>
+                        </div>
+
+                    </div>
+
+                    <div class="inputWrapper required">
+                        <label><span class="labelText">Wer ist die Zielgruppe? <span
+                                    class="requiredStar">*</span></span>
+                            <textarea name="question4" class="textarea check-answer question4" autocomplete="off"
+                                placeholder="z.B. Position, Beruf/Ausbildung, Branche, Erfahrung, Alter, Medienkompetenz"
+                                required></textarea>
+                        </label>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <label for="question5">
+                            <span class="labelText">Wie schätzen Sie beim angefragten Thema den Stand von Wissen &
+                                Fähigkeiten der Teilnehmenden ein?
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionMiddle">
+                                        <div class="infoBoxOverflow">
+                                            <strong>Anfänger:</strong><br>
+                                            Anfänger haben wenig oder keine Grundkenntnisse und sind mit grundlegenden
+                                            Zusammenhängen wenig oder gar nicht vertraut.<br><br>
+
+                                            <strong>Fortgeschrittene:</strong><br>
+                                            Fortgeschrittene können Grundkenntnisse in der Praxis anwenden und
+                                            Probleme/Herausforderungen im Themenfeld analysieren.<br><br>
+
+                                            <strong>Experten:</strong><br>
+                                            Experten können verschiedene Wissensbereiche zur Lösung komplexer Probleme
+                                            zusammenführen und Modelle, Lösungen oder Verfahren hinsichtlich ihrer
+                                            Zweckmäßigkeit beurteilen.
+                                        </div>
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div id="question5" class="multipleButton">
+                            <button class="singleMultipleButton buttonStart check-answer question5 -5165470176262312330" option_id="1075624531977688070"
+                                onclick="multipleButtonActiveAnswerMultible(this);">Anfänger</button>
+                            <button class="singleMultipleButton buttonMiddle check-answer question5 -5165470176262312330" option_id="-4645660111916325070"
+                                onclick="multipleButtonActiveAnswerMultible(this);">Fortgeschrittene</button>
+                            <button class="singleMultipleButton buttonEnd check-answer question5 -5165470176262312330" option_id="6854782291272041710"
+                                onclick="multipleButtonActiveAnswerMultible(this);">Experten</button>
+                        </div>
+                        <label>
+                            <textarea name="question5_1" class="textarea question5_1 401746071765203740" autocomplete="off"
+                                placeholder='Ergänzende Angaben, z.B. „Einige Teilnehmer haben bereits eine Grundlagenschulung im Bereich PLM absolviert.“'></textarea>
+                        </label>
+                    </div>
+
+                    <button class="primaryButton" onclick="showNext(this);">Weiter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="ziel">
+            <div class="cardWrapper">
+                <button class="backButton" onclick="showPrevious(this);">Zurück</button>
+                <div class="card">
+                    <h2 class="cardHeadline">Ziel</h2>
+                    <div class="inputWrapper required">
+                        <label for="question6">
+                            <span class="labelText">Welches Level sollen die Teilnehmenden am Ende erreichen? <span
+                                    class="requiredStar">*</span>
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionTop">
+                                        <div class="infoBoxOverflow">
+                                            <strong>Grundstufe:</strong><br>
+                                            Die Teilnehmenden kennen wichtige Begrifflichkeiten des Themengebiets und
+                                            verstehen
+                                            grundlegende Zusammenhänge.<br><br>
+
+                                            <strong>Aufbaustufe:</strong><br>
+                                            Die Teilnehmenden können ihre fundierten Grundkenntnisse in der Praxis
+                                            anwenden
+                                            und
+                                            Probleme/Herausforderungen analysieren.<br><br>
+
+                                            <strong>Vertiefungsstufe:</strong><br>
+                                            Die Teilnehmenden können verschiedene Wissensbereiche zur Lösung komplexer
+                                            Probleme
+                                            zusammenführen und Modelle, Lösungen oder Verfahren hinsichtlich ihrer
+                                            Zweckmäßigkeit
+                                            beurteilen.
+                                        </div>
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div id="question6" class="multipleButton" required>
+                            <button class="singleMultipleButton buttonStart check-answer question6 -9022484519455170860" option_id="332934136140726600"
+                                onclick="multipleButtonActive(this);">Grundstufe</button>
+                            <button class="singleMultipleButton buttonMiddle check-answer question6 -9022484519455170860" option_id="-3882102874194867100"
+                                onclick="multipleButtonActive(this);">Aufbaustufe</button>
+                            <button class="singleMultipleButton buttonEnd check-answer question6 -9022484519455170860" option_id="4643691154262170830"
+                                onclick="multipleButtonActive(this);">Vertiefungsstufe</button>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper inputWrapperTextarea required">
+                        <label><span class="labelText">Was sollen die Teilnehmenden nach Abschluss besser oder anders
+                                können? <span class="requiredStar">*</span><br><br>Die Teilnehmenden können...</span>
+                            <ul class="inputList">
+                                <li class="inputListItem">
+                                    <textarea name="question7" class="textarea check-answer question7"
+                                        autocomplete="off" placeholder="Ziel eingeben..." required></textarea>
+                                </li>
+                            </ul>
+                            <button class="addButton" onclick="addInputList(this);">+ Hinzufügen</button>
+                            <textarea name="question7_1" id="allGoals" class="textarea allTexts question7_1" autocomplete="off"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <label for="question8">
+                            <span class="labelText">Welche Form des Abschlusses wird angestrebt bzw. wie soll dieser
+                                dokumentiert werden?
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionMiddle">
+                                        <div class="infoBoxOverflow">
+                                            <strong>Teilnahmebescheinigung:</strong><br>
+                                            Schriftliche Bescheinigung der Teilnahme in gedruckter und/oder digitaler
+                                            Form.<br><br>
+
+                                            <strong>Anbieterzertifikat:</strong><br>
+                                            Anbieter stellt nach erfolgreicher Prüfung ein Zertifikat aus.<br><br>
+
+                                            <strong>Hochschulzertifikat:</strong><br>
+                                            Zertifikat einer akkreditierten Hochschule (z.B. Nanodegree, Certifcate of
+                                            Advanced Studies, ECTS-Vergabe).<br><br>
+
+                                            <strong>IHK-/HWK-Zertifikat:</strong><br>
+                                            IHK/HWK- Zertifikat oder Weiterbildung soll auf eine IHK/HWK-Prüfung
+                                            vorbereiten.<br><br>
+
+                                            <strong>Berufsausbildungsqualifikation:</strong><br>
+                                            Staatlich anerkannte Qualifikation mit Prüfung nach BBiG (z.B. Geprüfter
+                                            Fachwirt, Techniker, Meister).<br><br>
+
+                                            <strong>Hochschulabschluss (Bachelor/Master):</strong><br>
+                                            Akademischer Grad einer akkreditierten Hochschule in Form eines
+                                            Bachelor-/Master-Abschluss.<br><br>
+
+                                            <strong>Badge:</strong><br>
+                                            Digitaler Qualifizierungsnachweis in Form einer Bilddatei mit Metadaten.
+                                        </div>
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div id="question8" class="checkboxList">
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox1" value="Teilnahmebescheinigung"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="2264765800388375260">
+                                <span></span>
+                                Teilnahmebescheinigung
+                            </label>
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox2" value="Anbieterzertifikat"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="-3596031092873957510">
+                                <span></span>
+                                Anbieterzertifikat
+                            </label>
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox3" value="Hochschulzertifikat"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="780641509807078180">
+                                <span></span>
+                                Hochschulzertifikat
+                            </label>
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox4" value="IHK-/HWK-Zertifikat"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="-5225360326873559010">
+                                <span></span>
+                                IHK-/HWK-Zertifikat
+                            </label>
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox5" value="Berufsausbildungsqualifikation"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="195750276001366660">
+                                <span></span>
+                                Berufsausbildungsqualifikation
+                            </label>
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox6" value="Hochschulabschluss"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="-7702187073169696010">
+                                <span></span>
+                                Hochschulabschluss
+                            </label>
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox7" value="Badge"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="-3994827953085832590">
+                                <span></span>
+                                Badge
+                            </label>
+                            <label class="checkboxItem">
+                                <input type="checkbox" name="checkbox8" value="Ich weiß nicht/egal"
+                                    class="checkbox check-answer question8 -7927954973256555860" option_id="4054009885944292670">
+                                <span></span>
+                                Ich weiß nicht/egal
+                            </label>
+                        </div>
+                    </div>
+                    <button class="primaryButton" onclick="saveInputList(this); showNext(this);">Weiter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="format">
+            <div class="cardWrapper">
+                <button class="backButton" onclick="showPrevious(this);">Zurück</button>
+                <div class="card">
+                    <h2 class="cardHeadline">Format</h2>
+
+                    <div class="inputWrapper multipleButtonRadioQuestions required">
+                        <label for="question9">
+                            <span class="labelText">Wie soll Ihre Weiterbildung durchgeführt werden? <span
+                                    class="requiredStar">*</span>
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionMiddle">
+                                        <div class="infoBoxOverflow">
+                                            <strong>In Präsenz:</strong><br>
+                                            Die Weiterbildung findet an einem Ort Ihrer Wahl mit persönlicher Begegnung
+                                            statt.<br><br>
+
+                                            <strong>Digital:</strong><br>
+                                            Die Weiterbildung findet rein über digitale Kanäle statt.<br><br>
+
+                                            <strong>Digital und Präsenz:</strong><br>
+                                            Die Weiterbildung findet an digitalen und physischen Lernorten mit
+                                            persönlicher
+                                            Begegnung statt.
+                                        </div>
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div class="multipleButton multipleButtonResponse" required>
+                            <button class="singleMultipleButton buttonStart check-answer question9 7782559299616829700"
+                                name="questionPresence" onclick="multipleButtonActive(this);">Präsenz</button>
+                            <button class="singleMultipleButton buttonMiddle check-answer question9 7782559299616829700"
+                                name="questionDigital" onclick="multipleButtonActive(this);">Digital</button>
+                            <button class="singleMultipleButton buttonEnd check-answer question9 7782559299616829700"
+                                name="questionDigitalPresence" onclick="multipleButtonActive(this);">Digital +
+                                Präsenz</button>
+                        </div>
+                        <div id="question9" class="checkboxList singleCheckbox singleMultipleButtonCheckbox active">
+                            <!-- hiddenCheckbox -->
+                            <label class="checkboxItem" onclick="inactiveAnswer(this)">
+                                <input type="checkbox" name="checkbox1" value="Offen für Vorschläge"
+                                    class="checkbox check-answer question9 7782559299616829700">
+                                <span></span>
+                                Offen für Vorschläge
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper questionPresence">
+                        <label for="question10">
+                            <span class="labelText">Wo soll Ihre Weiterbildung durchgeführt werden?
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionTop">
+                                        <div class="infoBoxOverflow">
+                                            <strong>Inhouse im Unternehmen:</strong><br>
+                                            Die Weiterbildung findet an einem Ort Ihrer Wahl mit persönlicher Begegnung
+                                            statt.<br><br>
+
+                                            <strong>Schulungsräume des Anbieters:</strong><br>
+                                            Sofern vorhanden, findet die Weiterbildung in geeigneten Räumlichkeiten des
+                                            Anbieters statt.<br><br>
+
+                                            <strong>Tagungshotel:</strong><br>
+                                            Die Weiterbildung findet in einem Tagungshotel Ihrer Wahl statt.<br><br>
+
+                                            <strong>Event- oder Erlebnislocation:</strong><br>
+                                            Die Weiterbildung findet in einer von Ihnen gewählten Events- oder
+                                            Erlebnislocation satt.
+                                        </div>
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div id="question10" class="radioList">
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup1" value="Inhouse im Unternehmen"
+                                    class="radio check-answer question10 -3660696668465634010" option_id="3748802501281719710">
+                                <span></span>
+                                Inhouse im Unternehmen
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup1" value="Schulungsräume des Anbieters"
+                                    class="radio check-answer question10 -3660696668465634010" option_id="-9187328269420716740">
+                                <span></span>
+                                Schulungsräume des Anbieters
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup1" value="Tagungshotel"
+                                    class="radio check-answer question10 -3660696668465634010" option_id="-498402298519619110">
+                                <span></span>
+                                Tagungshotel
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup1" value="Event- oder Erlebnislocation"
+                                    class="radio check-answer question10 -3660696668465634010" option_id="8261365598101510800">
+                                <span></span>
+                                Event- oder Erlebnislocation
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup1" value="Keine Präferenz (offen für Vorschläge)"
+                                    class="radio check-answer question10 -3660696668465634010" option_id="-7643312174069487450">
+                                <span></span>
+                                Keine Präferenz (offen für Vorschläge)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper questionDigital">
+                        <label for="question11">
+                            <span class="labelText">Welches digitale Format wünschen Sie sich?
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionTop">
+                                        <div class="infoBoxOverflow">
+                                            <strong>Live-Online-Training:</strong><br>
+                                            Trainer/-innen und Teilnehmende sind über ein Videokonferenz-Tool in
+                                            Echtzeit
+                                            miteinander verbunden.<br><br>
+
+                                            <strong>E-Learning:</strong><br>
+                                            Multimedial aufbereitetes Lernprogramm, das von Teilnehmenden zeit- und
+                                            ortsunabhängig im Internet, z.B. über Learning Management Systeme absolviert
+                                            werden können.<br><br>
+
+                                            <strong>Hybrides Format:</strong><br>
+                                            Kombination aus Live-Online und E-Learning.
+                                        </div>
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div id="question11" class="radioList">
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup2" value="Live-Online-Training"
+                                    class="radio check-answer question11 -1160524995243098970" option_id="-3240610941991933530">
+                                <span></span>
+                                Live-Online-Training
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup2" value="E-Learning"
+                                    class="radio check-answer question11 -1160524995243098970" option_id="500968046203896450">
+                                <span></span>
+                                E-Learning
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup2" value="Hybrides Format"
+                                    class="radio check-answer question11 -1160524995243098970" option_id="-270771688053545850">
+                                <span></span>
+                                Hybrides Format
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup2" value="Keine Präferenz (offen für Vorschläge)"
+                                    class="radio check-answer question11 -1160524995243098970" option_id="-1674651294615293200">
+                                <span></span>
+                                Keine Präferenz (offen für Vorschläge)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper questionDigital">
+                        <label for="question12">
+                            <span class="labelText">In welcher Infrastruktur soll das Weiterbildungsangebot
+                                bereitgestellt werden?
+                            </span>
+                        </label>
+                        <div id="question12" class="radioList">
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup3" value="Eigenes Learning Management System (LMS)"
+                                    class="radio check-answer question12 -7198792838469751310" option_id="5234154449606334260">
+                                <span></span>
+                                Eigenes Learning Management System (LMS)
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup3"
+                                    value="Learning Management System (LMS) des Anbieters"
+                                    class="radio check-answer question12 -7198792838469751310" option_id="378471806132120030">
+                                <span></span>
+                                Learning Management System (LMS) des Anbieters
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup3" value="Keine Präferenz (offen für Vorschläge)"
+                                    class="radio check-answer question12 -7198792838469751310" option_id="-2045570136924133720">
+                                <span></span>
+                                Keine Präferenz (offen für Vorschläge)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper questionDigitalPresence">
+                        <label for="question13">
+                            <span class="labelText">Wo soll der Präsenzanteil stattfinden?
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionTop">
+                                        <div class="infoBoxOverflow">
+                                            <strong>Inhouse im Unternehmen:</strong><br>
+                                            Die Weiterbildung findet an einem Ort Ihrer Wahl mit persönlicher Begegnung
+                                            statt.<br><br>
+
+                                            <strong>Schulungsräume des Anbieters:</strong><br>
+                                            Sofern vorhanden, findet die Weiterbildung in geeigneten Räumlichkeiten des
+                                            Anbieters statt.<br><br>
+
+                                            <strong>Tagungshotel:</strong><br>
+                                            Die Weiterbildung findet in einem Tagungshotel Ihrer Wahl statt.<br><br>
+
+                                            <strong>Event- oder Erlebnislocation:</strong><br>
+                                            Die Weiterbildung findet in einer von Ihnen gewählten Events- oder
+                                            Erlebnislocation satt.
+                                        </div>
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div id="question13" class="radioList">
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup4" value="Inhouse im Unternehmen"
+                                    class="radio check-answer question13 -6857635318300007730" option_id="7463824854474981510">
+                                <span></span>
+                                Inhouse im Unternehmen
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup4" value="Schulungsräume des Anbieters"
+                                    class="radio check-answer question13 -6857635318300007730" option_id="-1037299789212109780">
+                                <span></span>
+                                Schulungsräume des Anbieters
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup4" value="Tagungshotel"
+                                    class="radio check-answer question13 -6857635318300007730" option_id="5986169739821367050">
+                                <span></span>
+                                Tagungshotel
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup4" value="Event- oder Erlebnislocation"
+                                    class="radio check-answer question13 -6857635318300007730" option_id="-4376546870126836960">
+                                <span></span>
+                                Event- oder Erlebnislocation
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup4" value="Keine Präferenz (offen für Vorschläge)"
+                                    class="radio check-answer question13 -6857635318300007730" option_id="6509881112930350750">
+                                <span></span>
+                                Keine Präferenz (offen für Vorschläge)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper questionDigitalPresence">
+                        <label for="question14">
+                            <span class="labelText">Welches digitale Format wünschen Sie sich?
+                                <span class="infoBoxWrapper">
+                                    <span class="questionCircle" tabindex="0">
+                                        <span class="questionMark">?</span>
+                                    </span>
+                                    <span class="infoBox infoPositionTop">
+                                        <strong>Live-Online-Training:</strong><br>
+                                        Trainer/-innen und Teilnehmende sind über ein Videokonferenz-Tool in Echtzeit
+                                        miteinander verbunden.<br><br>
+
+                                        <strong>E-Learning:</strong><br>
+                                        Multimedial aufbereitet Lernprogramme, die von Teilnehmenden zeit- und
+                                        ortsunabhängig im Internet, z.B. über Learning Management Systeme absolviert
+                                        werden können.<br><br>
+
+                                        <strong>Hybrides Format:</strong><br>
+                                        Kombination aus Live-Online und E-Learning.
+                                    </span>
+                                    <div class="infoOverlay"></div>
+                                </span>
+                            </span>
+                        </label>
+                        <div id="question14" class="radioList">
+                            <label class="radioItem" onclick="toggleNextRadioQuestion(this);">
+                                <input type="radio" name="radioGroup5" value="Live-Online-Training"
+                                    class="radio check-answer question14 -2990874983264856780" option_id="8474065759099590790">
+                                <span></span>
+                                Live-Online-Training
+                            </label>
+                            <label class="radioItem openNextQuestion" onclick="toggleNextRadioQuestion(this);">
+                                <input type="radio" name="radioGroup5" value="E-Learning"
+                                    class="radio check-answer question14 -2990874983264856780" option_id="-6961778311755614030">
+                                <span></span>
+                                E-Learning
+                            </label>
+                            <label class="radioItem" onclick="toggleNextRadioQuestion(this);">
+                                <input type="radio" name="radioGroup5" value="Keine Präferenz (offen für Vorschläge)"
+                                    class="radio check-answer question14 -2990874983264856780" option_id="4764714827567776080">
+                                <span></span>
+                                Keine Präferenz (offen für Vorschläge)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper questionDigitalPresence hide">
+                        <label for="question15">
+                            <span class="labelText">In welcher Infrastruktur soll das Weiterbildungsangebot
+                                bereitgestellt werden?
+                            </span>
+                        </label>
+                        <div id="question15" class="radioList">
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup6" value="Eigenes Learning Management System (LMS)"
+                                    class="radio check-answer question15 -4366418303564927030" option_id="-3119254158742544990">
+                                <span></span>
+                                Eigenes Learning Management System (LMS)
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup6"
+                                    value="Learning Management System (LMS) des Anbieters"
+                                    class="radio check-answer question15 -4366418303564927030" option_id="1429553043517134190">
+                                <span></span>
+                                Learning Management System (LMS) des Anbieters
+                            </label>
+                            <label class="radioItem">
+                                <input type="radio" name="radioGroup6" value="Keine Präferenz (offen für Vorschläge)"
+                                    class="radio check-answer question15 -4366418303564927030" option_id="7069423136552279010">
+                                <span></span>
+                                Keine Präferenz (offen für Vorschläge)
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="primaryButton" onclick="showNext(this);">Weiter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="rahmenbedingungen">
+            <div class="cardWrapper">
+                <button class="backButton" onclick="showPrevious(this);">Zurück</button>
+                <div class="card">
+                    <h2 class="cardHeadline">Rahmenbedingungen</h2>
+
+
+                    <div class="inputWrapper required">
+                        <label><span class="labelText">Welchen zeitlichen Umfang soll die Weiterbildung ungefähr haben?
+                                <span class="requiredStar">*</span></span>
+                        </label>
+                        <div class="rangeContainer">
+                            <div class="sliderLableContainer">
+                                <input type="range" min="1" max="16" step="0.5" value="8"
+                                    class="slider check-answer secondSlider" id="question16" oninput="sliderValue(this)"
+                                    required>
+                                <span class="sliderLabel">8</span>
+                            </div>
+                        </div>
+                        <div class="hourDayContainer">
+                            <li class="inputItem">
+                                <input type="number" class="sliderInput check-answer question16 6890281787929000090" name="question16"
+                                    min="0" max="100" onchange="outputValue(this)" required>
+
+                            </li>
+                            <div class="multipleButton alwaysActive no-check-answer question16">
+                                <button class="singleMultipleButton buttonStart active question16"
+                                    onclick="multipleButtonActive(this);">Stunden</button>
+                                <button class="singleMultipleButton buttonEnd question16"
+                                    onclick="multipleButtonActive(this);">Tage</button>
+                            </div>
+                        </div>
+                        <div id="question16" class="checkboxList singleCheckbox sliderCheckbox">
+                            <label class="checkboxItem" onclick="inactiveAnswer(this)">
+                                <input type="checkbox" name="checkbox1" value="Offen für Vorschläge"
+                                    class="checkbox check-answer question16">
+                                <span></span>
+                                Offen für Vorschläge
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <label for="question17">
+                            <span class="labelText">Wann soll die Weiterbildung durchgeführt werden?
+                            </span>
+                        </label>
+                        <div id="question17" class="multipleButton">
+                            <button class="singleMultipleButton buttonStart check-answer question17 -812571589422049910"  option_id="-9173282018719349950"
+                                onclick="multipleButtonActive(this);">In 1-3 Monaten</button>
+                            <button class="singleMultipleButton buttonMiddle check-answer question17 -812571589422049910"  option_id="4853452095656377080"
+                                onclick="multipleButtonActive(this);">In 3-6 Monaten</button>
+                            <button class="singleMultipleButton buttonEnd check-answer question17 -812571589422049910" option_id="-3783798409397940590"
+                                onclick="multipleButtonActive(this);">In 6-12 Monaten</button>
+                        </div>
+                        <label>
+                            <textarea name="question17" class="textarea question17_1 4035343967521199580" autocomplete="off"
+                                placeholder="Ergänzende Angaben"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <label><span class="labelText">Welchen Budgetrahmen haben Sie für die Weiterbildung
+                                insgesamt?</span>
+                        </label>
+                        <div class="rangeContainer">
+                            <div class="sliderLableContainer">
+                                <input type="range" min="500" max="30000" value="15000"
+                                    class="slider check-answer thirdSlider" id="question18" step="500"
+                                    oninput="sliderValue(this)">
+                                <span class="sliderLabel">15000</span>
+                            </div>
+                        </div>
+                        <div class="hourDayContainer">
+                            <li class="inputItem singleItem">
+                                <input type="number" class="sliderInput question18 7293279947918769110" name="question18" min="1000"
+                                    max="1000000" step="1000" onchange="outputValue(this)">
+                                <div class="currencySymbol">€</div>
+                            </li>
+                            <div class="multipleButton alwaysActive no-check-answer question18">
+                                <button class="singleMultipleButton buttonStart sliderConfig1 active question18"
+                                    onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Pro
+                                    Person</button>
+                                <button class="singleMultipleButton buttonEnd sliderConfig2 question18"
+                                    onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Insgesamt</button>
+                            </div>
+                        </div>
+                        <div id="question18" class="checkboxList singleCheckbox sliderCheckbox">
+                            <label class="checkboxItem" onclick="inactiveAnswer(this)">
+                                <input type="checkbox" name="checkbox1" value="Offen für Vorschläge"
+                                    class="checkbox check-answer question18">
+                                <span></span>
+                                Offen für Vorschläge
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper selectWrapperTextarea">
+                        <label><span class="labelText">In welcher Sprache soll die Weiterbildung durchgeführt
+                                werden?</span>
+                            <ul class="inputList" id="question19">
+                                <li class="inputListItem">
+                                    <select class="dropdown check-answer select-add-input question19" name="question19"
+                                        onclick="selectAddInput(this)">
+                                        <option value="" disabled selected hidden>Sprache auswählen...</option>
+                                        <option value="Deutsch">Deutsch</option>
+                                        <option value="Englisch">Englisch</option>
+                                        <option value="Französisch">Französisch</option>
+                                        <option value="Italienisch">Italienisch</option>
+                                        <option value="Weitere" class="additionalInput">Weitere</option>
+                                    </select>
+                                    <div class="inputListItemArrow">
+                                        <i class="iconArrow"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="addButton" onclick="addDropdownList(this);">+ Hinzufügen</button>
+                            <textarea name="question19_1" id="allLanguages" class="textarea allTexts question19_1 5273801592987243770" autocomplete="off"></textarea>
+                        </label>
+                    </div>
+
+                    <button class="primaryButton" onclick="saveInputListDropDown(this); showNext(this);">Weiter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="besonderheiten">
+            <div class="cardWrapper">
+                <button class="backButton" onclick="showPrevious(this);">Zurück</button>
+                <div class="card">
+                    <h2 class="cardHeadline">Besonderheiten</h2>
+
+                    <div class="inputWrapper">
+                        <label><span class="labelText">Weitere Anmerkungen für den Anbieter:</span>
+                            <textarea name="question20" class="textarea bigTextarea check-answer question20 -8310085781429795890"
+                                autocomplete="off"
+                                placeholder="z.B. Informationen zu aktuell verwendeter Soft- oder Hardware, Wünsche für unternehmensspezifische Anpassungen, Hinweise zu von Ihnen bereitgestellten Materialien oder Fallbeispielen"></textarea>
+                        </label>
+                    </div>
+
+                    <button class="primaryButton" onclick="showNext(this);">Weiter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="abschluss">
+            <div class="cardWrapper">
+                <button class="backButton" onclick="showPrevious(this);">Zurück</button>
+                <div class="card">
+                    <h2 class="cardHeadline">Abschluss</h2>
+
+                    <div class="inputWrapper required">
+                        <label for="question22">
+                            <span class="labelText">Ich möchte meine Anfrage unverbindlich an folgende Anbieter in OWL versenden: <span
+                                    class="requiredStar">*</span>
+                            </span>
+                        </label>
+
+                                <div class="checkboxList">
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox1" value="Fraunhofer IEM"
+                                                class="checkbox check-answer question22 -2930431412281367090" option_id="3629852861067961220">
+                                            <span></span>
+                                            Fraunhofer IEM Academy
+                                        </label>
+                                        <div class="checkboxListItemArrow"
+                                            onclick="toggleInformationTable(this, event);">
+                                            <i class="iconArrow"></i>
+                                        </div>
+                                    </div>
+                                    <div class="informationTable">
+                                        <div class="informationTableHeader">
+                                            <img class="informationTableLogo" src="img/Academy_Logo_big.png"
+                                                alt="Logo von IEM Academy">
+                                            <a href="https://www.iem.fraunhofer.de/de/academy.html" target="blank">Zur
+                                                Anbieter-Website</a>
+                                        </div>
+                                        <div class="informationTableRow">
+                                            <p class="informationTableFirstColumn">Formate:</p>
+                                            <p class="informationTableSecondColumn">Präsenz, digital, hybrid</p>
+                                        </div>
+                                        <div class="informationTableRow">
+                                            <p class="informationTableFirstColumn">Schulungsorte:</p>
+                                            <p class="informationTableSecondColumn">Paderborn, Inhouse</p>
+                                        </div>
+                                        <div class="informationTableRow">
+                                            <p class="informationTableFirstColumn">Trainer*innen:</p>
+                                            <p class="informationTableSecondColumn">>25</p>
+                                        </div>
+                                        <div class="informationTableRow">
+                                            <p class="informationTableFirstColumn">Zertifikate:</p>
+                                            <p class="informationTableSecondColumn">Teilnahmebescheinigungen,
+                                                Anbieterzertifikat</p>
+                                        </div>
+                                        <div class="informationTableRow">
+                                            <p class="informationTableFirstColumn">Kurzbeschreibung:</p>
+                                            <p class="informationTableSecondColumn">Die Fraunhofer IEM Academy bietet
+                                                hochwertige Weiterbildungsangebote für Fach- und Führungskräfte. In den
+                                                Angeboten werden neuste Forschungserkenntnisse und
+                                                State-of-the-Art-Methoden für das Engineering der Zukunft zu spannenden
+                                                Lernerlebnissen aufbereitet.</p>
+                                        </div>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox2" value="DMG Mori" class="checkbox check-answer question22 -2930431412281367090" option_id="-5204847475485867980">
+                                            <span></span>
+                                            DMG Mori
+                                        </label>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox2" value="Phoenix Contact" class="checkbox check-answer question22 -2930431412281367090" option_id="-5885003231564618550">
+                                            <span></span>
+                                            Phoenix Contact
+                                        </label>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox2" value="Werdegang-Werkstatt" class="checkbox check-answer question22 -2930431412281367090" option_id="5249802094275520310">
+                                            <span></span>
+                                            Werdegang-Werkstatt
+                                        </label>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox2" value="VHS Gütersloh" class="checkbox check-answer question22 -2930431412281367090" option_id="-6014203656945559180">
+                                            <span></span>
+                                            VHS Gütersloh
+                                        </label>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox2" value="UNITY AG" class="checkbox check-answer question22 -2930431412281367090" option_id="8126225646585607661">
+                                            <span></span>
+                                            UNITY AG
+                                        </label>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox2" value="comorrow by Melitta" class="checkbox check-answer question22 -2930431412281367090" option_id="90764229966135070">
+                                            <span></span>
+                                            comorrow by Melitta
+                                        </label>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox4" value="gpdm" class="checkbox check-answer question22 -2930431412281367090" option_id="-5477407213936854750">
+                                            <span></span>
+                                            gpdm
+                                        </label>
+                                    </div>
+                                    <div class="checkboxItemWrapper">
+                                        <label class="checkboxItem">
+                                            <input type="checkbox" name="checkbox5" value="DAA" class="checkbox check-answer question22 -2930431412281367090" option_id="1252048912699142330">
+                                            <span></span>
+                                            DAA
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                    </div>
+
+                    <div class="inputWrapper required">
+                        <label for="question23">
+                            <span class="labelText">Wie möchten Sie vom Anbieter kontaktiert werden? <span
+                                    class="requiredStar">*</span>
+                            </span>
+                        </label>
+                        <div id="question23" class="multipleButton multipleButtonResponse" required>
+                            <button class="singleMultipleButton buttonStart check-answer question23 -3565121280586418680" option_id="579364066700937530"
+                                onclick="multipleButtonActive(this);" name="questionEmail">E-Mail</button>
+                            <button class="singleMultipleButton buttonEnd check-answer question23 -3565121280586418680" option_id="3786880976117244520"
+                                onclick="multipleButtonActive(this);" name="questionTelephone">Telefon</button>
+                        </div>
+                    </div>
+
+                    <div class="inputWrapper questionEmail required">
+                        <label><span class="question23">Name *</span>
+                            <div class="inputItem">
+                                <input type="input" class="input check-answer question23 9005901207318568320" name="contact_name"
+                                    autocomplete="off" required>
+                            </div>
+                        </label>
+                        <label><span class="question23">E-Mail *</span>
+                            <div class="inputItem">
+                                <input type="input" class="input check-answer question23 6083130473180617250 checkEmailValidation"
+                                    name="contact_email" autocomplete="off" required>
+                            </div>
+                        </label>
+                        <label><span class="question23">Telefon</span>
+                            <div class="inputItem">
+                                <input type="input" class="input noRequiredDesign question23 1769388826830243300" name="contact_tel"
+                                    autocomplete="off">
+                            </div>
+                        </label>
+                        <label><span class="question23">Unternehmen</span>
+                            <div class="inputItem">
+                                <input type="input" class="input noRequiredDesign question23 -7331168861055180150" name="contact_company"
+                                    autocomplete="off">
+                            </div>
+                        </label>
+                        <label><span class="question23">Position</span>
+                            <div class="inputItem">
+                                <input type="input" class="input noRequiredDesign question23 -5382078710932503710" name="contact_position"
+                                    autocomplete="off">
+                            </div>
+                        </label>
+                        <label><span class="labelText question23">Ergänzende Informationen</span>
+                            <textarea name="contact_more_info" class="input textarea noRequiredDesign question23 2192384661115568360"
+                                autocomplete="off" placeholder="z.B. Branche, Produkte, Unternehmensgröße"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="inputWrapper questionTelephone">
+                        <label><span class="question23">Name *</span>
+                            <div class="inputItem">
+                                <input type="input" class="input check-answer question23 -5935897334659677360" name="contact_name"
+                                    autocomplete="off" required>
+                            </div>
+                        </label>
+                        <label><span class="question23">E-Mail</span>
+                            <div class="inputItem">
+                                <input type="input" class="input noRequiredDesign question23 -516519611847937850 checkEmailValidation"
+                                    name="contact_email" autocomplete="off">
+                            </div>
+                        </label>
+                        <label><span class="question23">Telefon *</span>
+                            <div class="inputItem">
+                                <input type="input" class="input check-answer question23 1421266559869014290" name="contact_tel"
+                                    autocomplete="off" required>
+                            </div>
+                        </label>
+                        <label><span class="question23">Unternehmen</span>
+                            <div class="inputItem">
+                                <input type="input" class="input noRequiredDesign question23 4857124570916322630" name="contact_company"
+                                    autocomplete="off">
+                            </div>
+                        </label>
+                        <label><span class="question23">Position</span>
+                            <div class="inputItem">
+                                <input type="input" class="input noRequiredDesign question23 -4253906166654901030" name="contact_position"
+                                    autocomplete="off">
+                            </div>
+                        </label>
+                        <label><span class="labelText question23">Ergänzende Informationen</span>
+                            <textarea name="contact_more_info" class="input textarea noRequiredDesign question23 -7974035170674233580"
+                                autocomplete="off" placeholder="z.B. Branche, Produkte, Unternehmensgröße"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="inputWrapper">
+                        <label><span class="labelText">Bis wann möchten Sie eine Antwort erhalten?</span>
+                            <input name="question24" id="question24"
+                                class="date_inputItem check-answer customDateInput question24 -4526400345000751610" type="date" multiple>
+
+                        </label>
+                    </div>
+
+
+                    <button class="primaryButton primaryButtonSend dynamicSubmit required-not-filled"
+                        onclick="checkSubmit(this);" onmouseover="checkSubmitRequired();">Absenden</button>
+                    <div class="submitMessage">
+                        Ihnen fehlen <span class="dynamicSubmitText">1 Pflichtangabe</span>, um Ihre Anfrage
+                        abzuschicken.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="veröffentlichung">
+            <div class="cardWrapper">
+
+                <div class="card">
+                    <div class="centerWrapper">
+                        <div id="bubble-container">
+                            <div class="itemOk">
+                                <i class="iconOk"></i>
+                            </div>
+                        </div>
+
+                        <h2>Ihre Anfrage wurde erfolgreich veröffentlicht!</h2>
+                        <p>Die Anbieter werden sich bei Ihnen melden.</p>
+                    </div>
+                    <div class="generatePDFWrapper">
+                        <button class="generatePDFButton" onclick="generatePDF();">Zusammenfassung der Anfrage als PDF
+                            herunterladen</button>
+                    </div>
+                    <button class="secondaryButton" onclick="self.close()">Schließen</button>
+                </div>
+                <button class="simpleButtonLink active" onclick="showPage(this); resetRequest();" href="#start">Erneut
+                    starten</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="progressWrapper">
+            <div class="progressContainer">
+                <div class="progressBar"></div>
+            </div>
+        </div>
+        <nav id="menuFooter">
+            <ul class="menuFooterList">
+                <li class="menuFooterListItem active">
+                    <a class="menuFooterListItemLink" href="#start" onclick="showPage(this);">
+                        <span class="footerTitel">Start</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="#thema" onclick="showPage(this);">
+                        <span class="footerTitel">Thema</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="#teilnehmer" onclick="showPage(this);">
+                        <span class="footerTitel">Teilnehmer</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="#ziel" onclick="showPage(this);">
+                        <span class="footerTitel">Ziel</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="#format" onclick="showPage(this);">
+                        <span class="footerTitel">Format</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="#rahmenbedingungen" onclick="showPage(this);">
+                        <span class="footerTitel">Rahmenbedingungen</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="#besonderheiten" onclick="showPage(this);">
+                        <span class="footerTitel">Besonderheiten</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="#abschluss" onclick="showPage(this);">
+                        <span class="footerTitel">Abschluss</span>
+                        <span class="footerRequiredCircle" data-required="0">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
