@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rahmendaten - Next Learning Creator</title>
+        
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="fonts/fonts.css" rel="stylesheet">
+        <link href="fonts/dooiconfont/dooiconfont.css" rel="stylesheet">
+        <script src="libs/jquery-3.6.1.min.js"></script>
+        <script src="libs/jquery-ui.min.js"></script>
+        <link href="libs/jquery-ui.min.css" rel="stylesheet">
+        <script src="libs/jquery.ui.touch-punch.js"></script>
+        <script src="libs/chart.umd.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="js/jsonInfotexts.js"></script>
+        <script src="js/scriptStructure.js"></script>
+        <script src="js/loadAndSaveData.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="headerLeft">
+                <a href="index.html" class="backButton small">Zurück</a>
+            </div>
+            <span id="logo">
+                <img class="logo" src="img/Logo_Next Learning_Creator.svg" alt="Logo Next Learning Creator">
+            </span>
+            <div class="headerRight">
+                <a href="content.html" class="primaryButton small">Weiter</a>
+            </div>
+        </header>
+        <main class="contentWidth">
+            <section id="data">
+                <div class="innerSection">
+                    <div class="innerSectionHeaderWrapper">
+                        <h1>Rahmendaten</h1>
+                        <a class="tertiaryButton small" onclick="deleteAllData();">Zurücksetzen</a>
+                    </div>
+                    <p>Geben Sie hier die Rahmendaten Ihres Lernangebots ein. So kann Sie der Creator ideal bei der Konzeption Ihres Lernangebots unterstützen.</p>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Allgemein</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Titel</span>
+                                    <input id="dataTitle" name="dataTitle" class="input" autocomplete="off" placeholder=""></input>
+                                </label>
+                            </div>
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Groblernziele <div class="infoFormButtonWrapper">
+                                            <button class="infotextButton infoFormButton" type="button" title="Erklärung anzeigen" data-infotext="groblernziele">?</button>
+                                        </div>
+                                    </span>
+                                    <span class="labelHelpText">Beispiel: Die Teilnehmenden können den Design-Thinking-Ansatz erläutern.</span>
+                                </label>
+                                <div class="multipleTextInputWrapper dataLearningTargetWrapper">
+                                    <div class="textInputBox entry-to-delete delete-stop noLevel dataLearningTargetRow">
+                                        <div class="conceptRow conceptLearningTargetLevel empty selectLearningTargetLevelButton">
+                                            <div class="conceptRowLightbox" style="display: none;">
+                                                <div class="conceptRowLightboxBackground"></div>
+                                                <div class="conceptRowLightboxContent">
+                                                    <div class="card">
+                                                        <!-- <div class="conceptRowLightboxHeader">Lernzielstufe wählen:</div> -->
+                                                        <div class="conceptRowLightboxInner">
+                                                            <div class="hasInfoButton">
+                                                                <a href="#" class="conceptRowLightboxLink learningTargetLevelLink learningTargetLevelLinkData recommendation" data-level="1">Stufe 1: <span class="copy">Wissen &amp; imitierend handeln</span>
+                                                                </a>
+                                                                <button class="infotextButton" type="button" title="Erklärung anzeigen" data-infotext="learningTargetLevel1">?</button>
+                                                            </div>
+                                                            <div class="hasInfoButton">
+                                                                <a href="#" class="conceptRowLightboxLink learningTargetLevelLink learningTargetLevelLinkData recommendation" data-level="2">Stufe 2: <span class="copy">Verstehen &amp; schematisch handeln</span>
+                                                                </a>
+                                                                <button class="infotextButton" type="button" title="Erklärung anzeigen" data-infotext="learningTargetLevel2">?</button>
+                                                            </div>
+                                                            <div class="hasInfoButton">
+                                                                <a href="#" class="conceptRowLightboxLink learningTargetLevelLink learningTargetLevelLinkData" data-level="3">Stufe 3: <span class="copy">Anwenden &amp; fachgerecht handeln</span>
+                                                                </a>
+                                                                <button class="infotextButton" type="button" title="Erklärung anzeigen" data-infotext="learningTargetLevel3">?</button>
+                                                            </div>
+                                                            <div class="hasInfoButton">
+                                                                <a href="#" class="conceptRowLightboxLink learningTargetLevelLink learningTargetLevelLinkData" data-level="4">Stufe 4: <span class="copy">Analysieren &amp; kontextabhängig handeln</span>
+                                                                </a>
+                                                                <button class="infotextButton" type="button" title="Erklärung anzeigen" data-infotext="learningTargetLevel4">?</button>
+                                                            </div>
+                                                            <div class="hasInfoButton">
+                                                                <a href="#" class="conceptRowLightboxLink learningTargetLevelLink learningTargetLevelLinkData" data-level="5">Stufe 5: <span class="copy">Evaluieren &amp; variabel handeln</span>
+                                                                </a>
+                                                                <button class="infotextButton" type="button" title="Erklärung anzeigen" data-infotext="learningTargetLevel5">?</button>
+                                                            </div>
+                                                            <div class="hasInfoButton">
+                                                                <a href="#" class="conceptRowLightboxLink learningTargetLevelLink learningTargetLevelLinkData" data-level="6">Stufe 6: <span class="copy">Erschaffen</span>
+                                                                </a>
+                                                                <button class="infotextButton" type="button" title="Erklärung anzeigen" data-infotext="learningTargetLevel6">?</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="conceptButton">
+                                                <span class="newText">Lernzielstufe auswählen</span>
+                                                <span class="conceptText">
+                                                    <span class="conceptTitle"></span>
+                                                    <!-- <span class="conceptContent"></span> -->
+                                                </span>
+                                                <span class="conceptEditButton dooIconContainer dooContainerName-pencil userIcon">
+                                                    <i class="dooIcon dooIcon-pencil dooIconSize-16"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <p class="textInputTitle">Die Teilnehmenden können</p>
+                                        <input name="dataLearningTargetText" class="input dataLearningTargetText" autocomplete="off" placeholder="Text eingeben..."></input>
+                                        <div class="dropdownContainer">
+                                            <select class="dropdown smallDropdown dataLearningTargetVerb" name="dataLearningTargetVerb" onchange="changeDropdownStatus(this);">
+                                                <option value="" disabled selected hidden>Verb auswählen...</option>
+                                            </select>
+                                            <div class="inputListItemArrow">
+                                                <span class="dooIconContainer dooContainerName-arrow-down">
+                                                    <i class="dooIcon dooIcon-arrow-down dooIconSize-20"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="deleteEntryButtonContainer" title="Löschen" onclick="deleteEntry(this);">
+                                            <button class="deleteEntryButton smallPadding">
+                                                <span class="dooIconContainer dooContainerName-trash">
+                                                    <i class="dooIcon dooIcon-trash dooIconSize-16"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="textInputBox textInputBoxPlaceholder">
+                                        <div class="conceptRow conceptLearningTargetLevel empty selectLearningTargetLevelButton" style="display: none;">
+                                            <button class="conceptButton">
+                                                <span class="newText">Lernzielstufe auswählen</span>
+                                            </button>
+                                        </div>
+                                        <p class="textInputTitle" style="display: none;">Die Teilnehmenden können</p>
+                                        <button type="button" class="addButton" title="Groblernziel hinzufügen" onclick="addTextInputList(this);">+ Hinzufügen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Format & Zeit</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Format der Weiterbildung <div class="infoFormButtonWrapper">
+                                            <button class="infotextButton infoFormButton" type="button" title="Erklärung anzeigen" data-infotext="formatDerWeiterbildung">?</button>
+                                        </div>
+                                    </span>
+                                </label>
+                                <div class="multipleButton multipleButtonResponse">
+                                    <button class="singleMultipleButton buttonStart dataFormat multipleButtonResponsePresence" data-format="presence" onclick="multipleButtonActive(this);">Präsenz</button>
+                                    <button class="singleMultipleButton buttonMiddle dataFormat multipleButtonResponseDigital" data-format="digital" onclick="multipleButtonActive(this);">Digital</button>
+                                    <button class="singleMultipleButton buttonEnd dataFormat multipleButtonResponsePresenceDigital" data-format="digital-presence" onclick="multipleButtonActive(this);">Digital + Präsenz</button>
+                                    <button class="singleMultipleButton buttonEnd dataFormat" data-format="open" onclick="multipleButtonActive(this);">Offen für Vorschläge</button>
+                                </div>
+                            </div>
+                            <div class="inputWrapper additionalQuestionDigitalFormat">
+                                <label>
+                                    <span class="labelText">Digitales Format</span>
+                                </label>
+                                <div class="multipleButton">
+                                    <button class="singleMultipleButton buttonStart dataDigitalFormat" data-digitalFormat="live-online" onclick="multipleButtonActive(this); multipleButtonSliderType(this);">Live-Online-Training</button>
+                                    <button class="singleMultipleButton buttonEnd dataDigitalFormat" data-digitalFormat="elearning" onclick="multipleButtonActive(this); multipleButtonSliderType(this);">E-Learning</button>
+                                </div>
+                            </div>
+                            <div class="inputWrapper additionalQuestionTimeDefault">
+                                <label>
+                                    <span class="labelText">Zeitumfang</span>
+                                </label>
+                                <div class="sliderInputContainer">
+                                    <div class="rangeContainer">
+                                        <div class="sliderLableContainer">
+                                            <input type="range" min="0.5" max="8" step="0.5" class="slider secondSlider dataTime" oninput="sliderValue(this)">
+                                        </div>
+                                    </div>
+                                    <div class="hourDayContainer">
+                                        <input type="number" class="sliderInput dataTime" id="dataTime" name="dataTime" min="0" max="100" onchange="outputValue(this)">
+                                        <div class="silderInputText dataTimeType" data-timeType="days"> Tage </div>
+                                        <!-- <div class="multipleButton alwaysActive">
+                                            <button class="singleMultipleButton buttonStart dataTimeType active" data-timeType="hours" onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Stunden</button>
+                                            <button class="singleMultipleButton buttonEnd dataTimeType" data-timeType="days" onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Tage</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="inputWrapper additionalQuestionTimeDigital">
+                                <label>
+                                    <span class="labelText">Zeitumfang Digital</span>
+                                </label>
+                                <div class="sliderInputContainer">
+                                    <div class="rangeContainer">
+                                        <div class="sliderLableContainer">
+                                            <input type="range" min="0.5" max="16" step="0.5" class="slider secondSlider dataTimeDigital" oninput="sliderValue(this)">
+                                        </div>
+                                    </div>
+                                    <div class="hourDayContainer">
+                                        <input type="number" class="sliderInput dataTimeDigital" id="dataTimeDigital" name="dataTimeDigital" min="0" max="100" onchange="outputValue(this)">
+                                        <div class="silderInputText dataTimeDigitalType" data-timeType="hours"> Stunden </div>
+                                        <!-- <div class="multipleButton alwaysActive">
+                                            <button class="singleMultipleButton buttonStart dataTimeDigitalType active" data-timeDigitalType="hours" onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Stunden</button>
+                                            <button class="singleMultipleButton buttonEnd dataTimeDigitalType" data-timeDigitalType="days" onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Tage</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inputWrapper additionalQuestionTimePresence">
+                                <label>
+                                    <span class="labelText">Zeitumfang Präsenz</span>
+                                </label>
+                                <div class="sliderInputContainer">
+                                    <div class="rangeContainer">
+                                        <div class="sliderLableContainer">
+                                            <input type="range" min="0.5" max="8" step="0.5" class="slider secondSlider dataTimePresence" oninput="sliderValue(this)">
+                                        </div>
+                                    </div>
+                                    <div class="hourDayContainer">
+                                        <input type="number" class="sliderInput dataTimePresence" id="dataTimePresence" name="dataTimePresence" min="0" max="100" onchange="outputValue(this)">
+                                        <div class="silderInputText dataTimePresenceType" data-timeType="days"> Tage </div>
+                                        <!-- <div class="multipleButton alwaysActive">
+                                            <button class="singleMultipleButton buttonStart sliderConfig1 dataTimePresenceType active" data-timePresenceType="hours" onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Stunden</button>
+                                            <button class="singleMultipleButton buttonEnd sliderConfig2 dataTimePresenceType" data-timePresenceType="days" onclick="multipleButtonActive(this); multipleButtonSliderRange(this);">Tage</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardTitleWrapper">
+                        <h3 class="cardTitle">Angaben zu Teilnehmenden</h3>
+                        <div class="card bigPadding">
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Ungefähre Anzahl der Teilnehmenden pro Durchführung</span>
+                                    <div class="infoFormButtonWrapper">
+                                        <button class="infotextButton infoFormButton" type="button" title="Erklärung anzeigen" data-infotext="ungefaehreAnzahlTeilnehmendeProDurchführung">?</button>
+                                    </div>
+                                </label>
+                                <div class="sliderInputContainer">
+                                    <!-- <div class="rangeContainer">
+                                        <div class="sliderLableContainer">
+                                            <input type="range" min="1" max="100" step="1" class="slider secondSlider dataUserPerEvent" oninput="sliderValue(this)">
+                                        </div>
+                                    </div> -->
+                                    <div class="rangeContainer">
+                                        <div class="sliderRangeContainer">
+                                            <!-- <input type="range" min="1" max="100" step="1" class="slider rangeSliderUI dataUserPerEvent" oninput="sliderValue(this)"> -->
+                                            <div class="rangeSliderUI"></div>
+                                        </div>
+                                    </div>
+                                    <div class="hourDayContainer">
+                                        <input type="number" class="sliderInput dataUserPerEventMin" id="dataUserPerEventMin" name="dataUserPerEventMin" min="0" max="100" step="1" value="40" onchange="outputRangeValue(this)" oninput="validateSliderInput(this);">
+                                        -
+                                        <input type="number" class="sliderInput dataUserPerEventMax" id="dataUserPerEventMax" name="dataUserPerEventMax" min="0" max="100" step="1" value="60" onchange="outputRangeValue(this)" oninput="validateSliderInput(this);">
+                                        <div class="silderInputText"> Teilnehmende </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Ungefähre Anzahl der Teilnehmenden insgesamt</span>
+                                    <div class="infoFormButtonWrapper">
+                                        <button class="infotextButton infoFormButton" type="button" title="Erklärung anzeigen" data-infotext="ungefaehreAnzahlTeilnehmendeInsgesamt">?</button>
+                                    </div>
+                                </label>
+                                <div class="sliderInputContainer">
+                                    <div class="rangeContainer">
+                                        <div class="sliderLableContainer">
+                                            <input type="range" min="1" max="1000" step="1" class="slider secondSlider dataUserTotal" id="dataQuestion11" oninput="sliderValue(this)">
+                                        </div>
+                                    </div>
+                                    <div class="hourDayContainer">
+                                        <input type="number" class="sliderInput dataUserTotal"  id="dataUserTotal" name="dataUserTotal" min="0" max="1000" onchange="outputValue(this)">
+                                        <div class="silderInputText"> Teilnehmende </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">(Digitale) Affinität der Teilnehmenden</span>
+                                </label>
+                                <div class="multipleButton">
+                                    <button class="singleMultipleButton buttonStart dataDigitalAffinity" data-digitalAffinity="low" onclick="multipleButtonActive(this);">Niedrig</button>
+                                    <button class="singleMultipleButton buttonMiddle dataDigitalAffinity" data-digitalAffinity="middle" onclick="multipleButtonActive(this);">Mittel</button>
+                                    <button class="singleMultipleButton buttonMiddle dataDigitalAffinity" data-digitalAffinity="high" onclick="multipleButtonActive(this);">Hoch</button>
+                                    <button class="singleMultipleButton buttonEnd dataDigitalAffinity" data-digitalAffinity="mixed" onclick="multipleButtonActive(this);">Gemischt</button>
+                                </div>
+                            </div>
+                            <div class="inputWrapper">
+                                <label>
+                                    <span class="labelText">Stand von Vorwissen & Fähigkeiten der Teilnehmenden</span>
+                                </label>
+                                <div class="multipleButton">
+                                    <button class="singleMultipleButton buttonStart dataKnowledgeSkills" data-knowledgeSkills="beginner" onclick="multipleButtonActive(this);">Anfänger</button>
+                                    <button class="singleMultipleButton buttonMiddle dataKnowledgeSkills" data-knowledgeSkills="advanced" onclick="multipleButtonActive(this);">Fortgeschrittene</button>
+                                    <button class="singleMultipleButton buttonMiddle dataKnowledgeSkills" data-knowledgeSkills="expert" onclick="multipleButtonActive(this);">Experten</button>
+                                    <button class="singleMultipleButton buttonEnd dataKnowledgeSkills" data-knowledgeSkills="mixed" onclick="multipleButtonActive(this);">Gemischt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goNextContainer">
+                        <a href="content.html" class="primaryButton primaryButtonSmall">Weiter</a>
+                        <p class="goNextInfotext">Sie können jederzeit die Rahmendaten ändern.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <nav id="menuFooter">
+                <ul class="menuFooterList">
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="index.html">
+                            <span class="footerTitle">Start</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem active">
+                        <a class="menuFooterListItemLink" href="data.html">
+                            <span class="footerTitle">Rahmendaten</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="content.html">
+                            <span class="footerTitle">Inhalte</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem">
+                        <a class="menuFooterListItemLink" href="structure.html">
+                            <span class="footerTitle">Struktur</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem inactive">
+                        <a class="menuFooterListItemLink" href="analysis.html">
+                            <span class="footerTitle">Analyse</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem inactive">
+                        <a class="menuFooterListItemLink" href="offer.html">
+                            <span class="footerTitle">Angebotsbeschreibung</span>
+                        </a>
+                    </li>
+                    <li class="menuFooterListItem inactive">
+                        <a class="menuFooterListItemLink" href="conclusion.html">
+                            <span class="footerTitle">Abschluss</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <div class="infotextWrapper">
+            <div class="infotextBackground"></div>
+            <div class="infotextInner thinScrollbar">
+                <div class="infotextTop padding">
+                    <h3 class="infotextHeadline">Hinweis</h3>
+                    <button class="buttonText infotextClose">
+                        <span class="dooIconContainer dooContainerName-cancel userIcon">
+                            <i class="dooIcon dooIcon-cancel dooIconSize-20"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="infotextText padding">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+            </div>
+        </div>
+        <div class="lightboxWrapper" id="deleteAllData">
+            <div class="lightboxBackground"></div>
+            <div class="lightboxContainer">
+                <div class="lightboxInner card padding">
+                    <h1>Bisherige Planung löschen</h1>
+                    <p>Durch das Zurücksetzen werden alle Ihre Daten aus dem Next Learning Creator gelöscht und Sie können von Vorne beginnen.</p>
+                    <h3>Möchten Sie von Vorne beginnen?</h3>
+                    <div class="lightboxButtons">
+                        <button type="button" class="primaryButton small lightboxContentClose" onclick="resetCreator();">Ja, alles löschen</button>
+                        <a><button type="button" class="tertiaryButton small lightboxContentClose">Abbrechen</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

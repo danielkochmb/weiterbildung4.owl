@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse - Next Learning Creator</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="fonts/fonts.css" rel="stylesheet">
+    <link href="fonts/dooiconfont/dooiconfont.css" rel="stylesheet">
+    <script src="libs/jquery-3.6.1.min.js"></script>
+    <script src="libs/jquery-ui.min.js"></script>
+    <script src="libs/jquery.ui.touch-punch.js"></script>
+    <script src="libs/chart.umd.min.js"></script>
+    <script src="libs/wordcloud.umd.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="js/jsonInfotexts.js"></script>
+    <script src="js/scriptStructure.js"></script>
+    <script src="js/loadAndSaveData.js"></script>
+    <script src="js/generateAnalysis.js"></script>
+    <script src="js/analyzeStructure.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <span id="logo"><img class="logo" src="img/Logo_Next Learning_Creator.svg"
+                alt="Logo Next Learning Creator"></span>
+    </header>
+    <header class="hasSubHeader">
+        <div class="headerLeft">
+            <a href="structure.html" class="backButton small">Zurück</a>
+        </div>
+
+        <span id="logo"><img class="logo" src="img/Logo_Next Learning_Creator.svg"
+                alt="Logo Next Learning Creator"></span>
+
+        <div class="headerRight">
+            <a href="offer.html" class="primaryButton small">Weiter</a>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <main class="contentWidth">
+
+        <section id="analysis">
+            <h1>Analyse</h1>
+            <!-- <div class="toolcheckInfoBox">
+                <h3>Hinweis:</h3>
+                Die Vorschläge sind nur ein Beispiel und hängen aktuell nicht mit den gewählten Inhalten zusammen.
+            </div> -->
+            <h3 class="cardTitle">Optimierungsvorschläge</h3>
+            <div class="optimizationProposalsWrapper">
+                <div class="cardConnectingLine"></div>
+            </div>
+
+
+
+            <div class="cardTitleWrapper">
+                <h3 class="cardTitle">Auswertung Methoden</h3>
+
+                <div class="card bigPadding analysisCardWrapper">
+                    <div class="analysisCardLeft chartContainer">
+                        <canvas id="evaluationMethods"></canvas>
+                        <button class="downloadButton" title="Diagramm herunterladen" onclick="downloadCanvas(this);">
+                            <span class="dooIconContainer dooContainerName-import">
+                                <i class="dooIcon dooIcon-import dooIconSize-16"></i>
+                            </span>
+                            Download
+                        </button>
+                    </div>
+                    <div class="analysisCardRight">
+                        <h4 class="cardTitle">Interpretation & Nutzung</h4>
+                        <p>
+                            Die Grafik gibt einen Eindruck zum geplanten Methodeneinsatz. Die gewählten Methoden sollten
+                            zu den Inhalten und Zielen des Lernangebots passen.
+                        </p>
+                        <p>
+                            Eine adäquate Auswahl von Methoden hilft dabei, die Motivation und das Engagement der
+                            Teilnehmenden zu fördern. Überprüfen Sie noch einmal, ob Ihre methodische Planung diese
+                            Anforderungen erfüllt.
+                        </p>
+                        <p>
+                            Darüber hinaus können Sie die Grafik dazu nutzen, um Ihr Angebot aussagekräftiger zu
+                            beschreiben.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardTitleWrapper">
+                <h3 class="cardTitle">Auswertung Lernziele</h3>
+
+                <div class="card bigPadding analysisCardWrapper">
+                    <div class="analysisCardLeft chartContainer">
+                        <canvas id="evaluationLearningObjectives"></canvas>
+                        <button class="downloadButton" title="Diagramm herunterladen" onclick="downloadCanvas(this);">
+                            <span class="dooIconContainer dooContainerName-import">
+                                <i class="dooIcon dooIcon-import dooIconSize-16"></i>
+                            </span>
+                            Download
+                        </button>
+                    </div>
+                    <div class="analysisCardRight">
+                        <h4 class="cardTitle">Interpretation & Nutzung</h4>
+                        <p>
+                            Die Grafik gibt eine Übersicht darüber, wie lange sich die Teilnehmenden voraussichtlich
+                            auf
+                            den einzelnen Lernzielstufen bewegen.
+                        </p>
+                        <p>
+                            Die Darstellung gibt Hinweise darauf, inwiefern die beabsichtigten Groblernziele und das
+                            geplante Level des Lernangebots erreicht werden können. Überprüfen Sie noch einmal, ob Ihre
+                            Planung auf Ebene der Lernziele den übergeordneten Erwartungen entspricht.
+                        </p>
+                        <p>
+                            Darüber hinaus können Sie die Grafik dazu nutzen, um Ihr Angebot aussagekräftiger zu
+                            beschreiben.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardTitleWrapper">
+                <h3 class="cardTitle">Auswertung Phasen</h3>
+
+                <div class="card bigPadding analysisCardWrapper">
+                    <div class="analysisCardLeft chartContainer">
+                        <canvas id="evaluationPhase"></canvas>
+                        <button class="downloadButton" title="Diagramm herunterladen" onclick="downloadCanvas(this);">
+                            <span class="dooIconContainer dooContainerName-import">
+                                <i class="dooIcon dooIcon-import dooIconSize-16"></i>
+                            </span>
+                            Download
+                        </button>
+                    </div>
+                    <div class="analysisCardRight">
+                        <h4 class="cardTitle">Interpretation & Nutzung</h4>
+                        <p>
+                            Die Grafik gibt eine Übersicht darüber, wie lange die Teilnehmenden voraussichtlich in den
+                            verschiedenen Phasen aktiv sind.
+                        </p>
+                        <p>
+                            Die Auswahl von Methoden bedingt maßgeblich die Nutzung verschiedener Sozialformen. In den
+                            verschiedenen Sozialformen können unterschiedliche Formen der Kooperation und
+                            Handlungsmuster erreicht werden.
+                        </p>
+                        <p>
+                            Überprüfen Sie noch einmal, ob Sie mit den gewählten Sozialformen lernförderliche
+                            Bedingungen schaffen. Darüber hinaus können Sie die Grafik dazu nutzen, um Ihr Angebot
+                            aussagekräftiger zu beschreiben.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardTitleWrapper">
+                <h3 class="cardTitle">Auswertung Sozialform</h3>
+
+                <div class="card bigPadding analysisCardWrapper">
+                    <div class="analysisCardLeft chartContainer">
+                        <canvas id="evaluationSocialForm"></canvas>
+                        <button class="downloadButton" title="Diagramm herunterladen" onclick="downloadCanvas(this);">
+                            <span class="dooIconContainer dooContainerName-import">
+                                <i class="dooIcon dooIcon-import dooIconSize-16"></i>
+                            </span>
+                            Download
+                        </button>
+                    </div>
+                    <div class="analysisCardRight">
+                        <h4 class="cardTitle">Interpretation & Nutzung</h4>
+                        <p>
+                            Die Grafik gibt eine Übersicht darüber, wie lange die Teilnehmenden voraussichtlich in den
+                            verschiedenen Sozialformen aktiv sind.
+                        </p>
+                        <p>
+                            Die Auswahl von Methoden bedingt maßgeblich die Nutzung verschiedener Sozialformen. In den
+                            verschiedenen Sozialformen können unterschiedliche Formen der Kooperation und
+                            Handlungsmuster erreicht werden.
+                        </p>
+                        <p>
+                            Überprüfen Sie noch einmal, ob Sie mit den gewählten Sozialformen lernförderliche
+                            Bedingungen schaffen. Darüber hinaus können Sie die Grafik dazu nutzen, um Ihr Angebot
+                            aussagekräftiger zu beschreiben.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+
+
+    <footer>
+        <nav id="menuFooter">
+            <ul class="menuFooterList">
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="index.html">
+                        <span class="footerTitle">Start</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="data.html">
+                        <span class="footerTitle">Rahmendaten</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="content.html">
+                        <span class="footerTitle">Inhalte</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="structure.html">
+                        <span class="footerTitle">Struktur</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem active">
+                    <a class="menuFooterListItemLink" href="analysis.html">
+                        <span class="footerTitle">Analyse</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="offer.html">
+                        <span class="footerTitle">Angebotsbeschreibung</span>
+                    </a>
+                </li>
+                <li class="menuFooterListItem">
+                    <a class="menuFooterListItemLink" href="conclusion.html">
+                        <span class="footerTitle">Abschluss</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- <div class="lightboxWrapper" id="toolcheckInfoBox">
+        <div class="lightboxBackgroundMandatory"></div>
+        <div class="lightboxContainer">
+            <div class="lightboxInner card padding">
+                <h1>Hinweis:</h1>
+                <p>Auf dieser Seite sehen Sie bespielhafte Optimierungsvorschläge und grafische Auswertungen zu einem angelegten Lernangebot.</p>
+                <p>Leider sind wir in der Entwicklung noch nicht so weit fortgeschritten, dass wir hier eine dynamische Oberfläche anbieten können, die sich auf die von dir angelegte Konzeption im Schritt "Struktur" bezieht. <br> Diese Funktion wird aktuell implementiert.</p>
+        
+                <button type="button" class="primaryButton small lightboxContentClose">Alles klar!</button>
+            </div>
+        </div>
+    </div> -->
+
+</body>
+
+</html>
